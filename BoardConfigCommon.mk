@@ -65,6 +65,7 @@ BOARD_KERNEL_SEPARATED_DTBO := true
 BOARD_MKBOOTIMG_ARGS += --header_version $(BOARD_BOOT_HEADER_VERSION)
 TARGET_KERNEL_CONFIG := vendor/bengal-perf_defconfig vendor/ext_config/moto-bengal.config
 TARGET_KERNEL_SOURCE := kernel/motorola/sm6225
+BOARD_RAMDISK_USE_LZ4 := true # Allow LZ4 compression
 
 # Kernel Modules - Audio
 TARGET_MODULE_ALIASES += \
