@@ -81,6 +81,7 @@ TARGET_KERNEL_SOURCE := kernel/motorola/sm6225
 KERNEL_LLVM_SUPPORT := true
 USE_KERNEL_AOSP_LLVM := true
 KERNEL_FULL_LLVM := true
+BOARD_RAMDISK_USE_LZ4 := true # Allow LZ4 compression
 
 # Kernel Modules
 BOARD_VENDOR_KERNEL_MODULES += \
