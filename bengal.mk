@@ -398,8 +398,8 @@ TARGET_BOARD_PLATFORM := bengal
 
 # Power
 PRODUCT_PACKAGES += \
-     android.hardware.power-service-qti \
-     vendor.qti.hardware.perf@2.0.vendor
+    android.hardware.power@1.2.vendor \
+    vendor.qti.hardware.perf@2.0.vendor
 
 # Prebuilt Headers
 PRODUCT_VENDOR_KERNEL_HEADERS := kernel/motorola/kernel-headers

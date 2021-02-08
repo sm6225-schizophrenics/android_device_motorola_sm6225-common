@@ -61,6 +61,9 @@
 # Motobox
 /(vendor|system/vendor)/bin/motobox                     u:object_r:vendor_motobox_exec:s0
 
+ # Power
+/vendor/bin/hw/android\.hardware\.power-service         u:object_r:hal_power_default_exec:s0
+
 # NFC
 /dev/sec-nfc                                            u:object_r:nfc_device:s0
 /(vendor|system/vendor)/bin/STFlashTool                 u:object_r:stflashtool_exec:s0
