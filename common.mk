@@ -299,6 +299,10 @@ PRODUCT_COPY_FILES += \
 BOARD_USES_QCOM_HARDWARE := true
 TARGET_BOARD_PLATFORM := bengal
 
+# Perf
+PRODUCT_PACKAGES += \
+    vendor.qti.hardware.perf@2.2.vendor
+
 # Power
 PRODUCT_PACKAGES += \
     android.hardware.power-service-qti
