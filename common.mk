@@ -51,7 +51,6 @@ PRODUCT_AAPT_PREF_CONFIG := xxhdpi
 
 # Audio
 PRODUCT_PACKAGES += \
-    audio_amplifier.bengal \
     audio.bluetooth.default \
     audio.primary.bengal \
     audio.r_submix.default \
