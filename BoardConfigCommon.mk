@@ -6,7 +6,7 @@
 COMMON_PATH := device/motorola/sm6225-common
 
 # ANT+
-BOARD_ANT_WIRELESS_DEVICE := "qualcomm-hidl"
+BOARD_ANT_WIRELESS_DEVICE := "vfs-prerelease"
 
 # Architecture
 TARGET_ARCH := arm64
