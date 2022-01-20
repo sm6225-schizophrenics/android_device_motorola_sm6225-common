@@ -433,6 +433,9 @@ service vendor.mmi-boot-sh /vendor/bin/init.mmi.boot.sh
 #    oneshot
 #    disabled
 
+on property:sys.boot_completed=1
+    setprop vendor.boot_completed ${sys.boot_completed}
+
 # translate MMI property in order to keep the consistent with QCOM
 on property:ro.vendor.hw.dualsim=true
    setprop persist.radio.multisim.config dsds
