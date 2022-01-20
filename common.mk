@@ -186,7 +186,6 @@ PRODUCT_PACKAGES += \
     init.qti.dcvs.sh \
     init.qti.early_init.sh \
     init.mmi.charge_only.rc \
-    init.mmi.chipset.rc \
     init.mmi.dalvik.rc \
     init.mmi.rc \
     init.qcom.rc \

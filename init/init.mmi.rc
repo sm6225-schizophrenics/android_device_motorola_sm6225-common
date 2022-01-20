@@ -1,11 +1,11 @@
-# Chipset-specific file
-import /vendor/etc/init/hw/init.mmi.chipset.rc
-
 # Target-specific file
 import /vendor/etc/init/hw/init.mmi.overlay.rc
 
 # Dalvik configuration
 import /vendor/etc/init/hw/init.mmi.dalvik.rc
+
+# Charge only mode configuration
+import /vendor/etc/init/hw/init.mmi.charge_only.rc
 
 on early-boot
     write /sys/module/subsystem_restart/parameters/disable_restart_work 0x0
@@ -15,6 +15,8 @@ on init
     chmod 0640 /proc/driver/mmi_annotate
 
 on early-init
+    exec u:r:vendor_modprobe:s0 -- /vendor/bin/modprobe -a -d /vendor/lib/modules exfat
+
     # Need to wait for platform path for UTAGs driver to succeed
     wait /dev/block/platform/soc/${ro.boot.bootdevice}/by-name/hw
 
