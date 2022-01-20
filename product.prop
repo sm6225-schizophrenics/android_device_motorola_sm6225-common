@@ -14,6 +14,7 @@ ro.lmk.downgrade_pressure=60
 
 # Motorola
 ro.mot.build.customerid=global
+ro.vendor.mot.factory=false
 
 # System server
 arm64.memtag.process.system_server=off
