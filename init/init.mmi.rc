@@ -27,7 +27,6 @@ on early-init
     # Map oem properties, this must follow
     # execution of vendor.oem-hw-sh to set
     # required properties.
-    setprop ro.carrier ${ro.boot.carrier}
     setprop ro.sf.lcd_density ${ro.boot.lcd_density}
     setprop ro.vendor.fsg-id ${ro.boot.fsg-id}
     setprop ro.vendor.hw.device ${ro.boot.device}
