@@ -307,9 +307,6 @@ on property:ro.vendor.hw.dualsim=true
 on property:ro.vendor.hw.dualsim=false
    setprop persist.radio.multisim.config ""
 
-on property:sys.sysctl.swappiness=*
-    write /proc/sys/vm/swappiness ${sys.sysctl.swappiness}
-
 service vendor.mmi-touch-sh /vendor/bin/init.mmi.touch.sh
     class core
     user root
@@ -390,19 +387,6 @@ on property:vendor.hw.touch.status="dead"
 
 on property:vendor.hw.touch.status="ready"
     start vendor.touch-ready-sh
-
-on property:vendor.wifi.tethering=false
-    write /sys/module/wlan/parameters/sar_mhs disabled
-
-on property:vendor.wifi.tethering=true
-    write /sys/module/wlan/parameters/sar_mhs enabled
-
-#Override fwpath string when wpa_supplicant server was killed
-on property:vendor.wifi.station=true
-    write /sys/module/wlan/parameters/sar_sta enabled
-
-on property:vendor.wifi.station=false
-    write /sys/module/wlan/parameters/sar_sta disabled
 
 on property:ro.vendor.hw.pvtui=*
     setprop ro.hardware.device.pvtui ${ro.vendor.hw.pvtui}
