@@ -443,9 +443,6 @@ on property:ro.vendor.hw.dualsim=true
 on property:ro.vendor.hw.dualsim=false
    setprop persist.radio.multisim.config ""
 
-on property:sys.sysctl.swappiness=*
-    write /proc/sys/vm/swappiness ${sys.sysctl.swappiness}
-
 service vendor.mbm_spy /vendor/bin/mbm_spy
     class late_start
     user system
@@ -537,14 +534,6 @@ on property:vendor.hw.touch.status="dead"
 on property:vendor.hw.touch.status="ready"
     start vendor.touch-ready-sh
 
-# bugreport is triggered by holding down volume down, volume up and power
-service bugreport /system/bin/dumpstate -d -p -B -z \
-        -o /data/user_de/0/com.android.shell/files/bugreports/bugreport
-    class main
-    disabled
-    oneshot
-    keycodes 114 115 116
-
 # touchRec
 service vendor.touchRec /vendor/bin/touchRec
     class late_start
@@ -552,19 +541,6 @@ service vendor.touchRec /vendor/bin/touchRec
     group input
     oneshot
     disabled
-
-on property:vendor.wifi.tethering=false
-    write /sys/module/wlan/parameters/sar_mhs disabled
-
-on property:vendor.wifi.tethering=true
-    write /sys/module/wlan/parameters/sar_mhs enabled
-
-#Override fwpath string when wpa_supplicant server was killed
-on property:vendor.wifi.station=true
-    write /sys/module/wlan/parameters/sar_sta enabled
-
-on property:vendor.wifi.station=false
-    write /sys/module/wlan/parameters/sar_sta disabled
 
 on shutdown
     exec_start vendor.mmi-shutdown-sh
