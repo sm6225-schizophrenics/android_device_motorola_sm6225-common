@@ -319,6 +319,9 @@ PRODUCT_SYSTEM_PROPERTIES += \
     ro.lmk.upgrade_pressure=40 \
     ro.lmk.use_minfree_levels=true
     
+PRODUCT_VENDOR_PROPERTIES += \
+    ro.vendor.lmk.force_inkernel_lmk=true
+    
 # Low RAM
 TARGET_HAS_LOW_RAM := true
 
