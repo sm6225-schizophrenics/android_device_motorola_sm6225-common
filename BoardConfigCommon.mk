@@ -72,11 +72,11 @@ BOARD_KERNEL_CMDLINE := \
     msm_rtb.filter=0x237 \
     service_locator.enable=1 \
     swiotlb=2048
-BOARD_KERNEL_IMAGE_NAME := Image
 BOARD_KERNEL_PAGESIZE := 4096
 BOARD_KERNEL_SEPARATED_DTBO := true
 BOARD_MKBOOTIMG_ARGS += --header_version $(BOARD_BOOT_HEADER_VERSION)
-TARGET_KERNEL_SOURCE := kernel/motorola/sm6225
+TARGET_KERNEL_APPEND_DTB := true
+TARGET_KERNEL_VERSION := 4.19
 
 # Kernel Modules - Audio
 TARGET_MODULE_ALIASES += \
