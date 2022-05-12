@@ -414,6 +414,12 @@ service qcom-c_main-sh /vendor/bin/init.class_main.sh
 on property:vold.decrypt=trigger_restart_framework
     start qcom-c_main-sh
     start wcnss-service
+    
+service adsprpcd /vendor/bin/adsprpcd
+   class main
+   user media
+   group media
+   disabled
 
 service vendor.qrtr-ns /vendor/bin/qrtr-ns -f
     class core
