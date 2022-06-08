@@ -1,3 +1,6 @@
+# Camera
+vendor.camera.aux.packagelist=com.android.camera,org.codeaurora.snapcam,co.aospa.sense,com.motorola.camera2,com.motorola.camera3,com.motorola.motocit
+
 # Logging
 persist.log.tag.slpi=S
 persist.log.tag.RBS=S
