@@ -63,6 +63,7 @@ BOARD_INCLUDE_DTB_IN_BOOTIMG := true
 BOARD_KERNEL_BASE := 0x00000000
 BOARD_KERNEL_CMDLINE := \
     androidboot.console=ttyMSM0 \
+    cgroup_disable=pressure \
     androidboot.hardware=qcom \
     loop.max_part=7 \
     lpm_levels.sleep_disabled=1 \
