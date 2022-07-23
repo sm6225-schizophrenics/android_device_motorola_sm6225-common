@@ -519,6 +519,10 @@ PRODUCT_SOONG_NAMESPACES += \
     hardware/motorola \
     hardware/samsung
 
+# SPU
+PRODUCT_VENDOR_PROPERTIES += \
+    vendor.gatekeeper.disable_spu=true
+
 # USB
 PRODUCT_PACKAGES += \
     usb_compositions.conf
