@@ -256,6 +256,9 @@ ro.vendor.sensors.glance_approach=false
 ro.vendor.sensors.mot_ltv=true
 ro.vendor.sensors.pug=false
 
+# SPU
+vendor.gatekeeper.disable_spu=true
+
 # USB
 ro.usb.uvc.enabled=true
 sys.usb.mtp.batchcancel=1
