@@ -51,6 +51,7 @@ DEVICE_MATRIX_FILE := hardware/qcom-caf/common/compatibility_matrix.xml
 ODM_MANIFEST_FILES := $(COMMON_PATH)/manifest-qva.xml
 
 # HWUI
+HWUI_COMPILE_FOR_PERF := true
 USE_OPENGL_RENDERER := true
 
 # Kernel
