@@ -52,6 +52,9 @@ DEVICE_MATRIX_FILE := hardware/qcom-caf/common/compatibility_matrix.xml
 DEVICE_MATRIX_FILE += hardware/qcom-caf/common/compatibility_matrix.xml
 ODM_MANIFEST_FILES := $(COMMON_PATH)/manifest-qva.xml
 
+# HWUI
+USE_OPENGL_RENDERER := true
+
 # Kernel
 BOARD_BOOT_HEADER_VERSION ?= 3
 BOARD_INCLUDE_DTB_IN_BOOTIMG := true
