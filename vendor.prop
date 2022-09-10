@@ -103,7 +103,10 @@ dalvik.vm.heapminfree=1m
 dalvik.vm.heapmaxfree=8m
 
 # Display
+debug.cpurend.vsync=false
 debug.hwui.skia_atrace_enabled=false
+debug.hwui.skia_tracing_enabled=false
+debug.hwui.skia_use_perfetto_track_events=false
 debug.hwui.target_cpu_time_percent=30
 debug.hwui.use_hint_manager=true
 debug.sf.enable_hwc_vds=0
@@ -158,6 +161,10 @@ vendor.hw.fm.init=0
 
 # FUSE passthrough
 persist.sys.fuse.passthrough.enable=true
+
+# HWUI
+debug.hwui.renderer=skiagl
+debug.renderengine.backend=skiaglthreaded
 
 # IMS
 persist.dbg.volte_avail_ovr=1
