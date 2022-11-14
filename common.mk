@@ -51,7 +51,6 @@ PRODUCT_AAPT_PREF_CONFIG := xxhdpi
 # Audio
 PRODUCT_PACKAGES += \
     audio_amplifier.bengal \
-    audio.bluetooth.default \
     audio.primary.bengal \
     audio.r_submix.default \
     audio.usb.default \
@@ -63,7 +62,6 @@ PRODUCT_PACKAGES += \
     android.hardware.audio@6.0-impl \
     android.hardware.audio.effect@6.0-impl \
     android.hardware.audio.service \
-    android.hardware.bluetooth.audio-impl \
     android.hardware.soundtrigger@2.3-impl
 
 PRODUCT_PACKAGES += \
