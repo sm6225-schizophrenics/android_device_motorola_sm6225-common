@@ -305,6 +305,7 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PACKAGES += \
     vendor.lineage.health-service.default
 
+<<<<<<< HEAD
 TARGET_HEALTH_CHARGING_CONTROL_SUPPORTS_BYPASS := false
 
 # LMK
@@ -333,6 +334,8 @@ KERNEL_MODULES_OUT := $(OUT_DIR)/target/product/$(AOSPA_BUILD)/$(KERNEL_MODULES_
 TARGET_USES_KERNEL_PLATFORM := false
 
 # Media
+GENERIC_ODM_IMAGE := true
+
 PRODUCT_SYSTEM_EXT_PROPERTIES += \
     media.aac_51_output_enabled=true \
     media.stagefright.enable-aac=true \
