@@ -204,6 +204,7 @@ PRODUCT_VENDOR_PROPERTIES += \
     debug.sf.enable_gl_backpressure=0 \
     debug.sf.layer_caching_active_layer_timeout_ms=1000 \
     debug.hwui.skia_atrace_enabled=false \
+    ro.sf.use_latest_hwc_vsync_period=0 \
     ro.vendor.display.sensortype=2 \
     vendor.display.idle_time=0 \
     vendor.display.idle_time_inactive=0 \
