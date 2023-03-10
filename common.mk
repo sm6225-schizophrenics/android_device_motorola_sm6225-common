@@ -323,6 +323,8 @@ PRODUCT_PACKAGES += \
     rfs_msm_mpss_readonly_vendor_fsg_symlink
 
 # Sensors
+TARGET_BUILDS_OSS_SENSORS_SUBHAL := true
+
 PRODUCT_PACKAGES += \
     android.hardware.sensors-service.multihal \
     android.frameworks.sensorservice@1.0
