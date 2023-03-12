@@ -143,14 +143,6 @@
     <!-- Whether the Unprocessed audio source supports the required frequency range and level -->
     <bool name="config_supportAudioSourceUnprocessed">true</bool>
 
-    <!-- Default files to pin via Pinner Service -->
-    <string-array translatable="false" name="config_defaultPinnerServiceFiles">
-        <item>/apex/com.android.art/javalib/core-oj.jar</item>
-        <item>/apex/com.android.art/javalib/core-libart.jar</item>
-        <item>/apex/com.android.media/javalib/updatable-media.jar</item>
-        <item>/system/bin/surfaceflinger</item>
-    </string-array>
-
     <!-- When true use the linux /dev/input/event subsystem to detect the switch changes
          on the headphone/microphone jack. When false use the older uevent framework. -->
     <bool name="config_useDevInputEventForAudioJack">true</bool>
