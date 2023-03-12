@@ -63,7 +63,6 @@ BOARD_KERNEL_CMDLINE := \
     earlycon=msm_geni_serial,0x4a90000 \
     loop.max_part=7 \
     lpm_levels.sleep_disabled=1 \
-    msm_rtb.filter=0x237 \
     service_locator.enable=1 \
     swiotlb=2048
 BOARD_KERNEL_IMAGE_NAME := Image
