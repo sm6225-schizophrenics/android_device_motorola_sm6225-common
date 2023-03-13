@@ -303,7 +303,7 @@ TARGET_COMMON_QTI_COMPONENTS := \
     bt \
     display \
     gps \
-    media \
+    keymaster \
     perf \
     vibrator \
     wlan

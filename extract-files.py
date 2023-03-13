@@ -22,6 +22,7 @@ namespace_imports = [
     'device/motorola/sm6225-common',
     'vendor/qcom/opensource/dataservices',
     'vendor/qcom/common/system/perf'
+    'vendor/qcom/common/vendor/keymaster'
 ]
 
 
