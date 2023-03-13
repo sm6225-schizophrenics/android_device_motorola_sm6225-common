@@ -221,11 +221,6 @@ vendor/lib64/vendor.qti.hardware.fm@1.0.so;MODULE_SUFFIX=_vendor|2f01b221540ba0c
 system_ext/lib64/fm_helium.so
 system_ext/lib64/libfm-hci.so
 
-# Gatekeeper - from LA.UM.9.15.2.r1-10600-KAMORTA.QSSI14.0
-vendor/bin/hw/android.hardware.gatekeeper@1.0-service-qti|2e33e885b92e413440511049025497945d6b8484
-vendor/etc/init/android.hardware.gatekeeper@1.0-service-qti.rc|d026889593faf28029f54d92176e89cb1081727d
-vendor/lib64/hw/android.hardware.gatekeeper@1.0-impl-qti.so|81deaf3df7aabd2e7acc56807e1d7cf1f0b49cce
-
 # GNSS
 vendor/lib64/libcacertclient.so
 vendor/lib64/vendor.qti.hardware.cacert@1.0.so
@@ -346,18 +341,6 @@ vendor/lib64/vendor.qti.imsrtpservice@3.0.so;MODULE_SUFFIX=_vendor
 
 # IPA firmware
 vendor/etc/init/ipa_fws.rc
-
-# Keymaster
-vendor/lib64/libqcbor.so
-
-# Keymaster - from LA.UM.9.15.2.r1-10600-KAMORTA.QSSI14.0
-vendor/etc/vintf/manifest/android.hardware.keymaster@4.1-service-default-qti.xml|478d11fc12dd7c6a85b543cf163bec217aea3148
-vendor/bin/hw/android.hardware.keymaster@4.1-service-qti|b7535b45d5874263fca28713cdcdcf1c6539e216
-vendor/etc/init/android.hardware.keymaster@4.1-service-qti.rc|9b12d723d880c68af58d6654c8a96cb11382676c
-vendor/lib64/libkeymasterdeviceutils.so|15af23f261554c47b5f490f0fe68c15abe87cda8
-vendor/lib64/libkeymasterprovision.so|03d39d7308db350acfbca5313908e88ffa13c1c5
-vendor/lib64/libkeymasterutils.so|572e22dd69debd0f64c5df9f723276f0184e36cc
-vendor/lib64/libqtikeymaster4.so|090018b0001a7a8fbcb62e1ce06c6fffb12c00ba
 
 # Listen
 vendor/lib/libcapiv2svacnn.so

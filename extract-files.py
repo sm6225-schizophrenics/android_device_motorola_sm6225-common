@@ -25,7 +25,8 @@ namespace_imports = [
     "vendor/qcom/common/system/perf",
     'vendor/qcom/common/vendor/gps-legacy',
     'vendor/qcom/common/vendor/display/4.19',
-    'vendor/qcom/common/vendor/display'
+    'vendor/qcom/common/vendor/display',
+    'vendor/qcom/common/vendor/keymaster'
 ]
 
 
