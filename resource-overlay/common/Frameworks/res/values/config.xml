@@ -120,6 +120,9 @@
     <!-- Safe USB headset gain. This value is used to ensure that the SPL on the USB
     headset output is compliant to EN 60950 requirements for portable music players. -->
     <integer name="config_safe_media_volume_usb_mB">-1500</integer>
+    
+    <!-- Determines whether the shell features all run on another thread. -->
+    <bool name="config_enableShellMainThread">true</bool>
 
     <!-- Whether WiFi display is supported by this device.
          There are many prerequisites for this feature to work correctly.
