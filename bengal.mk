@@ -164,6 +164,9 @@ PRODUCT_PACKAGES += \
     vendor.qti.hardware.display.mapper@2.0.vendor \
     vendor.qti.hardware.display.mapper@3.0.vendor \
     vendor.qti.hardware.display.mapper@4.0.vendor
+    
+# Dolby
+$(call inherit-product, hardware/motorola/Dolby/dolby-setup.mk)
 
 # DRM
 PRODUCT_PACKAGES += \
@@ -465,9 +468,6 @@ PRODUCT_PACKAGES += \
 
 PRODUCT_COPY_FILES += \
     vendor/qcom/opensource/vibrator/excluded-input-devices.xml:vendor/etc/excluded-input-devices.xml
-    
-# Viper
-$(call inherit-product, packages/apps/ViPER4AndroidFX/config.mk)
 
 # Wifi
 PRODUCT_PACKAGES += \
