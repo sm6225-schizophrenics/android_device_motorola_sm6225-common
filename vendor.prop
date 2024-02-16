@@ -256,6 +256,9 @@ vendor.usb.use_ffs_mtp=0
 vendor.usb.use_gadget_hal=0
 
 # Wifi
+ro.hardware.wlan.chip=wcn3988
+ro.hardware.wlan.dbs=0
+ro.hardware.wlan.mimo=0
 wifi.aware.interface=wifi-aware0
 
 # ZRAM
