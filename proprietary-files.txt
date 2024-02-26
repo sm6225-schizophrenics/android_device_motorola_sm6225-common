@@ -406,9 +406,6 @@ vendor/lib64/unnhal-acc-adreno.so
 vendor/lib64/unnhal-acc-common.so
 vendor/lib64/unnhal-acc-hvx.so
 
-# NFC
-system_ext/etc/nfcee_access.xml
-
 # OEM
 vendor/bin/motobox
 vendor/etc/vhw.xml|5bf40b73d1f5f519cd9bf0aa0a6af152939125c9
