@@ -8,10 +8,9 @@
             <instance>default</instance>
         </interface>
     </hal>
-    <hal format="hidl" optional="false">
+    <hal format="aidl" optional="true">
         <name>android.hardware.boot</name>
-        <transport>hwbinder</transport>
-        <version>1.2</version>
+        <version>1</version>
         <interface>
             <name>IBootControl</name>
             <instance>default</instance>
