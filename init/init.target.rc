@@ -51,6 +51,10 @@ on init
     symlink /dev/block/platform/soc/${ro.boot.bootdevice} /dev/block/bootdevice
     start vendor.qseecomd
     start keymaster-4-0
+    
+on boot 
+    write /dev/sys/fs/by-name/userdata/data_io_flag 56
+    write /dev/sys/fs/by-name/userdata/node_io_flag 56
 
 on early-fs
     start vold
@@ -145,3 +149,7 @@ on property:vendor.dcvs.prop=1
 on property:sys.boot_completed=1
     # Disable statsd service to prevent additional battery drain
     stop statsd
+    
+    # Runtime fs tuning
+    write /dev/sys/fs/by-name/userdata/data_io_flag 8
+    write /dev/sys/fs/by-name/userdata/node_io_flag 8
