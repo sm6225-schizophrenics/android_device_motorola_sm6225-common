@@ -350,10 +350,6 @@ vendor/lib/liblistensoundmodel2.so
 vendor/lib/libmulawdec.so
 
 # Media
-system_ext/lib/libmmosal.so
-system_ext/lib/libmmparser_lite.so
-system_ext/lib64/libmmosal.so
-system_ext/lib64/libmmparser_lite.so
 vendor/etc/seccomp_policy/mediacodec.policy
 vendor/etc/system_properties.xml
 vendor/lib/libAlacSwDec.so
@@ -378,7 +374,6 @@ vendor/lib/libOmxSwVdec.so
 vendor/lib/libOmxSwVencMpeg4.so
 vendor/lib/libOmxWmaDec.so
 vendor/lib/libdsd2pcm.so
-vendor/lib/libmmosal.so
 vendor/lib/libswvdec.so
 vendor/lib64/libAlacSwDec.so
 vendor/lib64/libApeSwDec.so
@@ -396,7 +391,6 @@ vendor/lib64/libOmxEvrcDec.so
 vendor/lib64/libOmxG711Dec.so
 vendor/lib64/libOmxQcelp13Dec.so
 vendor/lib64/libOmxWmaDec.so
-vendor/lib64/libmmosal.so
 vendor/lib64/libswvdec.so
 
 # Moto Permissions
@@ -782,6 +776,7 @@ vendor/lib64/vendor.qti.hardware.vpp@1.2.so
 vendor/bin/cnss-daemon
 vendor/etc/wifi/aoa_cldb_falcon.bin
 vendor/etc/wifi/aoa_cldb_swl14.bin
+<<<<<<< HEAD
 
 # WiFi Display
 framework/WfdCommon.jar
@@ -835,3 +830,5 @@ vendor/lib/libFileMux_proprietary.so
 vendor/lib/libmm-hdcpmgr.so
 vendor/lib/libmmrtpdecoder_proprietary.so
 vendor/lib/libmmrtpencoder_proprietary.so
+=======
+>>>>>>> 84de105 (sm6225-common: Drop QTI WFD)
