@@ -293,7 +293,6 @@ PRODUCT_COPY_FILES += \
     device/qcom/common/vendor/media/media_profiles.xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_profiles.xml
 
 PRODUCT_PACKAGES += \
-    libmm-omxcore \
     libOmxCore \
     libOmxVdec \
     libOmxVenc \
