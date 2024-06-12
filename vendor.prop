@@ -257,6 +257,7 @@ ro.vendor.sensors.mot_ltv=true
 ro.vendor.sensors.pug=false
 
 # USB
+ro.usb.uvc.enabled=true
 sys.usb.mtp.batchcancel=1
 vendor.usb.controller=4e00000.dwc3
 vendor.usb.device=4e00000.ssusb
