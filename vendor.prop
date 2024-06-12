@@ -246,6 +246,7 @@ ro.vendor.sensors.pug=false
 # USB
 vendor.usb.controller=4e00000.dwc3
 vendor.usb.device=4e00000.ssusb
+ro.usb.uvc.enabled=true
 vendor.usb.diag.func.name=diag
 vendor.usb.dpl.inst.name=dpl
 vendor.usb.rmnet.func.name=gsi
