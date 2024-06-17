@@ -34,6 +34,12 @@ TARGET_NO_BOOTLOADER := true
 # Broken
 BUILD_BROKEN_DUP_RULES := true
 
+# Data Services
+SOONG_CONFIG_NAMESPACES += rmnetctl
+SOONG_CONFIG_rmnetctl += \
+    old_rmnet_data
+SOONG_CONFIG_rmnetctl_old_rmnet_data := true
+
 # Disable Postrender Cleanup
 TARGET_DISABLE_POSTRENDER_CLEANUP := true
 
