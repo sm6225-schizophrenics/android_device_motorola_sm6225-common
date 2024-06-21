@@ -106,7 +106,6 @@ debug.hwui.skia_tracing_enabled=false
 debug.hwui.skia_use_perfetto_track_events=false
 debug.hwui.target_cpu_time_percent=30
 debug.hwui.use_hint_manager=true
-debug.sf.enable_hwc_vds=0
 debug.sf.enable_egl_image_tracker=0
 debug.sf.enable_gl_backpressure=false
 debug.sf.high_fps_early_gl_phase_offset_ns=-5000000
