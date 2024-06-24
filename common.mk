@@ -348,11 +348,22 @@ $(call inherit-product, vendor/aospa-priv/config/common.mk)
 PRODUCT_SOONG_NAMESPACES += \
     $(LOCAL_PATH) \
     hardware/motorola \
-    hardware/samsung
+    hardware/samsung \
+    vendor/qcom/opensource/usb/etc
     
 # Thermal
 PRODUCT_PACKAGES += \
     android.hardware.thermal-service.qti
+
+# USB
+PRODUCT_PACKAGES += \
+    android.hardware.usb-service.qti \
+    android.hardware.usb.gadget-service.qti \
+    usb_compositions.conf
+
+PRODUCT_PACKAGES += \
+    init.qcom.usb.rc \
+    init.qcom.usb.sh
 
 # Wifi
 PRODUCT_PACKAGES += \
