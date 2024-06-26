@@ -118,10 +118,6 @@ TARGET_MODULE_ALIASES += \
     wcd_core_dlkm.ko:audio_wcd_core.ko \
     wsa881x_analog_dlkm.ko:audio_wsa881x_analog.ko
 
-# Kernel Modules - WLAN
-TARGET_MODULE_ALIASES += \
-    wlan.ko:qca_cld3_wlan.ko
-
 # Partitions
 -include vendor/lineage/config/BoardConfigReservedSize.mk
 
