@@ -141,5 +141,8 @@ TARGET_USE_AOSP_SURFACEFLINGER := true
 BOARD_AVB_ENABLE := true
 BOARD_AVB_MAKE_VBMETA_IMAGE_ARGS += --flags 3
 
+# WiFi
+CONFIG_ACS := true
+
 # Inherit from the proprietary version
 include vendor/motorola/sm6225-common/BoardConfigVendor.mk
