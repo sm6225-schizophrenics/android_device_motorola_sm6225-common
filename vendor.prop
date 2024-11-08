@@ -139,7 +139,6 @@ vendor.display.disable_idle_time_hdr=1
 vendor.display.disable_idle_time_video=1
 vendor.display.disable_layer_stitch=0
 vendor.display.disable_rotator_ubwc=1
-vendor.display.enable_async_powermode=1
 vendor.display.enable_posted_start_dyn=1
 vendor.display.hwc_disable_hdr=1
 vendor.display.idle_time=0
