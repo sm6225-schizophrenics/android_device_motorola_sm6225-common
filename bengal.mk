@@ -289,6 +289,9 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PACKAGES += \
     android.hardware.power-service-qti
 
+# Prebuilt Headers
+PRODUCT_VENDOR_KERNEL_HEADERS := hardware/qcom-caf/kernel-headers/msm-4.19
+
 # Public libraries
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/public.libraries.txt:$(TARGET_COPY_OUT_VENDOR)/etc/public.libraries.txt \
