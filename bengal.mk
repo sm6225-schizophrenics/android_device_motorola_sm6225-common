@@ -221,11 +221,8 @@ PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.software.vulkan.deqp.level-2020-03-01.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.software.vulkan.deqp.level.xml
 
 # Health
-$(call inherit-product, vendor/qcom/opensource/healthd-ext/health-vendor-product.mk)
- 
 PRODUCT_PACKAGES += \
-     android.hardware.health@1.0.vendor \
-     android.hardware.health@2.1.vendor
+    android.hardware.health@2.1-impl.recovery
 
 # Init
 PRODUCT_PACKAGES += \
@@ -351,6 +348,7 @@ PRODUCT_PACKAGES += \
     BengalSystemUIOverlay \
     BengalWifiOverlay \
     DeviceAsWebcamOverlay \
+    FrameworksMotoBengalAOSPA \
     WifiMainline
 
 DEVICE_PACKAGE_OVERLAYS += \
@@ -416,6 +414,7 @@ TARGET_COMMON_QTI_COMPONENTS += \
     audio \
     av \
     bt \
+    charging \
     display \
     init \
     keymaster \
