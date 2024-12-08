@@ -4,6 +4,16 @@ ro.config.use_freezer=false
 # eBPF
 ro.bpf.kver_override=5.10.239
 
+# Battery Saving
+persist.radio.add_power_save=1
+pm.sleep_mode=1
+ro.ril.disable.power.collapse=0
+ro.ril.fast.dormancy.rule=1
+ro.ril.fast.dormancy.timeout=3
+ro.mot.eri.losalert.delay=100
+ro.vold.umsdirtyratio=20
+power.saving.mode=1
+
 # LMKD
 ro.lmk.thrashing_limit=30
 ro.lmk.swap_free_low_percentage=10
