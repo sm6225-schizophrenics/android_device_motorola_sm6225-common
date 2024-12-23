@@ -129,6 +129,9 @@ PRODUCT_PACKAGES += \
     init.qti.display_boot.rc \
     init.qti.display_boot.sh
 
+# Dolby
+$(call inherit-product, hardware/motorola/dolby/setup.mk)
+
 # DRM
 PRODUCT_PACKAGES += \
     android.hardware.drm-service.clearkey
