@@ -168,6 +168,8 @@ persist.vendor.ims.disableIMSLogs=1
 persist.vendor.ims.display_delay=40
 persist.vendor.ims.playout_delay=50
 persist.vendor.ims.vt.enableadb=1
+persist.vendor.radio.report_codec=1Add commentMore actions
+persist.vendor.radio.vdp_on_ims_cap=1
 persist.vendor.rcs.singlereg.feature=1
 
 # Netflix
