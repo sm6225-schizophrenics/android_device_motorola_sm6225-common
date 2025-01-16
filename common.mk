@@ -6,6 +6,10 @@
 # Add common definitions for Qualcomm
 $(call inherit-product, hardware/qcom-caf/common/common.mk)
 
+
+# Enable whole-program R8 Java optimizations for system_server.
+FULL_SYSTEM_OPTIMIZE_JAVA := true
+
 # A/B
 AB_OTA_UPDATER := true
 
