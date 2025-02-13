@@ -615,4 +615,11 @@ IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
         <transport>hwbinder</transport>
         <fqname>@2.0::IDms/default</fqname>
     </hal>
+    <hal format="aidl">
+        <name>vendor.google.google_battery</name>
+        <interface>
+            <name>IGoogleBattery</name>
+            <instance>default</instance>
+        </interface>
+    </hal>
 </manifest>
