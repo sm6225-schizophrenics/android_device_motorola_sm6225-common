@@ -130,6 +130,8 @@ on property:vendor.dcvs.prop=1
    start dcvs-sh
 
 on property:sys.boot_completed=1
+    # Disable statsd service to prevent additional battery drain
+    stop statsd
     wait 10
     write /dev/stune/schedtune.boost 0
     write /dev/stune/schedtune.prefer_idle 0
