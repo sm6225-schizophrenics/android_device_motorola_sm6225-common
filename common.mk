@@ -252,7 +252,6 @@ PRODUCT_PACKAGES += \
     init.qti.media.sh
 
 PRODUCT_PACKAGES += \
-    libavservices_minijail.vendor \
     libgui_vendor \
     libstagefright_softomx.vendor \
     libstagefright_softomx_plugin.vendor \
@@ -349,6 +348,7 @@ PRODUCT_COPY_FILES += \
 # QTI Components
 TARGET_COMMON_QTI_COMPONENTS := \
     audio \
+    av \
     perf
 
 # RFS MSM MPSS symlinks
