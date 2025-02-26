@@ -155,7 +155,6 @@ ENABLE_VENDOR_RIL_SERVICE := true
 
 # Recovery
 BOARD_INCLUDE_RECOVERY_DTBO := true
-TARGET_RECOVERY_PIXEL_FORMAT := RGBX_8888
 
 # Sepolicy
 include hardware/motorola/sepolicy/qti/SEPolicy.mk
