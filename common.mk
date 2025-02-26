@@ -55,8 +55,6 @@ PRODUCT_PACKAGES += \
     audio_amplifier.bengal \
     audio.bluetooth.default \
     audio.primary.bengal \
-    audio.r_submix.default \
-    audio.usb.default \
     sound_trigger.primary.bengal
 
 PRODUCT_PACKAGES += \
@@ -67,15 +65,7 @@ PRODUCT_PACKAGES += \
 
 PRODUCT_PACKAGES += \
     firmware_aw_cali.bin_symlink \
-    liba2dpoffload \
-    libbatterylistener \
-    libcomprcapture \
-    libexthwplugin \
-    libhdmiedid \
-    libhfp \
-    libsndmonitor \
-    libspkrprot \
-    libssrec
+    liba2dpoffload
 
 PRODUCT_PACKAGES += \
     libaudiopreprocessing \
@@ -84,9 +74,6 @@ PRODUCT_PACKAGES += \
     libdynproc \
     libeffectproxy \
     libldnhncr \
-    libqcompostprocbundle \
-    libqcomvisualizer \
-    libqcomvoiceprocessing \
     libreverbwrapper \
     libvisualizer \
     libvolumelistener
@@ -361,6 +348,7 @@ PRODUCT_COPY_FILES += \
     
 # QTI Components
 TARGET_COMMON_QTI_COMPONENTS := \
+    audio \
     perf
 
 # RFS MSM MPSS symlinks
