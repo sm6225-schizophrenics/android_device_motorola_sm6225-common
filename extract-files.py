@@ -21,6 +21,7 @@ from extract_utils.main import (
 namespace_imports = [
     'device/motorola/sm6225-common',
     'vendor/qcom/opensource/dataservices',
+    'vendor/qcom/common/system/perf'
 ]
 
 
