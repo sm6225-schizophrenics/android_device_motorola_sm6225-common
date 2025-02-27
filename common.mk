@@ -205,6 +205,9 @@ PRODUCT_PACKAGES += \
 # Low RAM
 TARGET_HAS_LOW_RAM := true
 
+# Kernel
+PRODUCT_ENABLE_UFFD_GC := true
+
 # Media
 MSM_VIDC_TARGET_LIST := bengal
 
