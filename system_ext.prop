@@ -5,9 +5,21 @@ persist.vendor.cne.logging.qxdm=3974
 # DPM
 persist.vendor.dpm.feature=11
 
+# Legit Touch Hax
+touch.size.scale=1
+touch.size.bias=0
+touch.size.isSummed=0
+touch.pressure.scale=0.001
+touch.distance.calibration=none
+touch.distance.scale=0
+touch.coverage.calibration=box
+touch.gestureMode=spots
+MultitouchSettleInterval=1ms
+MultitouchMinDistance=1px
+TapInterval=1ms
+TapSlop=1px
+
 # Media
-media.settings.xml=/vendor/etc/media_profiles_vendor.xml
-media.stagefright.thumbnail.prefer_hw_codecs=true
 ro.media.recorder-max-base-layer-fps=60
 
 # QVA

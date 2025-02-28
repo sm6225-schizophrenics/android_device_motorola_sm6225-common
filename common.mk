@@ -118,9 +118,6 @@ PRODUCT_PACKAGES += \
     android.frameworks.sensorservice@1.0.vendor \
     vendor.qti.hardware.camera.postproc@1.0.vendor
     
-PRODUCT_PACKAGES += \
-    libgui_vendor
-    
 # Data Services
 $(call inherit-product, vendor/qcom/opensource/dataservices/dataservices_vendor_product.mk)
 
@@ -207,19 +204,15 @@ PRODUCT_COPY_FILES += \
     device/qcom/common/vendor/media/media_profiles.xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_profiles.xml
 
 PRODUCT_PACKAGES += \
-    libOmxCore \
-    libOmxVdec \
-    libOmxVenc \
-    libstagefrighthw \
     libc2dcolorconvert \
     init.qti.media.rc \
     init.qti.media.sh
 
 PRODUCT_PACKAGES += \
-    libgui_vendor \
-    libstagefright_softomx.vendor \
     libstagefright_softomx_plugin.vendor \
-    vendor.qti.hardware.capabilityconfigstore@1.0.vendor
+    vendor.qti.hardware.capabilityconfigstore@1.0.vendor \
+    libcodec2_soft_common.vendor \
+    libsfplugin_ccodec_utils.vendor
     
 # MotoActions
 PRODUCT_PACKAGES += \
@@ -310,6 +303,7 @@ TARGET_COMMON_QTI_COMPONENTS := \
     av \
     display \
     gps \
+    media \
     perf \
     vibrator \
     wlan
