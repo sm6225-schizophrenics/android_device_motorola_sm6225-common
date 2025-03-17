@@ -123,25 +123,6 @@ on boot
     chown bluetooth net_bt /sys/class/rfkill/rfkill0/device/extldo
     chmod 0660 /sys/class/rfkill/rfkill0/device/extldo
 
-    # This location is used by QCRIL to host UNIX domain
-    # socket files used for internal IPC within QCRIL
-    # modules
-    mkdir /dev/socket/qmux_radio 0770 radio radio
-    chmod 2770 /dev/socket/qmux_radio
-
-    mkdir /persist/drm 0770 system system
-    mkdir /persist/bluetooth 0770 bluetooth bluetooth
-    mkdir /persist/misc 0770 system system
-    mkdir /persist/alarm 0770 system system
-    mkdir /mnt/vendor/persist/time 0770 system system
-    mkdir /mnt/vendor/persist/secnvm 0770 system system
-    mkdir /mnt/vendor/persist/iar_db 0770 system system
-    mkdir /mnt/vendor/spunvm 0770 system system
-
-    setprop wifi.interface wlan0
-
-    setprop ro.telephony.call_ring.multiple false
-
     #Remove SUID bit for iproute2 ip tool
     chmod 0755 /system/bin/ip
 
@@ -252,10 +233,6 @@ on post-fs-data
     mkdir /data/vendor/wifi/wpa 0770 wifi wifi
     mkdir /data/vendor/wifi/wpa/sockets 0770 wifi wifi
 
-    # Create the directories used by CnE subsystem
-    mkdir /data/vendor/connectivity 0771 radio radio
-    chown radio radio /data/vendor/connectivity
-
     # Create directory used by audio subsystem
     mkdir /data/vendor/audio 0770 audio audio
 
@@ -321,30 +298,10 @@ on post-fs-data
 
     mkdir /data/vendor/secure_element 0777 system system
 
-    #Create IOP  deamon related dirs
-    mkdir /data/vendor/iop 0700 root system
-
     # Mark the copy complete flag to not completed
     write /data/vendor/radio/copy_complete 0
     chown radio radio /data/vendor/radio/copy_complete
     chmod 0660 /data/vendor/radio/copy_complete
-
-    # copy prebuilt qcril.db files always
-    copy /vendor/radio/qcril_database/qcril.db /data/vendor/radio/qcril_prebuilt.db
-    chown radio radio /data/vendor/radio/qcril_prebuilt.db
-    chmod 0660 /data/vendor/radio/qcril_prebuilt.db
-    copy /vendor/radio/qcril_database/qcrilNr.db /data/vendor/radio/qcrilNr_prebuilt.db
-    copy /vendor/etc/qcril_database/qcrilNr.db /data/vendor/radio/qcrilNr_prebuilt.db
-    chown radio radio /data/vendor/radio/qcrilNr_prebuilt.db
-    chmod 0660 /data/vendor/radio/qcrilNr_prebuilt.db
-
-    # File flags for prebuilt ril db file
-    write /data/vendor/radio/prebuilt_db_support 1
-    chown radio radio /data/vendor/radio/prebuilt_db_support
-    chmod 0400 /data/vendor/radio/prebuilt_db_support
-    write /data/vendor/radio/db_check_done 0
-    chown radio radio /data/vendor/radio/db_check_done
-    chmod 0660 /data/vendor/radio/db_check_done
 
     # qti-logkit data
     mkdir /data/vendor/qti-logkit/ 0771 system system
@@ -374,13 +331,6 @@ service nqnfcinfo /system/vendor/bin/nqnfcinfo
     group nfc
     user system
     oneshot
-
-service iop /system/vendor/bin/iop
-    class main
-    user root
-    group root
-    disabled
-    socket iop seqpacket 0666 root system
 
 on property:ro.vendor.hw.dualsim=true
    setprop persist.vendor.radio.multisim.config dsds
@@ -580,9 +530,6 @@ service wifi-crda /vendor/bin/init.crda.sh
 on property:sys.boot_completed=1
     start qcom-post-boot
 
-on property:ro.vendor.ril.mbn_copy_completed=1
-    write /data/vendor/radio/copy_complete 1
-
 service qvop-daemon /vendor/bin/qvop-daemon
     class late_start
     user system
@@ -600,20 +547,6 @@ service battery_monitor /system/bin/battery_monitor
     user system
     group system
     disabled
-
-service vendor.ril-daemon2 /vendor/bin/hw/rild -c 2
-    class main
-    user radio
-    disabled
-    group radio cache inet misc audio sdcard_r sdcard_rw diag oem_2901 log
-    capabilities BLOCK_SUSPEND NET_ADMIN NET_RAW
-
-service vendor.ril-daemon3 /vendor/bin/hw/rild -c 3
-    class main
-    user radio
-    disabled
-    group radio cache inet misc audio sdcard_r sdcard_rw diag oem_2901 log
-    capabilities BLOCK_SUSPEND NET_ADMIN NET_RAW
 
 service profiler_daemon /system/bin/profiler_daemon
     class late_start
@@ -706,13 +639,6 @@ service time_daemon /vendor/bin/time_daemon
     user system
     group system
     capabilities SYS_TIME
-
-# Set vendor-ril lib path based on Meta version
-on property:vendor.rild.libpath=*
-    setprop rild.libpath ${vendor.rild.libpath}
-
-on property:ro.vendor.radio.noril=*
-    setprop ro.radio.noril ${ro.vendor.radio.noril}
 
 service vendor.power_off_alarm /vendor/bin/power_off_alarm
     class core

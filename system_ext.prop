@@ -12,6 +12,3 @@ ro.media.recorder-max-base-layer-fps=60
 
 # QVA
 ro.vendor.qti.va_aosp.support=1
-
-# Radio
-ril.subscription.types=RUIM

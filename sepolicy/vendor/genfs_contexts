@@ -1,5 +1,5 @@
 # Camera
-genfscon sysfs /devices/platform/cam_sync/video4linux/video1/name               u:object_r:sysfs_graphics:s0
+genfscon sysfs /devices/platform/cam_sync/video4linux/video1/name               u:object_r:vendor_sysfs_graphics:s0
 
 # Extcon
 genfscon sysfs /devices/platform/soc/soc:mmi,discrete-charging/extcon           u:object_r:sysfs_extcon:s0
