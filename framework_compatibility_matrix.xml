@@ -64,4 +64,167 @@
             <instance>default</instance>
         </interface>
     </hal>
+    <hal format="aidl" optional="true">
+        <name>android.hardware.radio.data</name>
+        <interface>
+            <name>IRadioData</name>
+            <instance>slot1</instance>
+        </interface>
+    </hal>
+    <hal format="aidl" optional="true">
+        <name>android.hardware.radio.messaging</name>
+        <interface>
+            <name>IRadioMessaging</name>
+            <instance>slot1</instance>
+        </interface>
+    </hal>
+    <hal format="aidl" optional="true">
+        <name>android.hardware.radio.modem</name>
+        <interface>
+            <name>IRadioModem</name>
+            <instance>slot1</instance>
+        </interface>
+    </hal>
+    <hal format="aidl" optional="true">
+        <name>android.hardware.radio.network</name>
+        <interface>
+            <name>IRadioNetwork</name>
+            <instance>slot1</instance>
+        </interface>
+    </hal>
+    <hal format="aidl" optional="true">
+        <name>android.hardware.radio.sim</name>
+        <interface>
+            <name>IRadioSim</name>
+            <instance>slot1</instance>
+        </interface>
+    </hal>
+    <hal format="aidl" optional="true">
+        <name>android.hardware.radio.voice</name>
+        <interface>
+            <name>IRadioVoice</name>
+            <instance>slot1</instance>
+        </interface>
+    </hal>
+    <hal format="aidl" optional="true">
+        <name>android.hardware.radio.ims</name>
+        <interface>
+            <name>IRadioIms</name>
+            <instance>slot1</instance>
+        </interface>
+    </hal>
+    <hal format="aidl" optional="true">
+        <name>android.hardware.security.keymint</name>
+        <interface>
+            <name>IRemotelyProvisionedComponent</name>
+            <instance>default</instance>
+        </interface>
+    </hal>
+    <hal format="aidl" optional="true">
+        <name>android.hardware.boot</name>
+        <interface>
+            <name>IBootControl</name>
+            <instance>default</instance>
+        </interface>
+    </hal>
+    <hal format="aidl" optional="true">
+        <name>android.hardware.soundtrigger3</name>
+        <interface>
+            <name>ISoundTriggerHw</name>
+            <instance>default</instance>
+        </interface>
+    </hal>
+    <hal format="aidl" optional="true">
+        <name>android.hardware.thermal</name>
+        <interface>
+            <name>IThermal</name>
+            <instance>default</instance>
+        </interface>
+    </hal>
+    <hal format="aidl" optional="true">
+        <name>android.hardware.usb.gadget</name>
+        <interface>
+            <name>IUsbGadget</name>
+            <instance>default</instance>
+        </interface>
+    </hal>
+    <hal format="aidl" optional="true">
+        <name>android.hardware.usb</name>
+        <interface>
+            <name>IUsb</name>
+            <instance>default</instance>
+        </interface>
+    </hal>
+    <hal format="aidl" optional="true">
+        <name>android.hardware.graphics.allocator</name>
+        <interface>
+            <name>IAllocator</name>
+            <instance>default</instance>
+        </interface>
+    </hal>
+    <hal format="aidl" optional="true">
+        <name>vendor.qti.hardware.radio.qtiradio</name>
+        <interface>
+            <name>IQtiRadioStable</name>
+            <instance>default</instance>
+        </interface>
+    </hal>
+    <hal format="aidl" optional="true">
+        <name>vendor.qti.data.factoryservice</name>
+        <interface>
+            <name>IFactory</name>
+            <instance>default</instance>
+        </interface>
+    </hal>
+    <hal format="aidl" optional="true">
+        <name>android.hardware.secure_element</name>
+        <interface>
+            <name>ISecureElement</name>
+            <instance>eSE1</instance>
+            <instance>SIM1</instance>
+        </interface>
+    </hal>
+<hal format="aidl" optional="true">
+    <name>android.hardware.power</name>
+    <interface>
+        <name>IPower</name>
+        <instance>default</instance>
+    </interface>
+</hal>
+<hal format="aidl" optional="true">
+    <name>android.hardware.sensors</name>
+    <interface>
+        <name>ISensors</name>
+        <instance>default</instance>
+    </interface>
+</hal>
+<hal format="aidl" optional="true">
+    <name>android.hardware.wifi</name>
+    <interface>
+        <name>IWifi</name>
+        <instance>default</instance>
+    </interface>
+</hal>
+<hal format="aidl" optional="true">
+    <name>android.hardware.wifi.hostapd</name>
+    <interface>
+        <name>IHostapd</name>
+        <instance>default</instance>
+    </interface>
+</hal>
+<hal format="aidl" optional="true">
+    <name>android.hardware.wifi.supplicant</name>
+    <interface>
+        <name>ISupplicant</name>
+        <instance>default</instance>
+    </interface>
+</hal>
+    <hal format="hidl" optional="true">
+         <name>vendor.qti.hardware.perf</name>
+         <version>2.0-2</version>
+         <interface>
+             <name>IPerf</name>
+             <instance>default</instance>
+         </interface>
+     </hal>
 </compatibility-matrix>

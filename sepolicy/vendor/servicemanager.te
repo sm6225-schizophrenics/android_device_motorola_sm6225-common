@@ -1,0 +1,1 @@
+allow servicemanager vendor_location_slim_daemon:binder { call };

@@ -12,4 +12,8 @@ allow vendor_mmi_boot vendor_proc_hw:file r_file_perms;
 
 allow vendor_mmi_boot vendor_toolbox_exec:file rx_file_perms;
 
+allow vendor_mmi_boot kmsg_device:chr_file { write };
+
+allow vendor_mmi_boot proc_cmdline:file { read };
+
 set_prop(vendor_mmi_boot, vendor_mot_hw_prop)
