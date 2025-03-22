@@ -48,15 +48,12 @@ PRODUCT_PACKAGES += \
 TARGET_PROVIDES_AUDIO_HAL := true
 
 PRODUCT_COPY_FILES += \
-    frameworks/av/services/audiopolicy/config/a2dp_in_audio_policy_configuration.xml:$(TARGET_COPY_OUT_VENDOR)/etc/a2dp_in_audio_policy_configuration.xml \
-    frameworks/av/services/audiopolicy/config/bluetooth_audio_policy_configuration.xml:$(TARGET_COPY_OUT_VENDOR)/etc/bluetooth_audio_policy_configuration.xml
+    frameworks/av/services/audiopolicy/config/a2dp_in_audio_policy_configuration.xml:$(TARGET_COPY_OUT_VENDOR)/etc/a2dp_in_audio_policy_configuration.xml
 
 PRODUCT_COPY_FILES += \
-    frameworks/native/data/etc/android.hardware.audio.pro.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.audio.pro.xml \
-    frameworks/native/data/etc/android.software.sip.voip.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.software.sip.voip.xml
+    frameworks/native/data/etc/android.hardware.audio.pro.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.audio.pro.xml
 
 PRODUCT_PACKAGES += \
-    audio.bluetooth.default \
     audio.r_submix.default \
     audio.usb.default \
     sound_trigger.primary.bengal
@@ -65,7 +62,6 @@ PRODUCT_PACKAGES += \
     android.hardware.audio@6.0-impl \
     android.hardware.audio.effect@6.0-impl \
     android.hardware.audio.service \
-    android.hardware.bluetooth.audio@2.0-impl \
     android.hardware.soundtrigger@2.3-impl
 
 PRODUCT_PACKAGES += \
@@ -141,27 +137,18 @@ PRODUCT_PRODUCT_PROPERTIES += \
     ro.support_hide_display_cutout=true
 
 # Display
-TARGET_USE_AIDL_QTI_MEMTRACK := true
-
 PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.hardware.se.omapi.uicc.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.se.omapi.uicc.xml
 
 PRODUCT_PACKAGES += \
-    gralloc.default \
-    libdisplayconfig.system.qti \
     libsdmcore \
     libsdmutils \
-    libtinyxml \
     libvulkan \
-    memtrack.default \
 
 PRODUCT_PACKAGES += \
-    android.hardware.graphics.mapper@3.0-impl-qti-display \
-    android.hardware.graphics.mapper@4.0-impl-qti-display \
     android.hardware.renderscript@1.0-impl \
     vendor.qti.hardware.display.allocator-service \
     vendor.qti.hardware.display.composer-service \
-    vendor.qti.hardware.memtrack-service \
     vendor.qti.hardware.display.config-V2-ndk_platform.vendor \
     vendor.qti.hardware.display.config-V5-ndk_platform.vendor
 
@@ -169,8 +156,8 @@ PRODUCT_PACKAGES += \
     init.qti.display_boot.rc \
     init.qti.display_boot.sh
 
- # DRM
- PRODUCT_PACKAGES += \
+# DRM
+PRODUCT_PACKAGES += \
      android.hardware.drm-service.clearkey \
      android.hardware.drm@1.4.vendor
 
@@ -180,10 +167,10 @@ PRODUCT_PACKAGES += \
     fastbootd
 
 # FM
-BOARD_HAVE_QCOM_FM := true
-
 PRODUCT_PACKAGES += \
-    FM2
+    FM2 \
+    libqcomfm_jni \
+    qcom.fmradio
 
 # Framework detect
 PRODUCT_PACKAGES += \
@@ -252,11 +239,6 @@ PRODUCT_PACKAGES += \
     init.target.rc \
     ueventd.qcom.rc
 
-# IPACM
-PRODUCT_PACKAGES += \
-    ipacm \
-    IPACM_cfg.xml
-
 # Keymaster
 PRODUCT_COPY_FILES += \
 frameworks/native/data/etc/android.hardware.keystore.app_attest_key.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.keystore.app_attest_key.xml
@@ -293,7 +275,6 @@ PRODUCT_PACKAGES += \
     init.qti.media.sh
 
 PRODUCT_PACKAGES += \
-    libavservices_minijail.vendor \
     libcodec2_hidl@1.2.vendor \
     libcodec2_soft_common.vendor \
     libsfplugin_ccodec_utils.vendor \
@@ -326,8 +307,7 @@ $(call inherit-product, vendor/motorola/TimeWeather/timeweather.mk)
  
 # Net
 PRODUCT_PACKAGES += \
-    netutils-wrapper-1.0 \
-    android.system.net.netd@1.1.vendor
+    netutils-wrapper-1.0
 
 # NFC
 PRODUCT_PACKAGES += \
@@ -338,7 +318,6 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     AOSPABengalFrameworksOverlay \
     AvoidAppsInCutoutOverlay \
-    BengalCarrierConfigOverlay \
     BengalFrameworksOverlay \
     BengalSettingsOverlay \
     BengalSystemUIOverlay \
@@ -363,8 +342,6 @@ PRODUCT_USE_DYNAMIC_PARTITIONS := true
 
 # Permissions
 PRODUCT_COPY_FILES += \
-    frameworks/native/data/etc/android.hardware.bluetooth.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.bluetooth.xml \
-    frameworks/native/data/etc/android.hardware.bluetooth_le.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.bluetooth_le.xml \
     frameworks/native/data/etc/android.hardware.camera.flash-autofocus.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.camera.flash-autofocus.xml \
     frameworks/native/data/etc/android.hardware.camera.front.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.camera.front.xml \
     frameworks/native/data/etc/android.hardware.camera.full.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.camera.full.xml \
@@ -377,9 +354,6 @@ PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.hardware.sensor.proximity.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.sensor.proximity.xml \
     frameworks/native/data/etc/android.hardware.sensor.stepcounter.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.sensor.stepcounter.xml \
     frameworks/native/data/etc/android.hardware.sensor.stepdetector.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.sensor.stepdetector.xml \
-    frameworks/native/data/etc/android.hardware.touchscreen.multitouch.jazzhand.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.touchscreen.multitouch.jazzhand.xml \
-    frameworks/native/data/etc/android.hardware.usb.accessory.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.usb.accessory.xml \
-    frameworks/native/data/etc/android.hardware.usb.host.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.usb.host.xml \
     frameworks/native/data/etc/android.hardware.vulkan.compute-0.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.vulkan.compute-0.xml \
     frameworks/native/data/etc/android.hardware.vulkan.level-1.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.vulkan.level-1.xml \
     frameworks/native/data/etc/android.hardware.vulkan.version-1_1.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.vulkan.version-1_1.xml \
@@ -398,8 +372,7 @@ TARGET_BOARD_PLATFORM := bengal
 
 # Power
 PRODUCT_PACKAGES += \
-    android.hardware.power@1.2.vendor \
-    vendor.qti.hardware.perf@2.0.vendor
+    android.hardware.power@1.2.vendor
 
 # Prebuilt Headers
 PRODUCT_VENDOR_KERNEL_HEADERS := kernel/motorola/kernel-headers
@@ -458,8 +431,7 @@ PRODUCT_PACKAGES += \
 # Soong namespaces
 PRODUCT_SOONG_NAMESPACES += \
     $(LOCAL_PATH) \
-    hardware/samsung \
-    vendor/qcom/opensource/usb/etc
+    hardware/samsung
 
 # Suspend
  PRODUCT_PACKAGES += \
@@ -477,10 +449,6 @@ PRODUCT_PACKAGES += \
 # USB
 PRODUCT_PACKAGES += \
     android.hardware.usb-service.qti
-
-PRODUCT_PACKAGES += \
-    init.qcom.usb.rc \
-    init.qcom.usb.sh
 
 # Vendor service manager
 PRODUCT_PACKAGES += \

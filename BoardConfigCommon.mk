@@ -45,6 +45,10 @@ TARGET_FS_CONFIG_GEN := \
     $(COMMON_PATH)/config.fs \
     $(COMMON_PATH)/mot_aids.fs
 
+# FM
+BOARD_HAS_QCA_FM_SOC := "bengal"
+BOARD_HAVE_QCOM_FM := true
+
 # GPS
 BOARD_VENDOR_QCOM_GPS_LOC_API_HARDWARE := $(TARGET_BOARD_PLATFORM)
 
@@ -113,9 +117,6 @@ TARGET_MODULE_ALIASES += \
 TARGET_MODULE_ALIASES += \
     wlan.ko:qca_cld3_wlan.ko
 
-# Media
-TARGET_USES_ION := true
-
 # Partitions
 BOARD_FLASH_BLOCK_SIZE := 262144 # (BOARD_KERNEL_PAGESIZE * 64)
 BOARD_USES_METADATA_PARTITION := true
@@ -159,7 +160,6 @@ TARGET_VENDOR_PROP += $(COMMON_PATH)/vendor.prop
 
 # Recovery
 BOARD_INCLUDE_RECOVERY_DTBO := true
-TARGET_RECOVERY_PIXEL_FORMAT := RGBX_8888
 
 # Sepolicy
 #include device/qcom/sepolicy_vndr/SEPolicy.mk

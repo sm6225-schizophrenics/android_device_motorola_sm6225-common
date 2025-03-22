@@ -1,9 +1,5 @@
 # CNE
-persist.vendor.cne.feature=1
 persist.vendor.cne.logging.qxdm=3974
-
-# DPM
-persist.vendor.dpm.feature=11
 
 # Media
 media.settings.xml=/vendor/etc/media_profiles_vendor.xml
