@@ -1,0 +1,1 @@
+allow priv_app audio_config_prop:file { read };
