@@ -167,11 +167,10 @@ PRODUCT_PACKAGES += \
     fastbootd
 
 # FM
+BOARD_HAVE_QCOM_FM := true
+ 
 PRODUCT_PACKAGES += \
-    FM2 \
-    libqcomfm_jni \
-    qcom.fmradio
-
+     FM2
 # Framework detect
 PRODUCT_PACKAGES += \
     libvndfwk_detect_jni.qti.vendor # Needed by CNE app
