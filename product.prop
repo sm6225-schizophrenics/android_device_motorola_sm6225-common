@@ -2,7 +2,6 @@
 ro.config.use_freezer=false
 
 # LMKD
-ro.lmk.kill_heaviest_task=true
 ro.lmk.swap_util_max=90
 ro.lmk.thrashing_limit=30
 ro.lmk.thrashing_limit_decay=25
