@@ -40,19 +40,11 @@ PRODUCT_PACKAGES += \
     checkpoint_gc \
     otapreopt_script
 
-# ANT+
-PRODUCT_PACKAGES += \
-    AntHalService-Soong
-
 # Audio
 TARGET_PROVIDES_AUDIO_HAL := true
 
-PRODUCT_COPY_FILES += \
-    frameworks/av/services/audiopolicy/config/a2dp_in_audio_policy_configuration.xml:$(TARGET_COPY_OUT_VENDOR)/etc/a2dp_in_audio_policy_configuration.xml
-
 PRODUCT_PACKAGES += \
     sound_trigger.primary.bengal \
-    audio.bluetooth.default
 
 PRODUCT_PACKAGES += \
     android.hardware.audio.service \
@@ -91,19 +83,21 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/audio/bluetooth_hearing_aid_audio_policy_configuration.xml:$(TARGET_COPY_OUT_VENDOR)/etc/bluetooth_hearing_aid_audio_policy_configuration.xml
 
 PRODUCT_COPY_FILES += \
-<<<<<<< HEAD
-    frameworks/av/services/audiopolicy/config/bluetooth_audio_policy_configuration.xml:$(TARGET_COPY_OUT_VENDOR)/etc/bluetooth_audio_policy_configuration.xml
-=======
     frameworks/av/services/audiopolicy/config/bluetooth_audio_policy_configuration.xml:$(TARGET_COPY_OUT_VENDOR)/etc/bluetooth_audio_policy_configuration.xml \
->>>>>>> 7ffbdef9 (sm6225-common: Drop some unnecessary audio stuff)
 
 # Authsecret
 PRODUCT_PACKAGES += \
      android.hardware.authsecret@1.0.vendor
 
-<<<<<<< HEAD
-=======
 # Bluetooth
+PRODUCT_PACKAGES += \
+    android.hardware.bluetooth.audio@2.0-impl \
+    com.qualcomm.qti.bluetooth_audio@1.0.vendor
+
+PRODUCT_PACKAGES += \
+     audio.bluetooth.default \
+     libbluetooth_audio_session
+
 PRODUCT_PRODUCT_PROPERTIES += \
     bluetooth.hardware.power.idle_cur_ma=7 \
     bluetooth.hardware.power.operating_voltage_mv=3700 \
@@ -112,14 +106,16 @@ PRODUCT_PRODUCT_PROPERTIES += \
 
 PRODUCT_VENDOR_PROPERTIES += \
     persist.vendor.bluetooth.modem_nv_support=true \
+    persist.vendor.qcom.bluetooth.a2dp_offload_cap=sbc-aptx-aptxtws-aptxhd-aac-ldac \
     persist.vendor.qcom.bluetooth.aac_vbr_ctl.enabled=false \
     persist.vendor.qcom.bluetooth.enable.splita2dp=true \
     persist.vendor.qcom.bluetooth.scram.enabled=false \
     persist.vendor.qcom.bluetooth.soc=cherokee \
     persist.vendor.qcom.bluetooth.twsp_state.enabled=false \
-    ro.vendor.bluetooth.wipower=false
+    ro.vendor.bluetooth.wipower=false \
+    persist.vendor.btstack.enable.splita2dp=true \
+    persist.vendor.btstack.a2dp_offload_cap=sbc-aptx-aptxtws-aptxhd-aac-ldac
 
->>>>>>> 7ffbdef9 (sm6225-common: Drop some unnecessary audio stuff)
 # Bootctrl
 PRODUCT_PACKAGES += \
     android.hardware.boot@1.2-impl-qti \

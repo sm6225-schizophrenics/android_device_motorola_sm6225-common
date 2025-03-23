@@ -437,6 +437,12 @@ vendor/etc/init/vendor.qti.qspmhal@1.0-service.rc
 vendor/etc/seccomp_policy/qspm.policy
 vendor/lib64/vendor.qti.qspmhal@1.0-impl.so
 
+# QCV (SOC Helper)
+ vendor/lib/libsoc_helper.so
+ vendor/lib/libsoc_helper_jni.so
+ vendor/lib64/libsoc_helper.so
+ vendor/lib64/libsoc_helper_jni.so
+
 # RIL
 system_ext/etc/permissions/qcrilhook.xml
 system_ext/etc/permissions/qti_libpermissions.xml

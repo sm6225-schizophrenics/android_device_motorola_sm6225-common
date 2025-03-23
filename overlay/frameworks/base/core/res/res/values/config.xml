@@ -42,10 +42,6 @@
     <!-- Flag specifying whether VoLTE, VT and WFC is available on device -->
     <bool name="config_device_vt_available">true</bool>
 
-    <!-- When true use the linux /dev/input/event subsystem to detect the switch changes
-         on the headphone/microphone jack. When false use the older uevent framework. -->
-    <bool name="config_useDevInputEventForAudioJack">true</bool>
-
     <!-- Indicate available ColorDisplayManager.COLOR_MODE_xxx. -->
     <integer-array name="config_availableColorModes">
         <item>0</item>
