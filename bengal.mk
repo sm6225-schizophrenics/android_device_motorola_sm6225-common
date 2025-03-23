@@ -225,6 +225,7 @@ PRODUCT_PACKAGES += \
     init.oem.hw.sh \
     init.qcom.early_boot.sh \
     init.qcom.post_boot.sh \
+    init.qcom.sensors.sh \
     init.qcom.sh \
     init.qti.dcvs.sh \
     init.qti.early_init.sh \
@@ -424,6 +425,7 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PACKAGES += \
     android.hardware.sensors@2.1-service.multihal \
     android.hardware.sensors@2.0-ScopedWakelock \
+    android.frameworks.sensorservice@1.0 \
     android.frameworks.sensorservice@1.0.vendor \
     libsensorndkbridge
 
