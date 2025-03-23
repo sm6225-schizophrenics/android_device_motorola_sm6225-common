@@ -1,12 +1,8 @@
 # Audio
-aaudio.hw_burst_min_usec=2000
-aaudio.mmap_exclusive_policy=2
-aaudio.mmap_policy=2
 af.fast_track_multiplier=1
 audio.deep_buffer.media=true
 audio.offload.min.duration.secs=60
 audio.offload.video=true
-persist.vendor.audio.avs.afe_api_version=2
 persist.vendor.audio.calfile0=/vendor/etc/acdbdata/Bluetooth_cal.acdb
 persist.vendor.audio.calfile1=/vendor/etc/acdbdata/General_cal.acdb
 persist.vendor.audio.calfile2=/vendor/etc/acdbdata/Global_cal.acdb
@@ -14,14 +10,8 @@ persist.vendor.audio.calfile3=/vendor/etc/acdbdata/Handset_cal.acdb
 persist.vendor.audio.calfile4=/vendor/etc/acdbdata/Hdmi_cal.acdb
 persist.vendor.audio.calfile5=/vendor/etc/acdbdata/Headset_cal.acdb
 persist.vendor.audio.calfile6=/vendor/etc/acdbdata/Speaker_cal.acdb
-persist.vendor.audio.fluence.speaker=true
-persist.vendor.audio.fluence.tmic.enabled=false
-persist.vendor.audio.fluence.voicerec=false
-persist.vendor.audio.spv3.enable=true
 ro.af.client_heap_size_kbyte=7168
 ro.config.vc_call_vol_steps=8
-ro.vendor.audio.sdk.fluencetype=none
-vendor.audio.adm.buffering.ms=2
 vendor.audio.hal.output.suspend.supported=true
 vendor.audio.offload.buffer.size.kb=32
 vendor.audio.offload.gapless.enabled=true
@@ -32,46 +22,6 @@ vendor.audio.volume.headset.gain.depcal=true
 vendor.audio_hal.in_period_size=144
 vendor.audio_hal.period_multiplier=3
 vendor.voice.path.for.pcm.voip=true
-
-# Audio - features
-vendor.audio.feature.a2dp_offload.enable=true
-vendor.audio.feature.afe_proxy.enable=true
-vendor.audio.feature.anc_headset.enable=true
-vendor.audio.feature.battery_listener.enable=true
-vendor.audio.feature.compress_in.enable=true
-vendor.audio.feature.compress_meta_data.enable=true
-vendor.audio.feature.concurrent_capture.enable=true
-vendor.audio.feature.custom_stereo.enable=true
-vendor.audio.feature.display_port.enable=true
-vendor.audio.feature.dynamic_ecns.enable=true
-vendor.audio.feature.fluence.enable=true
-vendor.audio.feature.fm.enable=true
-vendor.audio.feature.hdmi_edid.enable=true
-vendor.audio.feature.hdmi_passthrough.enable=true
-vendor.audio.feature.hfp.enable=true
-vendor.audio.feature.incall_music.enable=true
-vendor.audio.feature.keep_alive.enable=true
-vendor.audio.feature.kpi_optimize.enable=true
-vendor.audio.feature.multi_voice_session.enable=true
-vendor.audio.feature.ras.enable=true
-vendor.audio.feature.snd_mon.enable=true
-vendor.audio.feature.src_trkn.enable=true
-vendor.audio.feature.ssrec.enable=true
-vendor.audio.feature.usb_offload.enable=true
-vendor.audio.feature.usb_offload_burst_mode.enable=true
-vendor.audio.feature.vbat.enable=true
-
-# Bluetooth
-bluetooth.profile.avrcp.target.enabled?=true
-bluetooth.profile.bas.client.enabled?=truee
-persist.vendor.bt.aac_frm_ctl.enabled=true
-persist.vendor.qcom.bluetooth.a2dp_offload_cap=sbc-aac-aptx-aptxhd-ldac
-persist.vendor.qcom.bluetooth.aac_frm_ctl.enabled=true
-persist.vendor.qcom.bluetooth.enable.splita2dp=true
-persist.vendor.qcom.bluetooth.scram.enabled=true
-persist.vendor.qcom.bluetooth.soc=cherokee
-persist.vendor.qcom.bluetooth.twsp_state.enabled=false
-#ro.bluetooth.a2dp_offload.supported=true
 
 # Camera
 camera.disable_zsl_mode=1
