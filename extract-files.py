@@ -19,11 +19,25 @@ from extract_utils.main import (
 )
 
 namespace_imports = [
-    'device/motorola/sm6225-common',
-    'hardware/qcom-caf/sm8250',
-    'hardware/qcom-caf/wlan',
-    'vendor/qcom/opensource/dataservices',
-    'vendor/qcom/opensource/display',
+        "device/motorola/borneo",
+        "device/motorola/sm6225-common",
+        "hardware/qcom/display",
+        "hardware/qcom/display/gralloc",
+        "hardware/qcom/display/libdebug",
+        "hardware/qcom/display/sde-drm",
+        "hardware/motorola",
+        "vendor/qcom/common/vendor/display",
+        "vendor/qcom/common/vendor/display/4.19",
+        "vendor/qcom/common/vendor/gps-legacy",
+        "vendor/qcom/common/vendor/keymaster",
+        "vendor/qcom/common/vendor/media-legacy",
+        "vendor/qcom/common/vendor/wlan-legacy",
+        "vendor/qcom/common/system/av",
+        "vendor/qcom/common/system/telephony",
+        "vendor/qcom/common/system/perf",
+        "vendor/qcom/common/vendor/perf",
+        "vendor/qcom/common/system/wfd",
+        "vendor/qcom/common/system/display"
 ]
 
 
