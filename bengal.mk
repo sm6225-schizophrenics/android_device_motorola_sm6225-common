@@ -241,7 +241,7 @@ PRODUCT_PACKAGES += \
 # Overlay
 DEVICE_PACKAGE_OVERLAYS += \
     $(LOCAL_PATH)/overlay \
-    $(LOCAL_PATH)/overlay-custom
+    $(LOCAL_PATH)/overlay-lineage
 
 PRODUCT_ENFORCE_RRO_TARGETS := *
 
@@ -310,7 +310,7 @@ PRODUCT_PACKAGES += \
     android.hardware.sensors-service.multihal
 
 # Signing
-$(call inherit-product, vendor/aospa-priv/config/common.mk)
+$(call inherit-product, vendor/axion-priv/config/common.mk)
 
 # Soong namespaces
 PRODUCT_SOONG_NAMESPACES += \

@@ -1,3 +1,9 @@
+# Axion
+genfscon proc /sys/vm/dirty_writeback_centisecs     u:object_r:proc_dirty:s0
+genfscon proc /sys/vm/vfs_cache_pressure            u:object_r:proc_drop_caches:s0
+genfscon proc /sys/vm/dirty_ratio u:object_r:proc_dirty:s0
+genfscon proc /sys/kernel/sched_migration_cost_ns u:object_r:proc_sched:s0
+
 # Camera
 genfscon sysfs /devices/platform/cam_sync/video4linux/video1/name               u:object_r:sysfs_graphics:s0
 
