@@ -107,9 +107,10 @@ PRODUCT_COPY_FILES += \
 
 # Bootctrl
 PRODUCT_PACKAGES += \
-    android.hardware.boot@1.2-impl-qti \
-    android.hardware.boot@1.2-impl-qti.recovery \
-    android.hardware.boot@1.2-service
+    android.hardware.boot-service.qti \
+    android.hardware.boot-service.qti.recovery
+
+$(call soong_config_set,QTI_GPT_UTILS,USE_BSG_FRAMEWORK,false)
 
 # Camera
 PRODUCT_PACKAGES += \
@@ -315,6 +316,7 @@ $(call inherit-product, vendor/axion-priv/config/common.mk)
 # Soong namespaces
 PRODUCT_SOONG_NAMESPACES += \
     $(LOCAL_PATH) \
+    hardware/motorola \
     hardware/samsung \
     vendor/qcom/opensource/usb/etc
 
@@ -363,8 +365,6 @@ $(call inherit-product, packages/apps/ViPER4AndroidFX/config.mk)
 PRODUCT_PACKAGES += \
     android.hardware.wifi-service \
     hostapd \
-    libqsap_sdk \
-    libwpa_client \
     libwifi-hal-qcom \
     wpa_supplicant \
     wpa_supplicant.conf
