@@ -180,6 +180,9 @@ ro.netflix.bsp_rev=Q6115-31409-1
 # Perf
 ro.vendor.extension_library=libqti-perfd-client.so
 
+# RAM
+ro.config.low_ram=true
+
 # Radio
 persist.radio.multisim.config=dsds
 persist.vendor.data.iwlan.enable=true
