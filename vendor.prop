@@ -153,9 +153,6 @@ ro.crypto.volume.metadata.method=dm-default-key
 # FM
 vendor.hw.fm.init=0
 
-# FRP
-ro.frp.pst=/dev/block/bootdevice/by-name/frp
-
 # FUSE passthrough
 persist.sys.fuse.passthrough.enable=true
 
