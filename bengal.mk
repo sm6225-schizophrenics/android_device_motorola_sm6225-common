@@ -142,10 +142,6 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     fastbootd
 
-# FM
-PRODUCT_PACKAGES += \
-    FM2
-
 # Framework detect
 PRODUCT_PACKAGES += \
     libvndfwk_detect_jni.qti.vendor # Needed by CNE app
@@ -226,7 +222,7 @@ PRODUCT_PACKAGES += \
     MotoCommonOverlay
 
 # Moto Audio Recorder
-$(call inherit-product, vendor/motorola/AudioRecorder/audiorecorder.mk)
+#$(call inherit-product, vendor/motorola/AudioRecorder/audiorecorder.mk)
 
 # Moto Live Wallpapers 3
 $(call inherit-product, vendor/motorola/MotoLiveWallpaper3/motolivewallpaper3.mk)
@@ -310,7 +306,7 @@ PRODUCT_PACKAGES += \
     android.hardware.sensors-service.multihal
 
 # Signing
-$(call inherit-product, vendor/axion-priv/config/common.mk)
+$(call inherit-product, vendor/droidx-priv/config/common.mk)
 
 # Soong namespaces
 PRODUCT_SOONG_NAMESPACES += \
