@@ -128,7 +128,9 @@ PRODUCT_PACKAGES += \
     android.hardware.renderscript@1.0-impl \
     vendor.qti.hardware.display.allocator-service \
     vendor.qti.hardware.display.composer-service \
-    vendor.qti.hardware.memtrack-service
+    vendor.qti.hardware.memtrack-service \
+    libdisplaydebug \
+    libqservice
 
 PRODUCT_PACKAGES += \
     init.qti.display_boot.rc \
