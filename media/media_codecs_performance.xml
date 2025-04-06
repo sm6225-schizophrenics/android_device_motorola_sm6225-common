@@ -56,12 +56,6 @@ limitations under the License.
          </MediaCodec>
     </Encoders>
     <Decoders>
-        <MediaCodec name="OMX.qcom.video.decoder.avc" type="video/avc" update="true">
-            <Limit name="measured-frame-rate-320x240" range="244-277" />
-            <Limit name="measured-frame-rate-720x480" range="226-286" />
-            <Limit name="measured-frame-rate-1280x720" range="188-203" />
-            <Limit name="measured-frame-rate-1920x1080" range="95-105" />
-        </MediaCodec>
         <MediaCodec name="OMX.qcom.video.decoder.vp9" type="video/x-vnd.on2.vp9" update="true">
             <Limit name="measured-frame-rate-320x180" range="294-316" />
             <Limit name="measured-frame-rate-640x360" range="289-308" />
