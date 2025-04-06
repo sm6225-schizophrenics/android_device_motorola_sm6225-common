@@ -1,0 +1,13 @@
+type hal_fm_vendor, domain;
+type hal_fm_vendor_exec, exec_type, vendor_file_type, file_type;
+type hal_fm_vendor_hwservice, hwservice_manager_type, vendor_hwservice_type;
+ 
+hwbinder_use(hal_fm_vendor)
+add_hwservice(hal_fm_vendor, hal_fm_vendor_hwservice)
+get_prop(hal_fm_vendor, hwservicemanager_prop)
+ 
+init_daemon_domain(hal_fm_vendor)
+ 
+allow hal_fm_vendor self:netlink_kobject_uevent_socket create_socket_perms_no_ioctl;
+ 
+binder_call(hal_fm_vendor, platform_app)
