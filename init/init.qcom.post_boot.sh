@@ -994,7 +994,7 @@ else
     echo 0 > /sys/module/vmpressure/parameters/allocstall_threshold
 
     # Check for less than 4GB RAM and set 200 swappiness
-     if [ "$(cat /proc/meminfo | grep MemTotal | awk '{print $2}')" -le "4194304" ]; then
+     if [ "$(cat /proc/meminfo | grep MemTotal | awk '{print $2}')" -le "41943040" ]; then
          # Set swappiness to 200
          echo 200 > /proc/sys/vm/swappiness
      else
