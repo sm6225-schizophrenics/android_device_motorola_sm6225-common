@@ -143,7 +143,17 @@ PRODUCT_PACKAGES += \
 
 # FM
 PRODUCT_PACKAGES += \
-    FM2
+    libqcomfm_jni \
+    qcom.fmradio \
+    motorola.hardware.fmradio
+   
+PRODUCT_BOOT_JARS += qcom.fmradio
+ 
+PRODUCT_COPY_FILES += \
+    $(call find-copy-subdir-files,*,device/motorola/borneo/prebuilt/permissions,product/etc/permissions)
+ 
+AB_OTA_PARTITIONS += \
+    product
 
 # Framework detect
 PRODUCT_PACKAGES += \
