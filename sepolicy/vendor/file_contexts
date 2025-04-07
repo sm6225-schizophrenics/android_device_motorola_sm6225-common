@@ -55,6 +55,9 @@
 /dev/fpsensor                                           u:object_r:fps_device:s0
 /dev/goodix_fp                                          u:object_r:fps_device:s0
 
+# FM
+/vendor/bin/hw/motorola\.hardware\.fmradio@1\.0-service u:object_r:hal_fm_vendor_exec:s0
+
 # Motobox
 /(vendor|system/vendor)/bin/motobox                     u:object_r:vendor_motobox_exec:s0
 

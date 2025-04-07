@@ -142,6 +142,20 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     fastbootd
 
+# FM
+PRODUCT_PACKAGES += \
+    libqcomfm_jni \
+    qcom.fmradio \
+    motorola.hardware.fmradio
+   
+PRODUCT_BOOT_JARS += qcom.fmradio
+ 
+PRODUCT_COPY_FILES += \
+    $(call find-copy-subdir-files,*,device/motorola/sm6225-common/prebuilt/permissions,product/etc/permissions)
+ 
+AB_OTA_PARTITIONS += \
+    product
+
 # Framework detect
 PRODUCT_PACKAGES += \
     libvndfwk_detect_jni.qti.vendor # Needed by CNE app

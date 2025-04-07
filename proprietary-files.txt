@@ -231,6 +231,14 @@ system_ext/lib64/libfm-hci.so
 system_ext/lib64/vendor.qti.hardware.fm@1.0.so
 vendor/lib64/hw/vendor.qti.hardware.fm@1.0-impl.so
 vendor/lib64/vendor.qti.hardware.fm@1.0.so;MODULE_SUFFIX=_vendor
+vendor/etc/init/init.qti.fm.rc
+vendor/etc/init.qti.fm.sh
+vendor/lib64/motorola.hardware.fmradio@1.0.so
+vendor/bin/hw/motorola.hardware.fmradio@1.0-service
+ 
+# FM APKs - From fogos V1UG35H.75-14-4
+system_ext/app/FMRadioService/FMRadioService.apk|ec26aaa668eb6c263ff10e1b75008f18c369a264
+product/priv-app/FMPlayer/FMPlayer.apk|e17fab2e0fc683a6f8ebdaec484ea3294e645734
 
 # Gatekeeper
 vendor/bin/hw/android.hardware.gatekeeper@1.0-service-qti
