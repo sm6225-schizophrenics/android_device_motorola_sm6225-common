@@ -64,4 +64,12 @@
             <instance>default</instance>
         </interface>
     </hal>
+<hal format="hidl" optional="true">
+     <name>motorola.hardware.fmradio</name>
+     <version>1.0</version>
+     <interface>
+         <name>IMotFMRadio</name>
+         <instance>default</instance>
+     </interface>
+ </hal>
 </compatibility-matrix>

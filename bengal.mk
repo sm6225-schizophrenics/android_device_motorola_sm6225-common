@@ -144,8 +144,17 @@ PRODUCT_PACKAGES += \
 
 # FM
 PRODUCT_PACKAGES += \
-    FM2 \
-    qcom.fmradio
+    libqcomfm_jni \
+    qcom.fmradio \
+    motorola.hardware.fmradio
+   
+PRODUCT_BOOT_JARS += qcom.fmradio
+ 
+PRODUCT_COPY_FILES += \
+    $(call find-copy-subdir-files,*,device/motorola/sm6225-common/prebuilt/permissions,product/etc/permissions)
+ 
+AB_OTA_PARTITIONS += \
+    product
 
 # Framework detect
 PRODUCT_PACKAGES += \
