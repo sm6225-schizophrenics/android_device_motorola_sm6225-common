@@ -150,7 +150,7 @@ PRODUCT_PACKAGES += \
 PRODUCT_BOOT_JARS += qcom.fmradio
 
 PRODUCT_COPY_FILES += \
-     $(call find-copy-subdir-files,*,device/motorola/borneo/prebuilt/permissions,product/etc/permissions)
+    $(call find-copy-subdir-files,*,device/motorola/sm6225-common/prebuilt/permissions,product/etc/permissions)
 
 AB_OTA_PARTITIONS += \
      product

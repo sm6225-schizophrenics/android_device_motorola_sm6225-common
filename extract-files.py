@@ -41,7 +41,6 @@ lib_fixups: lib_fixups_user_type = {
     (
         'libqsap_sdk',
         'libril',
-        'libthermalclient',
         'libwpa_client',
     ): lib_fixup_remove,
 }
