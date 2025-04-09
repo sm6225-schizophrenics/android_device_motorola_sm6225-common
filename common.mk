@@ -58,11 +58,12 @@ PRODUCT_PACKAGES += \
     sound_trigger.primary.bengal
 
 PRODUCT_PACKAGES += \
-    android.hardware.audio@6.0-impl \
-    android.hardware.audio.effect@6.0-impl \
+    android.hardware.audio@7.0-impl \
+    android.hardware.audio.effect@7.0-impl \
     android.hardware.audio.service \
     android.hardware.bluetooth.audio-impl \
-    android.hardware.soundtrigger@2.3-impl
+    android.hardware.soundtrigger@2.3-impl \
+    libaudioroute.vendor \
 
 PRODUCT_PACKAGES += \
     firmware_aw_cali.bin_symlink \
