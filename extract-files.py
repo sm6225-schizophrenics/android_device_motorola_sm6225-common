@@ -4,8 +4,6 @@
 # SPDX-License-Identifier: Apache-2.0
 #
 
-export TARGET_ENABLE_CHECKELF=false
-
 from extract_utils.fixups_blob import (
     blob_fixup,
     blob_fixups_user_type,
@@ -22,10 +20,6 @@ from extract_utils.main import (
 namespace_imports = [
     'device/motorola/sm6225-common',
     'hardware/motorola',
-    'hardware/qcom-caf/sm8250',
-    'hardware/qcom-caf/wlan',
-    'vendor/qcom/opensource/dataservices',
-    'vendor/qcom/opensource/display',
 ]
 
 
