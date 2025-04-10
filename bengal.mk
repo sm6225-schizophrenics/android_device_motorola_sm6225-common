@@ -3,6 +3,9 @@
 # SPDX-License-Identifier: Apache-2.0
 #
 
+# Add common definitions for Qualcomm
+$(call inherit-product, hardware/qcom-caf/common/common.mk)
+
 # A/B
 AB_OTA_UPDATER := true
 
@@ -289,9 +292,6 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PACKAGES += \
     android.hardware.power-service-qti
 
-# Prebuilt Headers
-PRODUCT_VENDOR_KERNEL_HEADERS := hardware/qcom-caf/kernel-headers/msm-4.19
-
 # Public libraries
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/public.libraries.txt:$(TARGET_COPY_OUT_VENDOR)/etc/public.libraries.txt \
@@ -306,7 +306,7 @@ PRODUCT_PACKAGES += \
     android.hardware.sensors-service.multihal
 
 # Signing
-$(call inherit-product, vendor/aosp-priv/config/common.mk)
+$(call inherit-product, vendor/halogen-priv/config/common.mk)
 
 # Soong namespaces
 PRODUCT_SOONG_NAMESPACES += \
