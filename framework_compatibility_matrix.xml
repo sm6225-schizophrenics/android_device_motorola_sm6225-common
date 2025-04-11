@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+     SPDX-FileCopyrightText: 2022 The Linux Foundation
+     SPDX-License-Identifier: BSD-3-Clause
+-->
+<compatibility-matrix version="1.0" type="framework">
+<hal format="aidl" optional="true">
+    <name>android.hardware.bluetooth.audio</name>
+    <interface>
+        <name>IBluetoothAudioProviderFactory</name>
+        <instance>default</instance>
+    </interface>
+</hal>
+<hal format="aidl" optional="true">
+    <name>android.hardware.boot</name>
+    <interface>
+        <name>IBootControl</name>
+        <instance>default</instance>
+    </interface>
+</hal>
+<hal format="aidl" optional="true">
+    <name>android.hardware.drm</name>
+    <interface>
+        <name>IDrmFactory</name>
+        <instance>clearkey</instance>
+    </interface>
+</hal>
+<hal format="aidl" optional="true">
+    <name>android.hardware.health</name>
+    <interface>
+        <name>IHealth</name>
+        <instance>default</instance>
+    </interface>
+</hal>
+<hal format="aidl" optional="true">
+    <name>android.hardware.memtrack</name>
+    <interface>
+        <name>IMemtrack</name>
+        <instance>default</instance>
+    </interface>
+</hal>
+<hal format="aidl" optional="true">
+    <name>android.hardware.power</name>
+    <interface>
+        <name>IPower</name>
+        <instance>default</instance>
+    </interface>
+</hal>
+<hal format="aidl" optional="true">
+    <name>android.hardware.sensors</name>
+    <interface>
+        <name>ISensors</name>
+        <instance>default</instance>
+    </interface>
+</hal>
+<hal format="hidl" optional="true">
+    <name>android.hardware.tetheroffload.control</name>
+    <version>1.0-1</version>
+    <interface>
+        <name>IOffloadControl</name>
+        <instance>default</instance>
+    </interface>
+</hal>
+<hal format="aidl" optional="true">
+    <name>android.hardware.thermal</name>
+    <interface>
+        <name>IThermal</name>
+        <instance>default</instance>
+    </interface>
+</hal>
+<hal format="aidl" optional="true">
+    <name>android.hardware.usb</name>
+    <interface>
+        <name>IUsb</name>
+        <instance>default</instance>
+    </interface>
+</hal>
+<hal format="aidl" optional="true">
+    <name>android.hardware.vibrator</name>
+    <interface>
+        <name>IVibrator</name>
+        <instance>default</instance>
+    </interface>
+</hal>
+<hal format="aidl" optional="true">
+    <name>android.hardware.wifi</name>
+    <interface>
+        <name>IWifi</name>
+        <instance>default</instance>
+    </interface>
+</hal>
+<hal format="aidl" optional="true">
+    <name>android.hardware.wifi.hostapd</name>
+    <interface>
+        <name>IHostapd</name>
+        <instance>default</instance>
+    </interface>
+</hal>
+<hal format="aidl" optional="true">
+    <name>android.hardware.wifi.supplicant</name>
+    <interface>
+        <name>ISupplicant</name>
+        <instance>default</instance>
+    </interface>
+</hal>
+<hal format="hidl" optional="true">
+    <name>motorola.hardware.fmradio</name>
+    <version>1.0</version>
+    <interface>
+        <name>IMotFMRadio</name>
+        <instance>default</instance>
+    </interface>
+</hal>
+<hal format="aidl" optional="true">
+    <name>vendor.lineage.health</name>
+    <interface>
+        <name>IChargingControl</name>
+        <instance>default</instance>
+    </interface>
+</hal>
+</compatibility-matrix>
