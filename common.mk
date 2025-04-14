@@ -88,6 +88,8 @@ PRODUCT_PACKAGES += \
     libvisualizer \
     libvolumelistener
 
+AUDIO_HAL_DIR := hardware/qcom-caf/sm8250/audio/primary-hal
+
 # Audio - Configs
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/audio/audio_effects.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio_effects.xml \
@@ -226,6 +228,8 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/media/media_codecs_vendor.xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_codecs.xml \
     $(LOCAL_PATH)/media/media_codecs_vendor_v3.xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_codecs_khaje.xml \
     $(LOCAL_PATH)/media/media_profiles_vendor.xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_profiles_vendor.xml
+
+TARGET_SUPPORTS_OMX_SERVICE := false
 
 # MotoActions
 PRODUCT_PACKAGES += \
