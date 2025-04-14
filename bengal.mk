@@ -48,6 +48,8 @@ PRODUCT_PACKAGES += \
     AntHalService-Soong
 
 # Audio
+$(call soong_config_set,supports_extended_compress_format,true)
+
 PRODUCT_PACKAGES += \
     audio.bluetooth.default \
     audio.primary.bengal \
