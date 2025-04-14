@@ -218,7 +218,8 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     android.hardware.media.c2@1.2.vendor \
     libcodec2_hidl@1.0.vendor \
-    libcodec2_vndk.vendor
+    libcodec2_vndk.vendor \
+    libsfplugin_ccodec_utils.vendor
 
 # Media - Configs
 PRODUCT_COPY_FILES += \
