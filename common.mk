@@ -79,13 +79,10 @@ PRODUCT_PACKAGES += \
     libbundlewrapper \
     libdownmix \
     libdynproc \
-    libeffectproxy \
-    libldnhncr \
     libqcompostprocbundle \
     libqcomvisualizer \
     libqcomvoiceprocessing \
     libreverbwrapper \
-    libvisualizer \
     libvolumelistener
 
 AUDIO_HAL_DIR := hardware/qcom-caf/sm8250/audio/primary-hal
