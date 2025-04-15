@@ -88,10 +88,13 @@ PRODUCT_PACKAGES += \
     libreverbwrapper \
     libvolumelistener
 
-AUDIO_HAL_DIR := hardware/qcom-caf/sm8250/audio/primary-hal
+AUDIO_HAL_DIR := hardware/qcom-caf/sm8250/audio
 
 # Audio - Configs
 PRODUCT_COPY_FILES += \
+    $(AUDIO_HAL_DIR)/configs/common/audio_policy_configuration.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio_policy_configuration.xml \
+    $(AUDIO_HAL_DIR)/configs/bengal/card-defs.xml:$(TARGET_COPY_OUT_VENDOR)/etc/card-defs.xml \
+    $(AUDIO_HAL_DIR)/configs/bengal/microphone_characteristics.xml:$(TARGET_COPY_OUT_VENDOR)/etc/microphone_characteristics.xml \
     $(LOCAL_PATH)/audio/audio_effects.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio_effects.xml \
     $(LOCAL_PATH)/audio/audio_io_policy.conf:$(TARGET_COPY_OUT_VENDOR)/etc/audio_io_policy.conf \
     $(LOCAL_PATH)/audio/audio_policy_configuration.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio_policy_configuration.xml \
