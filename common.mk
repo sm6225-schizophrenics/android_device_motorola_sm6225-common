@@ -333,7 +333,7 @@ PRODUCT_SOONG_NAMESPACES += \
     $(LOCAL_PATH) \
     hardware/motorola \
     hardware/samsung \
-    vendor/qcom/opensource/usb/etc
+    vendor/qcom/opensource/usb/etc \
     hardware/google/interfaces \
     hardware/google/pixel \
     hardware/lineage/interfaces/power-libperfmgr \
