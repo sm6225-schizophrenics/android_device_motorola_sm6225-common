@@ -51,6 +51,8 @@ blob_fixups: blob_fixups_user_type = {
         .add_needed('libcrypto_shim.so'),
     'vendor/lib64/sensors.moto.so': blob_fixup()
         .add_needed('libbase_shim.so'),
+    'vendor/lib64/libadreno_app_profiles.so': blob_fixup()
+        .remove_needed('vendor.qti.qspmhal@1.0.so'),
 }  # fmt: skip
 
 module = ExtractUtilsModule(
