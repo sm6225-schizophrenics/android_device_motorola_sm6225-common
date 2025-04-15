@@ -178,9 +178,6 @@ vendor.media.omx=0
 # Netflix
 ro.netflix.bsp_rev=Q6115-31409-1
 
-# Perf
-ro.vendor.extension_library=libqti-perfd-client.so
-
 # RAM
 ro.config.low_ram=true
 
