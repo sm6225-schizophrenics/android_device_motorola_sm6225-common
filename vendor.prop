@@ -178,6 +178,9 @@ vendor.media.omx=0
 # Netflix
 ro.netflix.bsp_rev=Q6115-31409-1
 
+# Power
+vendor.powerhal.init=1
+
 # RAM
 ro.config.low_ram=true
 
