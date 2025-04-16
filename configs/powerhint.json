@@ -60,24 +60,6 @@
       "ResetOnInit": true
     },
     {
-      "Name": "GPUForceRailOn",
-      "Path": "/sys/class/kgsl/kgsl-3d0/force_rail_on",
-      "Values": [
-        "1",
-        "0"
-      ],
-      "ResetOnInit": true
-    },
-    {
-      "Name": "GPUForceClkOn",
-      "Path": "/sys/class/kgsl/kgsl-3d0/force_clk_on",
-      "Values": [
-        "1",
-        "0"
-      ],
-      "ResetOnInit": true
-    },
-    {
       "Name": "GPUIdleTimer",
       "Path": "/sys/class/kgsl/kgsl-3d0/idle_timer",
       "Values": [
@@ -198,7 +180,7 @@
       "PowerHint": "SUSTAINED_PERFORMANCE",
       "Node": "GPUMaxFreq",
       "Duration": 0,
-      "Value": "2"
+      "Value": "111400000"
     },
     {
       "PowerHint": "INTERACTION",
@@ -259,18 +241,6 @@
       "Node": "CPUBWMinFreq",
       "Duration": 3000,
       "Value": "11863"
-    },
-    {
-      "PowerHint": "LAUNCH",
-      "Node": "GPUForceClkOn",
-      "Duration": 3000,
-      "Value": "1"
-    },
-    {
-      "PowerHint": "LAUNCH",
-      "Node": "GPUForceRailOn",
-      "Duration": 3000,
-      "Value": "1"
     },
     {
       "PowerHint": "LAUNCH",
