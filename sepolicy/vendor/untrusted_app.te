@@ -1,1 +1,8 @@
 allow untrusted_app sysfs_input:dir search;
+allow untrusted_app configfs:dir search;
+allow untrusted_app sysfs_rtc:dir search;
+allow untrusted_app vendor_sysfs_uio_file:dir search;
+allow untrusted_app qemu_hw_prop:file read;
+allow untrusted_app qemu_sf_lcd_density_prop:file read;
+
+
