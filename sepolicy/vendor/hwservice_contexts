@@ -7,8 +7,4 @@ vendor.egistecbix.hardware.fingerprint::IBiometricsFingerprintBix       u:object
 
 # NFC
 vendor.nxp.nxpese::INxpEse                                              u:object_r:nxpese_hwservice:s0
-vendor.nxp.nxpnfc::INxpNfc    
-                                          u:object_r:nxpnfc_hwservice:s0
-# IMS
-vendor.qti.ims.callinfo::IService                                             u:object_r:vendor_hal_imscallinfo_hwservice:s0
-com.qualcomm.qti.uceservice::IUceService                                      u:object_r:vendor_hal_imsrcsd_hwservice:s0
+vendor.nxp.nxpnfc::INxpNfc                                              u:object_r:nxpnfc_hwservice:s0
