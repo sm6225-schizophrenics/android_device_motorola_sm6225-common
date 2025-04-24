@@ -51,6 +51,7 @@ PRODUCT_PACKAGES += \
 $(call soong_config_set,supports_extended_compress_format,true)
 
 PRODUCT_PACKAGES += \
+    audio_amplifier.bengal \
     audio.bluetooth.default \
     audio.primary.bengal \
     audio.r_submix.default \
