@@ -3,8 +3,8 @@
 # SPDX-License-Identifier: Apache-2.0
 #
 
-DEVICE_PATH := device/motorola/borneo
 HARDWARE_PATH := hardware/motorola
+COMMON_PATH := device/motorola/sm6225-common
 QCOM_COMMON_PATH := device/qcom/common
 
 # A/B
@@ -21,6 +21,7 @@ AB_OTA_PARTITIONS += \
 
 PRODUCT_PACKAGES += \
     update_engine \
+    update_engine_client \
     update_engine_sideload \
     update_verifier
 
@@ -39,6 +40,14 @@ AB_OTA_POSTINSTALL_CONFIG += \
 PRODUCT_PACKAGES += \
     checkpoint_gc \
     otapreopt_script
+
+# Ant
+PRODUCT_PACKAGES += \
+     AntHalService-Soong
+
+# Atrace
+PRODUCT_PACKAGES += \
+     android.hardware.atrace@1.0-service
 
 # Audio
 TARGET_PROVIDES_AUDIO_HAL := true
@@ -75,15 +84,18 @@ PRODUCT_PACKAGES += \
 
 # Audio - Configs
 PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/audio/audio_effects.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio_effects.xml \
-    $(LOCAL_PATH)/audio/audio_io_policy.conf:$(TARGET_COPY_OUT_VENDOR)/etc/audio_io_policy.conf \
-    $(LOCAL_PATH)/audio/audio_policy_configuration.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio_policy_configuration.xml \
-    $(LOCAL_PATH)/audio/audio_policy_configuration_a2dp_offload_disabled.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio_policy_configuration_a2dp_offload_disabled.xml \
-    $(LOCAL_PATH)/audio/audio_policy_configuration_a2dp_offload_disabled.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio/audio_policy_configuration.xml \
-    $(LOCAL_PATH)/audio/bluetooth_hearing_aid_audio_policy_configuration.xml:$(TARGET_COPY_OUT_VENDOR)/etc/bluetooth_hearing_aid_audio_policy_configuration.xml
+    $(COMMON_PATH)/audio/audio_effects.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio_effects.xml \
+    $(COMMON_PATH)/audio/audio_io_policy.conf:$(TARGET_COPY_OUT_VENDOR)/etc/audio_io_policy.conf \
+    $(COMMON_PATH)/audio/audio_policy_configuration.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio_policy_configuration.xml \
+    $(COMMON_PATH)/audio/audio_policy_configuration_a2dp_offload_disabled.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio_policy_configuration_a2dp_offload_disabled.xml \
+    $(COMMON_PATH)/audio/audio_policy_configuration_a2dp_offload_disabled.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio/audio_policy_configuration.xml \
+    $(COMMON_PATH)/audio/bluetooth_hearing_aid_audio_policy_configuration.xml:$(TARGET_COPY_OUT_VENDOR)/etc/bluetooth_hearing_aid_audio_policy_configuration.xml
 
 PRODUCT_COPY_FILES += \
     frameworks/av/services/audiopolicy/config/bluetooth_audio_policy_configuration.xml:$(TARGET_COPY_OUT_VENDOR)/etc/bluetooth_audio_policy_configuration.xml \
+    frameworks/native/data/etc/android.hardware.audio.pro.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.audio.pro.xml \
+    frameworks/native/data/etc/android.software.sip.voip.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.software.sip.voip.xml \
+    frameworks/av/services/audiopolicy/config/a2dp_in_audio_policy_configuration.xml:$(TARGET_COPY_OUT_VENDOR)/etc/a2dp_in_audio_policy_configuration.xml
 
 # Authsecret
 PRODUCT_PACKAGES += \
@@ -131,7 +143,9 @@ PRODUCT_COPY_FILES += \
  
 PRODUCT_PACKAGES += \
    android.hardware.camera.provider@2.4-impl \
-   android.hardware.camera.provider@2.4-service_64
+   android.hardware.camera.provider@2.4-service_64 \
+   libcamera2ndk_vendor \
+   vendor.qti.hardware.camera.postproc@1.0.vendor
 
 # ConfigStore
 PRODUCT_PACKAGES += \
@@ -140,6 +154,17 @@ PRODUCT_PACKAGES += \
 # Cutout
 PRODUCT_PRODUCT_PROPERTIES += \
     ro.support_hide_display_cutout=true
+
+# Dalvik
+$(call inherit-product, frameworks/native/build/phone-xhdpi-6144-dalvik-heap.mk)
+
+# Data Services
+$(call inherit-product, vendor/qcom/opensource/dataservices/dataservices_vendor_product.mk)
+ 
+SOONG_CONFIG_NAMESPACES += rmnetctl
+SOONG_CONFIG_rmnetctl += \
+     old_rmnet_data
+SOONG_CONFIG_rmnetctl_old_rmnet_data := true
 
 # Display
 PRODUCT_COPY_FILES += \
@@ -166,23 +191,34 @@ PRODUCT_PACKAGES += \
      android.hardware.drm-service.clearkey \
      android.hardware.drm@1.4.vendor
 
+# Emulated Storage
+$(call inherit-product, $(SRC_TARGET_DIR)/product/emulated_storage.mk)
+
 # Fastboot
 PRODUCT_PACKAGES += \
-    android.hardware.fastboot-service.example_recovery \
+    android.hardware.fastboot@1.0-impl-mock \
     fastbootd
+
+# FileSystem
+PRODUCT_PACKAGES += \
+    fs_config_files
+
+TARGET_FS_CONFIG_GEN += $(COMMON_PATH)/mot_aids.fs
 
 # FM
 BOARD_HAVE_QCOM_FM := true
  
 PRODUCT_PACKAGES += \
      FM2
+
 # Framework detect
 PRODUCT_PACKAGES += \
     libvndfwk_detect_jni.qti.vendor # Needed by CNE app
 
 # Gatekeeper
 PRODUCT_PACKAGES += \
-     android.hardware.gatekeeper@1.0.vendor
+    android.hardware.gatekeeper@1.0 \
+    android.hardware.gatekeeper@1.0.vendor
  
  # Generic ramdisk
  $(call inherit-product, $(SRC_TARGET_DIR)/product/generic_ramdisk.mk)
@@ -191,7 +227,8 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     android.hardware.gnss-V1-ndk_platform.vendor \
     libgnsspps \
-    libsynergy_loc_api
+    libsynergy_loc_api \
+    libdiag_system
 
 PRODUCT_PACKAGES += \
     flp.conf \
@@ -209,7 +246,15 @@ PRODUCT_COPY_FILES += \
 
 # Health
 PRODUCT_PACKAGES += \
-    android.hardware.health@2.1-impl.recovery
+     android.hardware.health@2.1-impl-qti \
+     android.hardware.health@2.1-impl.recovery \
+     android.hardware.health@2.1-service
+
+# HIDL
+PRODUCT_PACKAGES += \
+    android.hidl.memory.block@1.0.vendor \
+    libhidltransport.vendor \
+    libhwbinder.vendor
 
 # Init
 PRODUCT_PACKAGES += \
@@ -244,14 +289,19 @@ PRODUCT_PACKAGES += \
     init.target.rc \
     ueventd.qcom.rc
 
-# Keymaster
-PRODUCT_COPY_FILES += \
-frameworks/native/data/etc/android.hardware.keystore.app_attest_key.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.keystore.app_attest_key.xml
+# IPACM
+ $(call inherit-product, vendor/qcom/opensource/data-ipa-cfg-mgr-legacy/ipacm_vendor_product.mk)
  
+ PRODUCT_PACKAGES += \
+     ipacm \
+     IPACM_cfg.xml \
+     libipanat \
+     liboffloadhal
+
+# Keymaster
 PRODUCT_PACKAGES += \
-    android.hardware.hardware_keystore.xml \
-    android.hardware.keymaster@4.1.vendor \
-    libkeymaster_messages.vendor
+   android.hardware.keymaster@4.1 \
+   android.hardware.keymaster@4.1.vendor
  
  # Keymint
 PRODUCT_COPY_FILES += \
@@ -281,18 +331,17 @@ PRODUCT_PACKAGES += \
 
 PRODUCT_PACKAGES += \
     libcodec2_hidl@1.2.vendor \
-    libgui_vendor \
     libstagefright_softomx.vendor \
     libstagefright_softomx_plugin.vendor \
     vendor.qti.hardware.capabilityconfigstore@1.0.vendor
 
 # Media - Configs
 PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/media/media_codecs_performance.xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_codecs_performance.xml \
-    $(LOCAL_PATH)/media/media_codecs_performance_v3.xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_codecs_performance_khaje.xml \
-    $(LOCAL_PATH)/media/media_codecs_vendor.xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_codecs.xml \
-    $(LOCAL_PATH)/media/media_codecs_vendor_v3.xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_codecs_khaje.xml \
-    $(LOCAL_PATH)/media/media_profiles_vendor.xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_profiles_vendor.xml
+    $(COMMON_PATH)/media/media_codecs_performance.xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_codecs_performance.xml \
+    $(COMMON_PATH)/media/media_codecs_performance_v3.xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_codecs_performance_khaje.xml \
+    $(COMMON_PATH)/media/media_codecs_vendor.xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_codecs.xml \
+    $(COMMON_PATH)/media/media_codecs_vendor_v3.xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_codecs_khaje.xml \
+    $(COMMON_PATH)/media/media_profiles_vendor.xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_profiles_vendor.xml
 
 # MotoActions
 #PRODUCT_PACKAGES += \
@@ -312,6 +361,10 @@ $(call inherit-product, vendor/motorola/TimeWeather/timeweather.mk)
 PRODUCT_PACKAGES += \
     netutils-wrapper-1.0
 
+# Neural networks
+PRODUCT_PACKAGES += \
+    android.hardware.neuralnetworks@1.3.vendor
+
 # NFC
 PRODUCT_PACKAGES += \
     com.android.nfc_extras \
@@ -330,7 +383,7 @@ PRODUCT_PACKAGES += \
     WifiMainline
 
 DEVICE_PACKAGE_OVERLAYS += \
-    $(LOCAL_PATH)/overlay \
+    $(COMMON_PATH)/overlay \
 
 PRODUCT_ENFORCE_RRO_TARGETS := *
 
@@ -355,8 +408,12 @@ PRODUCT_VENDOR_KERNEL_HEADERS := kernel/motorola/kernel-headers
 
 # Public libraries
 PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/configs/public.libraries.txt:$(TARGET_COPY_OUT_VENDOR)/etc/public.libraries.txt \
-    $(LOCAL_PATH)/configs/public.libraries.system_ext-qti.txt:$(TARGET_COPY_OUT_SYSTEM_EXT)/etc/public.libraries-qti.txt
+    $(COMMON_PATH)/configs/public.libraries.txt:$(TARGET_COPY_OUT_VENDOR)/etc/public.libraries.txt \
+    $(COMMON_PATH)/configs/public.libraries-qti.txt:$(TARGET_COPY_OUT_SYSTEM_EXT)/etc/public.libraries-qti.txt
+
+# QMI
+PRODUCT_PACKAGES += \
+    libjson
 
 # QTI Components
 TARGET_COMMON_QTI_COMPONENTS += \
@@ -372,7 +429,6 @@ TARGET_COMMON_QTI_COMPONENTS += \
     overlay \
     perf \
     gps \
-    telephony \
     usb \
     vibrator \
     wfd \
@@ -383,13 +439,42 @@ PRODUCT_PACKAGES += \
     rfs_msm_mpss_readonly_vendor_fsg_symlink
 
 # RIL
+ENABLE_VENDOR_RIL_SERVICE := true
+
 PRODUCT_COPY_FILES += \
-    frameworks/native/data/etc/android.software.ipsec_tunnels.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.software.ipsec_tunnels.xml \
-    frameworks/native/data/etc/android.software.ipsec_tunnel_migration.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.software.ipsec_tunnel_migration.xml
+    frameworks/native/data/etc/android.software.ipsec_tunnels.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.software.ipsec_tunnels.xml
+
+PRODUCT_PACKAGES += \
+    android.hardware.radio@1.5 \
+    android.hardware.radio@1.5.vendor \
+    android.hardware.radio@1.6 \
+    android.hardware.radio@1.6.vendor \
+    android.hardware.radio.config@1.2 \
+    android.hardware.radio.config@1.2.vendor \
+    android.hardware.radio.config@1.3 \
+    android.hardware.radio.config@1.3.vendor \
+    android.hardware.radio.deprecated@1.0 \
+    android.hardware.radio.deprecated@1.0.vendor \
+    android.hardware.wifi.hostapd@1.0.vendor \
+    android.system.net.netd@1.1 \
+    android.system.net.netd@1.1.vendor \
+    libprotobuf-cpp-full \
+    librmnetctl \
+    libxml2 \
+    vendor.qti.hardware.systemhelperaidl-V1-ndk \
+    vendor.qti.hardware.systemhelperaidl-V1-ndk.vendor
+
+PRODUCT_PACKAGES += \
+    android.hardware.radio.config-V1-ndk.vendor \
+    android.hardware.radio.data-V1-ndk.vendor \
+    android.hardware.radio.messaging-V1-ndk.vendor \
+    android.hardware.radio.modem-V1-ndk.vendor \
+    android.hardware.radio.network-V1-ndk.vendor \
+    android.hardware.radio.sim-V1-ndk.vendor \
+    android.hardware.radio.voice-V1-ndk.vendor \
+    android.hardware.radio-V1-ndk.vendor
 
 # Sensors
-TARGET_BUILDS_OSS_SENSORS_SUBHAL := true
-
 PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.hardware.sensor.accelerometer.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.sensor.accelerometer.xml \
     frameworks/native/data/etc/android.hardware.sensor.barometer.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.sensor.barometer.xml \
@@ -401,9 +486,8 @@ PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.hardware.sensor.stepdetector.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.sensor.stepdetector.xml
 
 PRODUCT_PACKAGES += \
-    android.hardware.sensors@2.1-service.multihal \
+    android.hardware.sensors@2.0-service.multihal \
     android.hardware.sensors@2.0-ScopedWakelock \
-    android.hardware.sensors@2.0-ScopedWakelock.vendor \
     libsensorndkbridge
 
 # Signing
@@ -411,12 +495,23 @@ $(call inherit-product, vendor/aospa-priv/config/common.mk)
 
 # Soong namespaces
 PRODUCT_SOONG_NAMESPACES += \
-    $(LOCAL_PATH) \
-    hardware/samsung
+    $(COMMON_PATH) \
+    hardware/samsung \
+    vendor/qcom/opensource/data-ipa-cfg-mgr-legacy
 
 # Suspend
  PRODUCT_PACKAGES += \
      libsuspend
+
+# System Helper
+PRODUCT_PACKAGES += \
+    vendor.qti.hardware.systemhelper@1.0.vendor
+
+# Telephony
+PRODUCT_COPY_FILES += \
+    frameworks/native/data/etc/android.hardware.telephony.cdma.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.telephony.cdma.xml \
+    frameworks/native/data/etc/android.hardware.telephony.gsm.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.telephony.gsm.xml \
+    frameworks/native/data/etc/android.hardware.telephony.ims.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.telephony.ims.xml
 
 # Thermal
 PRODUCT_PACKAGES += \
@@ -467,9 +562,9 @@ PRODUCT_PACKAGES += \
 
 # Wifi - Configs
 PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/wifi/p2p_supplicant_overlay.conf:$(TARGET_COPY_OUT_VENDOR)/etc/wifi/p2p_supplicant_overlay.conf \
-    $(LOCAL_PATH)/wifi/WCNSS_qcom_cfg.ini:$(TARGET_COPY_OUT_VENDOR)/etc/wifi/WCNSS_qcom_cfg.ini \
-    $(LOCAL_PATH)/wifi/wpa_supplicant_overlay.conf:$(TARGET_COPY_OUT_VENDOR)/etc/wifi/wpa_supplicant_overlay.conf
+    $(COMMON_PATH)/wifi/p2p_supplicant_overlay.conf:$(TARGET_COPY_OUT_VENDOR)/etc/wifi/p2p_supplicant_overlay.conf \
+    $(COMMON_PATH)/wifi/WCNSS_qcom_cfg.ini:$(TARGET_COPY_OUT_VENDOR)/etc/wifi/WCNSS_qcom_cfg.ini \
+    $(COMMON_PATH)/wifi/wpa_supplicant_overlay.conf:$(TARGET_COPY_OUT_VENDOR)/etc/wifi/wpa_supplicant_overlay.conf
 
 # Hardware Motorola
 $(call inherit-product, $(HARDWARE_PATH)/common.mk)

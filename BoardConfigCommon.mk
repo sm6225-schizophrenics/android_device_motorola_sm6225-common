@@ -36,11 +36,6 @@ TARGET_NO_BOOTLOADER := true
 # Broken
 BUILD_BROKEN_DUP_RULES := true
 
-# Filesystem
-TARGET_FS_CONFIG_GEN := \
-    $(COMMON_PATH)/config.fs \
-    $(COMMON_PATH)/mot_aids.fs
-
 # GPS
 BOARD_VENDOR_QCOM_GPS_LOC_API_HARDWARE := $(TARGET_BOARD_PLATFORM)
 
@@ -74,41 +69,42 @@ BOARD_KERNEL_PAGESIZE := 4096
 BOARD_KERNEL_SEPARATED_DTBO := true
 BOARD_MKBOOTIMG_ARGS += --header_version $(BOARD_BOOT_HEADER_VERSION)
 TARGET_KERNEL_VERSION := 4.19
+TARGET_KERNEL_CLANG_COMPILE := true
+TARGET_KERNEL_CLANG_VERSION := aosp
 
-# Kernel Modules - Audio
-TARGET_MODULE_ALIASES += \
-    adsp_loader_dlkm.ko:audio_adsp_loader.ko \
-    apr_dlkm.ko:audio_apr.ko \
-    bolero_cdc_dlkm.ko:audio_bolero_cdc.ko \
-    machine_dlkm.ko:audio_machine_bengal.ko \
-    mbhc_dlkm.ko:audio_mbhc.ko \
-    native_dlkm.ko:audio_native.ko \
-    pinctrl_lpi_dlkm.ko:audio_pinctrl_lpi.ko \
-    platform_dlkm.ko:audio_platform.ko \
-    pm2250_spmi_dlkm.ko:audio_pm2250_spmi.ko \
-    q6_dlkm.ko:audio_q6.ko \
-    q6_notifier_dlkm.ko:audio_q6_notifier.ko \
-    q6_pdr_dlkm.ko:audio_q6_pdr.ko \
-    rouleur_dlkm.ko:audio_rouleur.ko \
-    rouleur_slave_dlkm.ko:audio_rouleur_slave.ko \
-    rx_macro_dlkm.ko:audio_rx_macro.ko \
-    snd_event_dlkm.ko:audio_snd_event.ko \
-    aw882xx_dlkm.ko:audio_snd_soc_aw882xx.ko \
-    stub_dlkm.ko:audio_stub.ko \
-    swr_dlkm.ko:audio_swr.ko \
-    swr_ctrl_dlkm.ko:audio_swr_ctrl.ko \
-    tx_macro_dlkm.ko:audio_tx_macro.ko \
-    usf_dlkm.ko:audio_usf.ko \
-    va_macro_dlkm.ko:audio_va_macro.ko \
-    wcd937x_dlkm.ko:audio_wcd937x.ko \
-    wcd937x_slave_dlkm.ko:audio_wcd937x_slave.ko \
-    wcd9xxx_dlkm.ko:audio_wcd9xxx.ko \
-    wcd_core_dlkm.ko:audio_wcd_core.ko \
-    wsa881x_analog_dlkm.ko:audio_wsa881x_analog.ko
+BOARD_VENDOR_KERNEL_MODULES := \
+    $(KERNEL_MODULES_OUT)/adsp_loader_dlkm.ko \
+    $(KERNEL_MODULES_OUT)/apr_dlkm.ko \
+    $(KERNEL_MODULES_OUT)/bolero_cdc_dlkm.ko \
+    $(KERNEL_MODULES_OUT)/machine_dlkm.ko \
+    $(KERNEL_MODULES_OUT)/mbhc_dlkm.ko \
+    $(KERNEL_MODULES_OUT)/native_dlkm.ko \
+    $(KERNEL_MODULES_OUT)/pinctrl_lpi_dlkm.ko \
+    $(KERNEL_MODULES_OUT)/platform_dlkm.ko \
+    $(KERNEL_MODULES_OUT)/pm2250_spmi_dlkm.ko \
+    $(KERNEL_MODULES_OUT)/q6_dlkm.ko \
+    $(KERNEL_MODULES_OUT)/q6_notifier_dlkm.ko \
+    $(KERNEL_MODULES_OUT)/q6_pdr_dlkm.ko \
+    $(KERNEL_MODULES_OUT)/rouleur_dlkm.ko \
+    $(KERNEL_MODULES_OUT)/rouleur_slave_dlkm.ko \
+    $(KERNEL_MODULES_OUT)/rx_macro_dlkm.ko \
+    $(KERNEL_MODULES_OUT)/snd_event_dlkm.ko \
+    $(KERNEL_MODULES_OUT)/aw882xx_dlkm.ko \
+    $(KERNEL_MODULES_OUT)/stub_dlkm.ko \
+    $(KERNEL_MODULES_OUT)/swr_dlkm.ko \
+    $(KERNEL_MODULES_OUT)/swr_ctrl_dlkm.ko \
+    $(KERNEL_MODULES_OUT)/tx_macro_dlkm.ko \
+    $(KERNEL_MODULES_OUT)/usf_dlkm.ko \
+    $(KERNEL_MODULES_OUT)/va_macro_dlkm.ko \
+    $(KERNEL_MODULES_OUT)/wcd937x_dlkm.ko \
+    $(KERNEL_MODULES_OUT)/wcd937x_slave_dlkm.ko \
+    $(KERNEL_MODULES_OUT)/wcd9xxx_dlkm.ko \
+    $(KERNEL_MODULES_OUT)/wcd_core_dlkm.ko \
+    $(KERNEL_MODULES_OUT)/wsa881x_analog_dlkm.ko
 
 # Kernel Modules - WLAN
 TARGET_MODULE_ALIASES += \
-    wlan.ko:qca_cld3_wlan.ko
+    $(KERNEL_MODULES_OUT)/wlan.ko
 
 # Partitions
 BOARD_FLASH_BLOCK_SIZE := 262144 # (BOARD_KERNEL_PAGESIZE * 64)
