@@ -207,12 +207,6 @@ on post-fs-data
     # Create directory for cutback
     mkdir /data/vendor/misc/cutback 0770 radio wifi
 
-    # Create bug2go folder
-    mkdir /data/vendor/bug2go 0770 log log
-
-    # Setup folder for aplogd
-    mkdir /data/vendor/aplogd 0770 log log
-
     # Subsystem RAM-dumps
     mkdir /data/vendor/ss-ram-dumps 0750 system log
     mkdir /data/vendor/ss-ram-dumps/bp-dumps 0750 system log
