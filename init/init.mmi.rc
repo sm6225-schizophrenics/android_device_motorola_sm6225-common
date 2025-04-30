@@ -83,7 +83,6 @@ on post-fs
     mkdir /mnt/vendor/persist/camera/ledcal 0775 camera vendor_tcmd
     mkdir /mnt/vendor/persist/camera/mot_ledcal 0775 camera camera
     mkdir /mnt/vendor/persist/camera/mot_gyrocal 0775 camera camera
-    mkdir /mnt/vendor/persist/batt_health 0775 vendor_pwric vendor_pwric
     mkdir /mnt/vendor/persist/mdm 0770 radio radio
     mkdir /mnt/vendor/persist/factory 0755 vendor_tcmd vendor_tcmd
     mkdir /mnt/vendor/persist/factory/audio 0755 vendor_tcmd system
