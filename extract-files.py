@@ -59,6 +59,8 @@ lib_fixups: lib_fixups_user_type = {
         'vendor.qti.hardware.radio.*',
         'vendor.qti.ims.*',
         'vendor.qti.latency*',
+        'vendor.qti.qspmhal@1.0',
+        'libril'
     ): lib_fixup_vendor_suffix,
     (
         'libqsap_sdk',
