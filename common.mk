@@ -146,8 +146,7 @@ PRODUCT_PACKAGES += \
 # FM
 PRODUCT_PACKAGES += \
     libqcomfm_jni \
-    qcom.fmradio \
-    motorola.hardware.fmradio
+    qcom.fmradio
    
 PRODUCT_BOOT_JARS += qcom.fmradio
  
@@ -237,7 +236,7 @@ PRODUCT_PACKAGES += \
     MotoCommonOverlay
 
 # Moto Audio Recorder
-#$(call inherit-product, vendor/motorola/AudioRecorder/audiorecorder.mk)
+$(call inherit-product, vendor/motorola/AudioRecorder/audiorecorder.mk)
 
 # Moto Live Wallpapers 3
 $(call inherit-product, vendor/motorola/MotoLiveWallpaper3/motolivewallpaper3.mk)
@@ -323,7 +322,7 @@ PRODUCT_PACKAGES += \
     android.hardware.sensors-service.multihal
 
 # Signing
-$(call inherit-product, vendor/halogen-priv/config/common.mk)
+$(call inherit-product, vendor/lineage-priv/config/common.mk)
 
 # Soong namespaces
 PRODUCT_SOONG_NAMESPACES += \
@@ -396,6 +395,9 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/wifi/p2p_supplicant_overlay.conf:$(TARGET_COPY_OUT_VENDOR)/etc/wifi/p2p_supplicant_overlay.conf \
     $(LOCAL_PATH)/wifi/WCNSS_qcom_cfg.ini:$(TARGET_COPY_OUT_VENDOR)/etc/wifi/WCNSS_qcom_cfg.ini \
     $(LOCAL_PATH)/wifi/wpa_supplicant_overlay.conf:$(TARGET_COPY_OUT_VENDOR)/etc/wifi/wpa_supplicant_overlay.conf
+
+# Evo x
+WITH_GMS := true
 
 # Get non-open-source specific aspects
 $(call inherit-product, vendor/motorola/sm6225-common/sm6225-common-vendor.mk)
