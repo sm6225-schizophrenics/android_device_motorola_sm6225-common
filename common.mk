@@ -305,6 +305,10 @@ PRODUCT_PACKAGES += \
 PRODUCT_VENDOR_PROPERTY_BLACKLIST := \
     ro.carrier
 
+# Prebuilt
+$(call inherit-product, vendor/prebuilt/common.mk)
+PRODUCT_BROKEN_VERIFY_USES_LIBRARIES := true
+
 # Public libraries
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/public.libraries.txt:$(TARGET_COPY_OUT_VENDOR)/etc/public.libraries.txt \
