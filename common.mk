@@ -291,6 +291,9 @@ PRODUCT_COPY_FILES += \
 # Power
 PRODUCT_PACKAGES += \
     android.hardware.power-service-qti
+    
+# Prebuilt
+$(call inherit-product, vendor/prebuilt/common.mk)
 
 # Properties
 PRODUCT_VENDOR_PROPERTY_BLACKLIST := \
