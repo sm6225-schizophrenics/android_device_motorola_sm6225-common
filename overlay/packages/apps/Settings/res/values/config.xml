@@ -18,6 +18,7 @@
     <!-- Whether to show Smooth Display feature in Settings Options -->
     <bool name="config_show_smooth_display">true</bool>
 
-    <!-- Pixelage Maintainer -->
+    <!-- Maintainer -->
     <string name="build_maintainer_summary" translatable="false">b</string>
+    <string name="build_maintainer_donate_url">https://t.me/briefingstunna</string>
 </resources>
