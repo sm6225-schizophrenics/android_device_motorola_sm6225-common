@@ -125,7 +125,6 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     android.hardware.graphics.mapper@3.0-impl-qti-display \
     android.hardware.graphics.mapper@4.0-impl-qti-display \
-    android.hardware.renderscript@1.0-impl \
     vendor.qti.hardware.display.allocator-service \
     vendor.qti.hardware.display.composer-service \
     vendor.qti.hardware.memtrack-service
@@ -188,7 +187,6 @@ PRODUCT_PACKAGES += \
     init.mmi.charge_only.rc \
     init.mmi.chipset.rc \
     init.mmi.dalvik.rc \
-    init.mmi.debug.rc \
     init.mmi.rc \
     init.qcom.rc \
     init.qcom.recovery.rc \
@@ -236,6 +234,8 @@ DEVICE_PACKAGE_OVERLAYS += \
     $(LOCAL_PATH)/overlay-lineage
 
 PRODUCT_ENFORCE_RRO_TARGETS := *
+PRODUCT_PACKAGES += \
+    NcmTetheringOverlay
 
 # Partitions
 PRODUCT_PACKAGES += \
@@ -288,6 +288,10 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PACKAGES += \
     android.hardware.power-service-qti
 
+# Properties
+PRODUCT_VENDOR_PROPERTY_BLACKLIST := \
+    ro.carrier
+
 # Public libraries
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/public.libraries.txt:$(TARGET_COPY_OUT_VENDOR)/etc/public.libraries.txt \
@@ -314,7 +318,9 @@ PRODUCT_PACKAGES += \
 
 # USB
 PRODUCT_PACKAGES += \
-    android.hardware.usb-service.qti
+    android.hardware.usb-service.qti \
+    android.hardware.usb.gadget-service.qti \
+    usb_compositions.conf
 
 PRODUCT_PACKAGES += \
     init.qcom.usb.rc \
