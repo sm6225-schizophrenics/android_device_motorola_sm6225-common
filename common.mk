@@ -223,6 +223,9 @@ PRODUCT_PACKAGES += \
 # Moto Audio Recorder
 $(call inherit-product, vendor/motorola/AudioRecorder/audiorecorder.mk)
 
+# MotoFm
+$(call inherit-product, vendor/motorola/MotoFm/common.mk)
+
 # Moto Live Wallpapers 3
 $(call inherit-product, vendor/motorola/MotoLiveWallpaper3/motolivewallpaper3.mk)
 
