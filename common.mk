@@ -306,7 +306,7 @@ PRODUCT_COPY_FILES += \
 
 # RemovePackages
 PRODUCT_PACKAGES += \
-    RemovePackages \
+    RemovePackages
 
 # RFS MSM MPSS symlinks
 PRODUCT_PACKAGES += \

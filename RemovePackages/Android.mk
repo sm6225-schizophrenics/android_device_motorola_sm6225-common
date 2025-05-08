@@ -5,9 +5,10 @@ LOCAL_MODULE := RemovePackages
 LOCAL_MODULE_CLASS := APPS
 LOCAL_MODULE_TAGS := optional
 LOCAL_OVERRIDES_PACKAGES := \
-   Camelo \
-   Jelly \
-   Glimpse
+    Camelot \
+    Jelly \
+    Glimpse \
+    YASR
 
 LOCAL_UNINSTALLABLE_MODULE := true
 LOCAL_CERTIFICATE := PRESIGNED
