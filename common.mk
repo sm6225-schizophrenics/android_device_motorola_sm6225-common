@@ -199,10 +199,6 @@ PRODUCT_PACKAGES += \
     ipacm \
     IPACM_cfg.xml
 
-# Lights HAL
-PRODUCT_PACKAGES += \
-    android.hardware.lights-service.moto
-
 # Media
 PRODUCT_PACKAGES += \
     libOmxCore \

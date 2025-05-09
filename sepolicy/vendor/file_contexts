@@ -1,2 +1,0 @@
-# Lights
-/vendor/bin/hw/android\.hardware\.lights-service\.moto u:object_r:hal_light_default_exec:s0
