@@ -227,9 +227,6 @@ PRODUCT_PACKAGES += \
 # Moto Audio Recorder
 $(call inherit-product, vendor/motorola/AudioRecorder/audiorecorder.mk)
 
-# Moto Dialer
-$(call inherit-product, vendor/motorola/MotoDialer/common.mk)
-
 # MotoFm
 $(call inherit-product, vendor/motorola/MotoFm/common.mk)
 
