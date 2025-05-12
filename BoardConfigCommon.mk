@@ -52,11 +52,11 @@ TARGET_GLOBAL_OPTIMIZATION := O3
 TARGET_GLOBAL_THINLTO := true
 
 # HIDL
-DEVICE_FRAMEWORK_COMPATIBILITY_MATRIX_FILE := \
+DEVICE_FRAMEWORK_COMPATIBILITY_MATRIX_FILE += \
     hardware/motorola/vintf/device_framework_matrix.xml \
     vendor/qcom/opensource/core-utils/vendor_framework_compatibility_matrix.xml \
     vendor/aospa/target/config/aospa_vendor_framework_compatibility_matrix.xml
-DEVICE_MANIFEST_FILE := \
+DEVICE_MANIFEST_FILE += \
     $(COMMON_PATH)/manifest.xml
 ODM_MANIFEST_FILES := $(COMMON_PATH)/manifest-qva.xml
 
