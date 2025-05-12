@@ -96,7 +96,6 @@ TARGET_FWK_SUPPORTS_FULL_VALUEADDS := true
 
 # APEX
 DEXPREOPT_GENERATE_APEX_IMAGE := true
->>>>>>> 3bd7601a6 (sm7250-common: Remove unneeded cmdline property)
 
 # Audio
 AUDIO_FEATURE_ENABLED_EXT_AMPLIFIER := true
