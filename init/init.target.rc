@@ -56,16 +56,16 @@ on fs
 
 on late-fs
     mount_all --late
-    
-# Dolby
-    mkdir /data/vendor/dolby 0770 media media
-    mkdir /data/vendor/multimedia 0775 system system
 
 on post-fs-data
     mkdir /vendor/data/tombstones 0771 system system
 
 on early-boot
     start vendor.sensors
+    
+# Dolby
+    mkdir /data/vendor/dolby 0770 media media
+    mkdir /data/vendor/multimedia 0775 system system
 
 on boot
 # We want all cores for camera
