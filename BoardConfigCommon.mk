@@ -21,80 +21,6 @@ TARGET_2ND_CPU_ABI := armeabi-v7a
 TARGET_2ND_CPU_ABI2 := armeabi
 TARGET_2ND_CPU_VARIANT := cortex-a9
 
-# Bootloader
-TARGET_BOOTLOADER_BOARD_NAME := lito
-TARGET_NO_BOOTLOADER := true
-
-# Kernel
-BOARD_BOOT_HEADER_VERSION := 2
-BOARD_KERNEL_BASE := 0x00000000
-BOARD_KERNEL_CMDLINE := \
-    androidboot.hardware=qcom \
-    androidboot.console=ttyMSM0 \
-    androidboot.memcg=1 \
-    lpm_levels.sleep_disabled=1 \
-    service_locator.enable=1 \
-    androidboot.usbcontroller=a600000.dwc3 \
-    swiotlb=2048 \
-    loop.max_part=7 \
-    cgroup.memory=nokmem,nosocket \
-    reboot=panic_warm
-
-BOARD_KERNEL_IMAGE_NAME := Image
-BOARD_KERNEL_PAGESIZE := 4096
-BOARD_KERNEL_SEPARATED_DTBO := true
-BOARD_MKBOOTIMG_ARGS += --header_version $(BOARD_BOOT_HEADER_VERSION)
-TARGET_KERNEL_SOURCE := kernel/motorola/sm7250
-TARGET_KERNEL_ADDITIONAL_FLAGS += \
-    DTC_PREBUILT=true \
-    DTC=$(shell pwd)/prebuilts/misc/$(HOST_OS)-x86/dtc/dtc \
-    DTC_OVERLAY_TEST_EXT=$(shell pwd)/prebuilts/misc/$(HOST_OS)-x86/libufdt/ufdt_apply_overlay \
-    MKDTIMG=$(shell pwd)/prebuilts/misc/$(HOST_OS)-x86/libufdt/mkdtimg
-
-# Kernel modules - Audio
-TARGET_MODULE_ALIASES += \
-    adsp_loader_dlkm.ko:audio_adsp_loader.ko \
-    apr_dlkm.ko:audio_apr.ko \
-    bolero_cdc_dlkm.ko:audio_bolero_cdc.ko \
-    hdmi_dlkm.ko:audio_hdmi.ko \
-    machine_dlkm.ko:audio_machine_lito.ko \
-    mbhc_dlkm.ko:audio_mbhc.ko \
-    native_dlkm.ko:audio_native.ko \
-    pinctrl_lpi_dlkm.ko:audio_pinctrl_lpi.ko \
-    platform_dlkm.ko:audio_platform.ko \
-    q6_dlkm.ko:audio_q6.ko \
-    q6_notifier_dlkm.ko:audio_q6_notifier.ko \
-    q6_pdr_dlkm.ko:audio_q6_pdr.ko \
-    rx_macro_dlkm.ko:audio_rx_macro.ko \
-    snd_event_dlkm.ko:audio_snd_event.ko \
-    stub_dlkm.ko:audio_stub.ko \
-    swr_ctrl_dlkm.ko:audio_swr_ctrl.ko \
-    swr_dlkm.ko:audio_swr.ko \
-    tx_macro_dlkm.ko:audio_tx_macro.ko \
-    usf_dlkm.ko:audio_usf.ko \
-    va_macro_dlkm.ko:audio_va_macro.ko \
-    wcd937x_dlkm.ko:audio_wcd937x.ko \
-    wcd937x_slave_dlkm.ko:audio_wcd937x_slave.ko \
-    wcd938x_dlkm.ko:audio_wcd938x.ko \
-    wcd938x_slave_dlkm.ko:audio_wcd938x_slave.ko \
-    wcd9xxx_dlkm.ko:audio_wcd9xxx.ko \
-    wcd_core_dlkm.ko:audio_wcd_core.ko \
-    wsa881x_dlkm.ko:audio_wsa881x.ko \
-    wsa883x_dlkm.ko:audio_wsa883x.ko \
-    wsa_macro_dlkm.ko:audio_wsa_macro.ko
-
-# Kernel modules - WLAN
-TARGET_MODULE_ALIASES += \
-    wlan.ko:qca_cld3_wlan.ko
-
-# Platform
-BOARD_USES_QCOM_HARDWARE := true
-TARGET_BOARD_PLATFORM := lito
-TARGET_FWK_SUPPORTS_FULL_VALUEADDS := true
-
-# APEX
-DEXPREOPT_GENERATE_APEX_IMAGE := true
-
 # Audio
 AUDIO_FEATURE_ENABLED_EXT_AMPLIFIER := true
 AUDIO_FEATURE_ENABLED_EXTENDED_COMPRESS_FORMAT := true
@@ -144,7 +70,6 @@ BOARD_KERNEL_CMDLINE := \
     earlycon=msm_geni_serial,0x4a90000 \
     loop.max_part=7 \
     lpm_levels.sleep_disabled=1 \
-    msm_rtb.filter=0x237 \
     service_locator.enable=1 \
     swiotlb=2048
 BOARD_KERNEL_IMAGE_NAME := Image
