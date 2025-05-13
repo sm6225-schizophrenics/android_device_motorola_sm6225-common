@@ -21,6 +21,3 @@ arm64.memtag.process.system_server=off
 
 # Voice assistant
 ro.opa.eligible_device=true
-
-# Fwk detect
-ro.vendor.qti.va_aosp.support=1
