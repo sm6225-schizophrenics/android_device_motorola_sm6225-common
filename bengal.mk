@@ -405,6 +405,9 @@ PRODUCT_PACKAGES += \
 # Service Tracker
 PRODUCT_PACKAGES += \
     vendor.qti.hardware.servicetracker@1.2.vendor
+    
+# Signing
+$(call inherit-product, vendor/pe-priv/config/common.mk)
 
 # Soong namespaces
 PRODUCT_SOONG_NAMESPACES += \
