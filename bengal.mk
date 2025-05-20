@@ -286,6 +286,15 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PACKAGES += \
     MotoActions \
     MotoCommonOverlay
+    
+# MotoFm
+$(call inherit-product, vendor/motorola/MotoFm/common.mk)
+    
+# Moto Live Wallpapers 3
+$(call inherit-product, vendor/motorola/MotoLiveWallpaper3/motolivewallpaper3.mk)
+    
+# Moto Time Weather
+$(call inherit-product, vendor/motorola/TimeWeather/timeweather.mk)
 
 # Net
 PRODUCT_PACKAGES += \
@@ -452,6 +461,9 @@ PRODUCT_PACKAGES += \
 
 PRODUCT_COPY_FILES += \
     vendor/qcom/opensource/vibrator/excluded-input-devices.xml:vendor/etc/excluded-input-devices.xml
+    
+# Viper
+$(call inherit-product, packages/apps/ViPER4AndroidFX/config.mk)
 
 # Wifi
 PRODUCT_PACKAGES += \
