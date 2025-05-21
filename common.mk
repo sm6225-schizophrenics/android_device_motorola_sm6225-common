@@ -342,7 +342,7 @@ PRODUCT_SOONG_NAMESPACES += \
     vendor/qcom/opensource/usb/etc \
     hardware/google/interfaces \
     hardware/google/pixel \
-    hardware/qcom-caf/common/libqti-perfd-client
+    hardware/qcom-caf/common/libqti-perfd-client \
     vendor/qcom/opensource/usb/etc
 
 # Telephony
