@@ -131,3 +131,7 @@ service dcvs-sh /vendor/bin/init.qti.dcvs.sh
 
 on property:vendor.dcvs.prop=1
    start dcvs-sh
+   
+on property:sys.boot_completed=1
+    # Enable PowerHAL hint processing
+    setprop vendor.powerhal.init 1

@@ -302,7 +302,8 @@ PRODUCT_COPY_FILES += \
 
 # Power
 PRODUCT_PACKAGES += \
-    android.hardware.power-service-qti
+    android.hardware.power-service.lineage-libperfmgr \
+    libqti-perfd-client
 
 # Prebuilt
 $(call inherit-product, vendor/prebuilt/common.mk)
@@ -337,7 +338,11 @@ $(call inherit-product, vendor/komodo-priv/config/common.mk)
 PRODUCT_SOONG_NAMESPACES += \
     $(LOCAL_PATH) \
     hardware/samsung \
-    vendor/qcom/opensource/usb/etc
+    vendor/qcom/opensource/usb/etc \
+    hardware/google/interfaces \
+    hardware/google/pixel \
+    hardware/lineage/interfaces/power-libperfmgr \
+    hardware/qcom-caf/common/libqti-perfd-client
 
 # Telephony
 PRODUCT_PACKAGES += \
