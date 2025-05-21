@@ -148,6 +148,9 @@ PRODUCT_PACKAGES += \
 # Framework detect
 PRODUCT_PACKAGES += \
     libvndfwk_detect_jni.qti.vendor # Needed by CNE app
+    
+# GApps
+WITH_GAPPS := true
 
 # GPS
 PRODUCT_PACKAGES += \
@@ -311,7 +314,7 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/public.libraries.system_ext-qti.txt:$(TARGET_COPY_OUT_SYSTEM_EXT)/etc/public.libraries-qti.txt
 
 # RemovePackages
-ifeq ($(TARGET_BUILD_GAPPS),true)
+ifeq ($(WITH_GAPPS),true)
 PRODUCT_PACKAGES += \
     RemovePackages
 else
@@ -328,7 +331,7 @@ PRODUCT_PACKAGES += \
     android.hardware.sensors-service.multihal
 
 # Signing
-$(call inherit-product, vendor/yaap-priv/config/common.mk)
+$(call inherit-product, vendor/komodo-priv/config/common.mk)
 
 # Soong namespaces
 PRODUCT_SOONG_NAMESPACES += \
