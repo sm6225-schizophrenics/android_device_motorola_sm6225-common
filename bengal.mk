@@ -194,6 +194,9 @@ PRODUCT_PACKAGES += \
     libqti_vndfwk_detect.vendor \
     libvndfwk_detect_jni.qti \
     libvndfwk_detect_jni.qti.vendor
+    
+# GApps
+WITH_GMS := true
 
 # Gatekeeper
 PRODUCT_PACKAGES += \
