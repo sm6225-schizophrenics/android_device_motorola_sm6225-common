@@ -27,7 +27,6 @@ TARGET_2ND_CPU_ABI2 := armeabi
 TARGET_2ND_CPU_VARIANT := cortex-a9
 
 # Audio
-AUDIO_FEATURE_ENABLED_EXT_AMPLIFIER := true
 AUDIO_FEATURE_ENABLED_EXTENDED_COMPRESS_FORMAT := true
 AUDIO_FEATURE_ENABLED_GEF_SUPPORT := true
 AUDIO_FEATURE_ENABLED_INSTANCE_ID := true
@@ -62,7 +61,7 @@ LOC_HIDL_VERSION := 4.0
 DEVICE_FRAMEWORK_COMPATIBILITY_MATRIX_FILE := \
     $(COMMON_PATH)/framework_compatibility_matrix.xml \
     hardware/qcom-caf/common/vendor_framework_compatibility_matrix.xml \
-    vendor/aosp/config/device_framework_matrix.xml
+    vendor/dot/config/device_framework_matrix.xml
 DEVICE_MANIFEST_FILE := $(COMMON_PATH)/manifest.xml
 DEVICE_MATRIX_FILE := $(COMMON_PATH)/compatibility_matrix.xml
 ODM_MANIFEST_FILES := $(COMMON_PATH)/manifest-qva.xml
@@ -140,7 +139,7 @@ BOARD_SUPER_PARTITION_GROUPS := moto_dynamic_partitions
 BOARD_MOTO_DYNAMIC_PARTITIONS_PARTITION_LIST := system system_ext product vendor
 BOARD_MOTO_DYNAMIC_PARTITIONS_SIZE ?= 7579107328 # BOARD_SUPER_PARTITION_SIZE - 4MB
 
-ifneq ($(WITH_GMS),true)
+ifneq ($(WITH_GAPPS),true)
 BOARD_PRODUCTIMAGE_EXTFS_INODE_COUNT := -1
 BOARD_PRODUCTIMAGE_PARTITION_RESERVED_SIZE := 1258291200
 BOARD_SYSTEMIMAGE_EXTFS_INODE_COUNT := -1

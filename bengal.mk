@@ -51,7 +51,6 @@ PRODUCT_PACKAGES += \
 
 # Audio
 PRODUCT_PACKAGES += \
-    audio_amplifier.bengal \
     audio.bluetooth.default \
     audio.primary.bengal \
     audio.r_submix.default \
@@ -197,9 +196,6 @@ PRODUCT_PACKAGES += \
     libqti_vndfwk_detect.vendor \
     libvndfwk_detect_jni.qti \
     libvndfwk_detect_jni.qti.vendor
-    
-# GApps
-WITH_GMS := true
 
 # Gatekeeper
 PRODUCT_PACKAGES += \
@@ -434,7 +430,7 @@ PRODUCT_PACKAGES += \
     vendor.qti.hardware.servicetracker@1.2.vendor
     
 # Signing
-$(call inherit-product, vendor/pe-priv/config/common.mk)
+$(call inherit-product, vendor/dot-priv/config/common.mk)
 
 # Soong namespaces
 PRODUCT_SOONG_NAMESPACES += \
@@ -500,11 +496,9 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/wifi/WCNSS_qcom_cfg.ini:$(TARGET_COPY_OUT_VENDOR)/etc/wifi/WCNSS_qcom_cfg.ini \
     $(LOCAL_PATH)/wifi/wpa_supplicant_overlay.conf:$(TARGET_COPY_OUT_VENDOR)/etc/wifi/wpa_supplicant_overlay.conf
 
-# ArrowOS
-DEVICE_MAINTAINER := b
-
-# GMS build flags
-ARROW_GAPPS := true
+# Dot
+TARGET_SUPPORTS_GOOGLE_RECORDER := false
+TARGET_INCLUDE_LIVE_WALLPAPERS := true
 
 # Prebuilt
 $(call inherit-product, vendor/prebuilt/common.mk)
