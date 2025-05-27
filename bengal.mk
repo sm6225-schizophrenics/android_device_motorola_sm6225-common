@@ -164,6 +164,27 @@ PRODUCT_PACKAGES += \
     vendor.qti.hardware.display.mapper@3.0.vendor \
     vendor.qti.hardware.display.mapper@4.0.vendor
     
+PRODUCT_PACKAGES += \
+    android.hardware.graphics.composer@2.1 \
+    hwcomposer.bengal
+
+PRODUCT_PACKAGES += \
+    libdisplayconfig.qti.vendor \
+    libtinyxml
+
+PRODUCT_PACKAGES += \
+    vendor.display.config@1.14 \
+    vendor.display.config@2.0 \
+    vendor.display.config@2.0.vendor
+
+PRODUCT_PACKAGES += \
+    vendor.qti.hardware.display.allocator@3.0.vendor \
+    vendor.qti.hardware.display.allocator@4.0.vendor \
+    vendor.qti.hardware.display.composer@2.0.vendor \
+    vendor.qti.hardware.display.composer@3.0.vendor \
+    vendor.qti.hardware.display.mapper@1.0.vendor \
+    vendor.qti.hardware.display.mapperextensions@1.1.vendor
+    
 # Dolby
 $(call inherit-product, hardware/motorola/Dolby/dolby-setup.mk)
 
@@ -428,9 +449,6 @@ PRODUCT_PACKAGES += \
 # Service Tracker
 PRODUCT_PACKAGES += \
     vendor.qti.hardware.servicetracker@1.2.vendor
-    
-# Signing
-$(call inherit-product, vendor/dot-priv/config/common.mk)
 
 # Soong namespaces
 PRODUCT_SOONG_NAMESPACES += \
@@ -495,10 +513,6 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/wifi/p2p_supplicant_overlay.conf:$(TARGET_COPY_OUT_VENDOR)/etc/wifi/p2p_supplicant_overlay.conf \
     $(LOCAL_PATH)/wifi/WCNSS_qcom_cfg.ini:$(TARGET_COPY_OUT_VENDOR)/etc/wifi/WCNSS_qcom_cfg.ini \
     $(LOCAL_PATH)/wifi/wpa_supplicant_overlay.conf:$(TARGET_COPY_OUT_VENDOR)/etc/wifi/wpa_supplicant_overlay.conf
-
-# Dot
-TARGET_SUPPORTS_GOOGLE_RECORDER := false
-TARGET_INCLUDE_LIVE_WALLPAPERS := true
 
 # Prebuilt
 $(call inherit-product, vendor/prebuilt/common.mk)
