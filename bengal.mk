@@ -520,7 +520,6 @@ ARROW_GAPPS := true
 
 # Prebuilt
 $(call inherit-product, vendor/prebuilt/common.mk)
-PRODUCT_BROKEN_VERIFY_USES_LIBRARIES := true
 
 # Get non-open-source specific aspects
 $(call inherit-product, vendor/motorola/sm6225-common/sm6225-common-vendor.mk)
