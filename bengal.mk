@@ -383,7 +383,7 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/public.libraries.system_ext-qti.txt:$(TARGET_COPY_OUT_SYSTEM_EXT)/etc/public.libraries-qti.txt
     
 # RemovePackages
-ifeq ($(WITH_GAPPS),true)
+ifeq ($(WITH_GMS),true)
 PRODUCT_PACKAGES += \
     RemovePackages
 else
