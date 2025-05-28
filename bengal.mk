@@ -166,7 +166,7 @@ PRODUCT_PACKAGES += \
     vendor.qti.hardware.display.mapper@4.0.vendor
     
 # Dolby
-$(call inherit-product, hardware/motorola/Dolby/dolby-setup.mk)
+$(call inherit-product, hardware/motorola/dolby/setup.mk)
 
 # DRM
 PRODUCT_PACKAGES += \
@@ -307,6 +307,9 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PACKAGES += \
     MotoActions \
     MotoCommonOverlay
+    
+# Moto Audio Recorder
+$(call inherit-product, vendor/motorola/AudioRecorder/audiorecorder.mk)
     
 # MotoFm
 $(call inherit-product, vendor/motorola/MotoFm/common.mk)
