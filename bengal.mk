@@ -196,6 +196,12 @@ PRODUCT_PACKAGES += \
     libqti_vndfwk_detect.vendor \
     libvndfwk_detect_jni.qti \
     libvndfwk_detect_jni.qti.vendor
+    
+# GApps
+ifeq ($(WITH_GMS),true)
+$(call inherit-product, vendor/gapps/Android.mk)
+else
+endif
 
 # Gatekeeper
 PRODUCT_PACKAGES += \
