@@ -199,6 +199,11 @@ PRODUCT_PACKAGES += \
     libvndfwk_detect_jni.qti.vendor
     
 # GApps
+ifneq ($(WITH_GMS),false)
+WITH_GMS := true
+else
+endif
+
 ifeq ($(WITH_GMS),true)
 $(call inherit-product, vendor/gapps/Android.mk)
 else
