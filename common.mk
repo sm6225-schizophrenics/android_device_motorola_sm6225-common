@@ -49,6 +49,12 @@ PRODUCT_PACKAGES += \
 PRODUCT_AAPT_CONFIG := normal
 PRODUCT_AAPT_PREF_CONFIG := xxhdpi
 
+# Android Auto
+ifeq ($(ROM_BUILDTYPE),$(filter $(ROM_BUILDTYPE),GAPPS))
+PRODUCT_PACKAGES += \
+    AndroidAutoStub
+endif
+
 # ANT+
 PRODUCT_PACKAGES += \
     AntHalService-Soong
@@ -157,6 +163,17 @@ PRODUCT_PACKAGES += \
 # Framework detect
 PRODUCT_PACKAGES += \
     libvndfwk_detect_jni.qti.vendor # Needed by CNE app
+    
+# GApps
+ifneq (,$(filter %WEEKLY %MICROG, $(ROM_BUILDTYPE)))
+ROM_BUILDTYPE := GAPPS
+else
+endif
+
+ifeq ($(ROM_BUILDTYPE),GAPPS)
+$(call inherit-product, vendor/gapps/config.mk)
+else
+endif
 
 # GPS
 PRODUCT_PACKAGES += \
