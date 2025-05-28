@@ -382,6 +382,15 @@ PRODUCT_PACKAGES += \
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/public.libraries.txt:$(TARGET_COPY_OUT_VENDOR)/etc/public.libraries.txt \
     $(LOCAL_PATH)/configs/public.libraries.system_ext-qti.txt:$(TARGET_COPY_OUT_SYSTEM_EXT)/etc/public.libraries-qti.txt
+    
+# RemovePackages
+ifeq ($(WITH_GAPPS),true)
+PRODUCT_PACKAGES += \
+    RemovePackages
+else
+PRODUCT_PACKAGES += \
+    RemovePackagesVanilla
+endif
 
 # RIL
 PRODUCT_PACKAGES += \
