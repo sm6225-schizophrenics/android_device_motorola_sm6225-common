@@ -61,7 +61,6 @@ PRODUCT_PACKAGES += \
     android.hardware.soundtrigger@2.3-impl
 
 PRODUCT_PACKAGES += \
-    firmware_aw_cali.bin_symlink \
     liba2dpoffload \
     libbatterylistener \
     libcomprcapture \
