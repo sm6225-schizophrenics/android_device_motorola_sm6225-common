@@ -289,7 +289,6 @@ PRODUCT_PACKAGES += \
     libsqlite.vendor:64 \
     libsysutils.vendor:64 \
     libxml2
->>>>>>> parent of 1cb7fbac (sm6225-common: Create rfs fsg symlink)
 
 # Rootdir
 PRODUCT_PACKAGES += \
