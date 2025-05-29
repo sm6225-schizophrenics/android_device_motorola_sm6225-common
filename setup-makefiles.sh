@@ -26,7 +26,6 @@ function vendor_imports() {
     cat <<EOF >>"$1"
 		"device/motorola/sm6225-common",
 		"hardware/qcom-caf/sm8250",
-		"hardware/qcom-caf/wlan",
 		"vendor/qcom/opensource/dataservices",
 		"vendor/qcom/opensource/display",
 EOF
