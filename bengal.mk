@@ -283,8 +283,6 @@ PRODUCT_PACKAGES += \
     android.hardware.radio.deprecated@1.0.vendor \
     android.hardware.secure_element@1.2.vendor \
     libjson \
-    libprotobuf-cpp-full-3.9.1-vendorcompat \
-    libprotobuf-cpp-lite-3.9.1-vendorcompat \
     librmnetctl \
     libsqlite.vendor:64 \
     libsysutils.vendor:64 \
