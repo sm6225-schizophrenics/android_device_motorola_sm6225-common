@@ -350,7 +350,6 @@ PRODUCT_VENDOR_PROPERTY_BLACKLIST := \
 
 # Prebuilt
 $(call inherit-product, vendor/prebuilt/common.mk)
-PRODUCT_BROKEN_VERIFY_USES_LIBRARIES := true
 
 # Public libraries
 PRODUCT_COPY_FILES += \
