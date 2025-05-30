@@ -31,7 +31,7 @@ PRODUCT_PACKAGES += \
 
 AB_OTA_POSTINSTALL_CONFIG += \
     RUN_POSTINSTALL_system=true \
-    POSTINSTALL_PATH_system=system/bin/otapreopt_script \
+    POSTINSTALL_PATH_system=system/bin/omnipreopt_script \
     FILESYSTEM_TYPE_system=erofs \
     POSTINSTALL_OPTIONAL_system=true
 
@@ -139,6 +139,8 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     init.qti.display_boot.rc \
     init.qti.display_boot.sh
+    
+-include hardware/qcom-caf/sm8250/display/config/display-board.mk
 
 # DRM
 PRODUCT_PACKAGES += \
@@ -178,6 +180,13 @@ PRODUCT_PACKAGES += \
 # Health
 PRODUCT_PACKAGES += \
     android.hardware.health-service.qti
+    
+# HIDL
+PRODUCT_PACKAGES += \
+    android.hidl.base@1.0 \
+    android.hidl.manager@1.0 \
+    libhidltransport \
+    libhwbinder
 
 # Init
 PRODUCT_PACKAGES += \
@@ -240,6 +249,11 @@ $(call inherit-product, vendor/motorola/MotoLiveWallpaper3/motolivewallpaper3.mk
 
 # Moto Time Weather
 $(call inherit-product, vendor/motorola/TimeWeather/timeweather.mk)
+
+# Netutils
+PRODUCT_PACKAGES += \
+    netutils-wrapper-1.0 \
+    libandroid_net
 
 # NFC
 PRODUCT_PACKAGES += \
@@ -342,9 +356,13 @@ PRODUCT_PACKAGES += \
 # Sensors
 PRODUCT_PACKAGES += \
     android.hardware.sensors-service.multihal
+    
+# Shims
+PRODUCT_PACKAGES += \
+    libgui_shim
 
 # Signing
-$(call inherit-product, vendor/yaap-priv/config/common.mk)
+$(call inherit-product, vendor/omni-priv/config/common.mk)
 
 # Soong namespaces
 PRODUCT_SOONG_NAMESPACES += \
@@ -352,6 +370,10 @@ PRODUCT_SOONG_NAMESPACES += \
     hardware/motorola \
     hardware/samsung \
     vendor/qcom/opensource/usb/etc
+
+# Systemhelper
+PRODUCT_PACKAGES += \
+    vendor.qti.hardware.systemhelper@1.0
 
 # Thermal
 PRODUCT_PACKAGES += \
