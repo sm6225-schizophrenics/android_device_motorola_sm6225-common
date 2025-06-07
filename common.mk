@@ -216,6 +216,7 @@ PRODUCT_PACKAGES += \
     libOmxVdec \
     libOmxVenc \
     libc2dcolorconvert \
+    init.qti.media.rc \
     init.qti.media.sh
 
 PRODUCT_PACKAGES += \
