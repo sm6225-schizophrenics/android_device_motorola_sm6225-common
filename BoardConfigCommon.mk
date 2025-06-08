@@ -70,9 +70,6 @@ BOARD_MKBOOTIMG_ARGS += --header_version $(BOARD_BOOT_HEADER_VERSION)
 TARGET_NO_KERNEL_OVERRIDE := true
 #TARGET_KERNEL_SOURCE := hardware/qcom-caf/kernel-headers/msm-4.19
 
-# Kernel prebuilt
-include device/motorola/sm6225-kernel/prebuilt_kernel.mk
-
 # Kernel Modules - Audio
 TARGET_MODULE_ALIASES += \
     adsp_loader_dlkm.ko:audio_adsp_loader.ko \
