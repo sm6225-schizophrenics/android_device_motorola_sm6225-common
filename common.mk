@@ -198,10 +198,6 @@ PRODUCT_PACKAGES += \
     ipacm \
     IPACM_cfg.xml
 
-# Lineage Health
-PRODUCT_PACKAGES += \
-    vendor.lineage.health-service.default
-
 # Media
 PRODUCT_PACKAGES += \
     libOmxCore \
