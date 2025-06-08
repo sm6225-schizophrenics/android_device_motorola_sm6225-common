@@ -70,6 +70,15 @@ BOARD_MKBOOTIMG_ARGS += --header_version $(BOARD_BOOT_HEADER_VERSION)
 TARGET_NO_KERNEL_OVERRIDE := true
 #TARGET_KERNEL_SOURCE := hardware/qcom-caf/kernel-headers/msm-4.19
 
+BOARD_KERNEL_BINARIES := kernel
+BOARD_PREBUILT_DTBOIMAGE := $(DEVICE_PATH)-kernel/dtbo.img
+TARGET_FORCE_PREBUILT_KERNEL := true
+TARGET_PREBUILT_KERNEL := $(DEVICE_PATH)-kernel/kernel
+TARGET_PREBUILT_DTB := $(DEVICE_PATH)-kernel/dtb.img
+PRODUCT_COPY_FILES += \
+    $(DEVICE_PATH)-kernel/dtb.img:$(TARGET_COPY_OUT)/dtb.img \
+    $(DEVICE_PATH)-kernel/kernel:kernel \
+
 # Kernel Modules - Audio
 TARGET_MODULE_ALIASES += \
     adsp_loader_dlkm.ko:audio_adsp_loader.ko \
