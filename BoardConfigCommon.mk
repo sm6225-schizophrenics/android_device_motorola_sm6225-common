@@ -64,12 +64,11 @@ BOARD_KERNEL_CMDLINE := \
     msm_rtb.filter=0x237 \
     service_locator.enable=1 \
     swiotlb=2048
-BOARD_KERNEL_IMAGE_NAME := Image
+BOARD_KERNEL_IMAGE_NAME := kernel
 BOARD_KERNEL_PAGESIZE := 4096
-BOARD_KERNEL_SEPARATED_DTBO := true
 BOARD_MKBOOTIMG_ARGS += --header_version $(BOARD_BOOT_HEADER_VERSION)
-TARGET_KERNEL_CONFIG := vendor/bengal-perf_defconfig vendor/debugfs.config vendor/ext_config/moto-bengal.config
-TARGET_KERNEL_SOURCE := kernel/motorola/sm6225
+TARGET_NO_KERNEL_OVERRIDE := true
+#TARGET_KERNEL_SOURCE := hardware/qcom-caf/kernel-headers/msm-4.19
 
 # Kernel prebuilt
 include device/motorola/sm6225-kernel/prebuilt_kernel.mk
