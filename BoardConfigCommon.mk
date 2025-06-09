@@ -35,6 +35,9 @@ BOARD_USES_ALSA_AUDIO := true
 # Bootloader
 TARGET_NO_BOOTLOADER := true
 
+# Broken
+BUILD_BROKEN_ELF_PREBUILT_PRODUCT_COPY_FILES := true
+
 # Filesystem
 TARGET_FS_CONFIG_GEN := \
     $(COMMON_PATH)/config.fs \
@@ -80,6 +83,7 @@ TARGET_PREBUILT_DTB := $(DEVICE_PATH)-kernel/dtb.img
 PRODUCT_COPY_FILES += \
     $(DEVICE_PATH)-kernel/dtb.img:$(TARGET_COPY_OUT)/dtb.img \
     $(DEVICE_PATH)-kernel/kernel:kernel \
+    $(call find-copy-subdir-files,*,$(DEVICE_PATH)-kernel/modules/,$(TARGET_COPY_OUT_VENDOR)/lib/modules)
 
 # Kernel Modules - Audio
 TARGET_MODULE_ALIASES += \
