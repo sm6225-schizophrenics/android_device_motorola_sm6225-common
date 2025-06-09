@@ -80,8 +80,7 @@ BOARD_PREBUILT_DTBOIMAGE := $(KERNEL_PATH)/dtbo.img
 BOARD_PREBUILT_DTB := $(KERNEL_PATH)/dtb.img
 PRODUCT_COPY_FILES += \
     $(KERNEL_PATH)/dtb.img:$(TARGET_COPY_OUT)/dtb.img \
-    $(KERNEL_PATH)/kernel:kernel \
-    $(call find-copy-subdir-files,*,$(DEVICE_PATH)-kernel/modules/,$(TARGET_COPY_OUT_VENDOR)/lib/modules)
+    $(call find-copy-subdir-files,*,$(KERNEL_PATH)/modules/,$(TARGET_COPY_OUT_VENDOR)/lib/modules)
 
 # Kernel Modules - Audio
 TARGET_MODULE_ALIASES += \
@@ -184,7 +183,7 @@ BOARD_INCLUDE_RECOVERY_DTBO := true
 TARGET_RECOVERY_PIXEL_FORMAT := RGBX_8888
 
 # Sepolicy
-include device/qcom/sepolicy_vndr/SEPolicy.mk
+include device/qcom/sepolicy_vndr-legacy-um/SEPolicy.mk
 include hardware/motorola/sepolicy/qti/SEPolicy.mk
 
 # Verified Boot
