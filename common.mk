@@ -197,6 +197,11 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     ipacm \
     IPACM_cfg.xml
+    
+# Kernel
+LOCAL_KERNEL := device/motorola/borneo-kernel/kernel
+PRODUCT_COPY_FILES += \
+	$(LOCAL_KERNEL):kernel
 
 # Media
 PRODUCT_PACKAGES += \

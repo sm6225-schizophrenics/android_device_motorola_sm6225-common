@@ -4,6 +4,7 @@
 #
 
 COMMON_PATH := device/motorola/sm6225-common
+KERNEL_PATH := device/motorola/borneo-kernel
 
 # ANT+
 BOARD_ANT_WIRELESS_DEVICE := "vfs-prerelease"
@@ -71,18 +72,15 @@ BOARD_KERNEL_CMDLINE := \
     swiotlb=2048
 BOARD_KERNEL_IMAGE_NAME := kernel
 BOARD_KERNEL_PAGESIZE := 4096
+BOARD_KERNEL_SEPARATED_DTBO := true
 BOARD_MKBOOTIMG_ARGS += --header_version $(BOARD_BOOT_HEADER_VERSION)
 TARGET_NO_KERNEL_OVERRIDE := true
-#TARGET_KERNEL_SOURCE := hardware/qcom-caf/kernel-headers/msm-4.19
-
-BOARD_KERNEL_BINARIES := kernel
-BOARD_PREBUILT_DTBOIMAGE := $(DEVICE_PATH)-kernel/dtbo.img
-TARGET_FORCE_PREBUILT_KERNEL := true
-TARGET_PREBUILT_KERNEL := $(DEVICE_PATH)-kernel/kernel
-TARGET_PREBUILT_DTB := $(DEVICE_PATH)-kernel/dtb.img
+TARGET_KERNEL_SOURCE := hardware/qcom-caf/sm8250/kernel-headers
+BOARD_PREBUILT_DTBOIMAGE := $(KERNEL_PATH)/dtbo.img
+BOARD_PREBUILT_DTB := $(KERNEL_PATH)/dtb.img
 PRODUCT_COPY_FILES += \
-    $(DEVICE_PATH)-kernel/dtb.img:$(TARGET_COPY_OUT)/dtb.img \
-    $(DEVICE_PATH)-kernel/kernel:kernel \
+    $(KERNEL_PATH)/dtb.img:$(TARGET_COPY_OUT)/dtb.img \
+    $(KERNEL_PATH)/kernel:kernel \
     $(call find-copy-subdir-files,*,$(DEVICE_PATH)-kernel/modules/,$(TARGET_COPY_OUT_VENDOR)/lib/modules)
 
 # Kernel Modules - Audio
