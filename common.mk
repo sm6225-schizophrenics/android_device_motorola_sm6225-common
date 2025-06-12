@@ -223,6 +223,15 @@ PRODUCT_PACKAGES += \
     MotoActions \
     MotoCommonOverlay
 
+# MotoFm
+$(call inherit-product, vendor/motorola/MotoFm/common.mk)
+
+# Moto Live Wallpapers 3
+$(call inherit-product, vendor/motorola/MotoLiveWallpaper3/motolivewallpaper3.mk)
+
+# Moto Time Weather
+$(call inherit-product, vendor/motorola/TimeWeather/timeweather.mk)
+
 # NFC
 PRODUCT_PACKAGES += \
     com.android.nfc_extras \
