@@ -313,6 +313,10 @@ PRODUCT_VENDOR_PROPERTY_BLACKLIST := \
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/public.libraries.txt:$(TARGET_COPY_OUT_VENDOR)/etc/public.libraries.txt \
     $(LOCAL_PATH)/configs/public.libraries.system_ext-qti.txt:$(TARGET_COPY_OUT_SYSTEM_EXT)/etc/public.libraries-qti.txt
+    
+# RemovePackages
+PRODUCT_PACKAGES += \
+    RemovePackages
 
 # RFS MSM MPSS symlinks
 PRODUCT_PACKAGES += \
