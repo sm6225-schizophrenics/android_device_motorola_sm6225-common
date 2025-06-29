@@ -333,6 +333,8 @@ PRODUCT_SYSTEM_EXT_PROPERTIES += \
     mmp.enable.3g2=true \
     persist.mm.enable.prefetch=true
 
+PRODUCT_PROPERTY_OVERRIDES += debug.stagefright.omx_default_rank=0
+
 # Netmgr
 PRODUCT_SYSTEM_EXT_PROPERTIES += \
     persist.data.netmgrd.qos.enable=true
