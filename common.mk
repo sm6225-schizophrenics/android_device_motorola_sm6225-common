@@ -333,6 +333,7 @@ PRODUCT_SOONG_NAMESPACES += \
     $(LOCAL_PATH) \
     hardware/motorola \
     hardware/samsung \
+    hardware/qcom-caf/wlan \
     vendor/qcom/opensource/usb/etc
 
 # Telephony
