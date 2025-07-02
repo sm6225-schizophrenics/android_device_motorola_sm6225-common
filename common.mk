@@ -326,7 +326,7 @@ PRODUCT_PACKAGES += \
     android.hardware.sensors-service.multihal
     
 # Signing
-$(call inherit-product, vendor/evo-priv/config/common.mk)
+$(call inherit-product, vendor/aosp-priv/config/common.mk)
 
 # Soong namespaces
 PRODUCT_SOONG_NAMESPACES += \
