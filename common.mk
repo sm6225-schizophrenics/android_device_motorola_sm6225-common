@@ -215,7 +215,7 @@ PRODUCT_PACKAGES += \
     
 # LiveDisplay
 PRODUCT_PACKAGES += \
-    vendor.lineage.livedisplay@2.1-service-sdm
+    vendor.lineage.livedisplay@2.1
 
 # Media
 PRODUCT_PACKAGES += \
