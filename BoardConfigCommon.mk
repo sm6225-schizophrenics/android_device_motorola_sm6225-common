@@ -34,6 +34,9 @@ BOARD_USES_ALSA_AUDIO := true
 # Bootloader
 TARGET_NO_BOOTLOADER := true
 
+# Broken
+BUILD_BROKEN_DUP_RULES := true
+
 # Disable Postrender Cleanup
 TARGET_DISABLE_POSTRENDER_CLEANUP := true
 
