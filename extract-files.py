@@ -24,6 +24,7 @@ namespace_imports = [
     'hardware/qcom-caf/wlan',
     'vendor/qcom/opensource/dataservices',
     'vendor/qcom/opensource/display',
+    'vendor/qcom/common/system/display'
 ]
 
 
@@ -36,6 +37,14 @@ lib_fixups: lib_fixups_user_type = {
     (
         'com.qualcomm.qti.dpm.api@1.0',
         'vendor.qti.imsrtpservice@3.0',
+        'vendor.display.color@1.0',
+        'vendor.display.color@1.1',
+        'vendor.display.color@1.2',
+        'vendor.display.color@1.3',
+        'vendor.display.postproc@1.0',
+        'vendor.qti.hardware.iop@2.0',
+        'vendor.qti.hardware.qccsyshal@1.0',
+        'vendor.qti.qspmhal@1.0'
     ): lib_fixup_vendor_suffix,
     (
         'libqsap_sdk',
