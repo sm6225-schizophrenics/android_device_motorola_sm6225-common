@@ -308,6 +308,9 @@ TARGET_BOARD_PLATFORM := bengal
 PRODUCT_PACKAGES += \
     android.hardware.power-service-qti
     
+# Prebuilt Headers
+PRODUCT_VENDOR_KERNEL_HEADERS := kernel/motorola/kernel-headers
+    
 # Preopt SystemUI
 PRODUCT_DEXPREOPT_SPEED_APPS += SystemUIGoogle  # For internal
 PRODUCT_DEXPREOPT_SPEED_APPS += SystemUI        # For AOSP
