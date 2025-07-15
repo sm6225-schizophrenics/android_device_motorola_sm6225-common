@@ -21,7 +21,8 @@ from extract_utils.main import (
 namespace_imports = [
     'device/motorola/sm6225-common',
     'vendor/qcom/opensource/dataservices',
-    'vendor/qcom/common/system/display'
+    'vendor/qcom/common/system/display',
+    "vendor/qcom/common/system/perf"
 ]
 
 
@@ -40,8 +41,7 @@ lib_fixups: lib_fixups_user_type = {
         'vendor.display.color@1.3',
         'vendor.display.postproc@1.0',
         'vendor.qti.hardware.iop@2.0',
-        'vendor.qti.hardware.qccsyshal@1.0',
-        'vendor.qti.qspmhal@1.0'
+        'vendor.qti.hardware.qccsyshal@1.0'
     ): lib_fixup_vendor_suffix,
     (
         'libqsap_sdk',
