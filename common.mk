@@ -187,23 +187,16 @@ PRODUCT_PACKAGES += \
 
 # Init
 PRODUCT_PACKAGES += \
-    init.class_main.sh \
     init.mmi.boot.sh \
     init.mmi.laser.sh \
     init.mmi.touch.sh \
     init.oem.hw.sh \
-    init.qcom.early_boot.sh \
-    init.qcom.post_boot.sh \
-    init.qcom.sh \
     init.qti.dcvs.sh \
     init.qti.early_init.sh \
     init.mmi.charge_only.rc \
     init.mmi.dalvik.rc \
     init.mmi.rc \
-    init.qcom.rc \
-    init.qcom.recovery.rc \
-    init.target.rc \
-    ueventd.qcom.rc
+    init.target.rc
 
 # IPACM
 PRODUCT_PACKAGES += \
