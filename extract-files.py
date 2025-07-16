@@ -24,7 +24,8 @@ namespace_imports = [
     'vendor/qcom/common/system/display',
     "vendor/qcom/common/system/perf"
     'vendor/qcom/common/vendor/gps-legacy',
-    'vendor/qcom/common/vendor/display/4.19'
+    'vendor/qcom/common/vendor/display/4.19',
+    'vendor/qcom/common/vendor/display'
 ]
 
 
@@ -37,11 +38,6 @@ lib_fixups: lib_fixups_user_type = {
     (
         'com.qualcomm.qti.dpm.api@1.0',
         'vendor.qti.imsrtpservice@3.0',
-        'vendor.display.color@1.0',
-        'vendor.display.color@1.1',
-        'vendor.display.color@1.2',
-        'vendor.display.color@1.3',
-        'vendor.display.postproc@1.0',
         'vendor.qti.hardware.iop@2.0',
         'vendor.qti.hardware.qccsyshal@1.0'
     ): lib_fixup_vendor_suffix,
