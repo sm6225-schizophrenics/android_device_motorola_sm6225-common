@@ -31,7 +31,6 @@ vendor.audio.use.sw.ape.decoder=true
 vendor.audio.volume.headset.gain.depcal=true
 vendor.audio_hal.in_period_size=144
 vendor.audio_hal.period_multiplier=3
-vendor.audio_hal.period_size=240
 vendor.voice.path.for.pcm.voip=true
 
 # Audio - features
@@ -98,7 +97,6 @@ dalvik.vm.heapsize=512m
 dalvik.vm.heaptargetutilization=0.75
 dalvik.vm.heapminfree=1m
 dalvik.vm.heapmaxfree=8m
-dalvik.vm.systemuicompilerfilter=speed-profile
 
 # Display
 debug.cpurend.vsync=false
@@ -257,7 +255,6 @@ vendor.usb.controller=4e00000.dwc3
 vendor.usb.device=4e00000.ssusb
 vendor.usb.diag.func.name=diag
 vendor.usb.dpl.inst.name=dpl
-vendor.usb.qdss.inst.name=qdss
 vendor.usb.rmnet.func.name=gsi
 vendor.usb.rmnet.inst.name=rmnet
 vendor.usb.rndis.func.name=gsi
