@@ -157,10 +157,6 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     FM2
 
-# Framework detect
-PRODUCT_PACKAGES += \
-    libvndfwk_detect_jni.qti.vendor # Needed by CNE app
-
 # GPS
 PRODUCT_PACKAGES += \
     android.hardware.gnss@2.1-impl-qti \
@@ -294,6 +290,7 @@ PRODUCT_COPY_FILES += \
     
 # Platform
 TARGET_BOARD_PLATFORM := bengal
+TARGET_KERNEL_VERSION := 4.19
 
 # Power
 PRODUCT_PACKAGES += \
@@ -326,7 +323,6 @@ TARGET_COMMON_QTI_COMPONENTS := \
     init \
     overlay \
     perf \
-    sepolicy \
     wfd \
 
 # RFS MSM MPSS symlinks
@@ -345,14 +341,8 @@ PRODUCT_SOONG_NAMESPACES += \
 
 # Telephony
 PRODUCT_PACKAGES += \
-    ims-ext-common \
-    ims_ext_common.xml \
-    qti-telephony-hidl-wrapper \
-    qti_telephony_hidl_wrapper.xml \
     qti-telephony-hidl-wrapper-prd \
     qti_telephony_hidl_wrapper_prd.xml \
-    qti-telephony-utils \
-    qti_telephony_utils.xml \
     telephony-ext \
     libjson \
     android.hardware.radio.config@1.2.vendor \
