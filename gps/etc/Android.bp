@@ -1,10 +1,4 @@
 prebuilt_etc {
-    name: "izat.conf",
-    vendor: true,
-    src: "izat.conf",
-}
-
-prebuilt_etc {
     name: "gnss@2.0-xtwifi-inet-agent.policy",
     vendor: true,
     sub_dir: "seccomp_policy",
