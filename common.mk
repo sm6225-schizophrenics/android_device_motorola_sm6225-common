@@ -358,9 +358,6 @@ PRODUCT_PACKAGES += \
     extphonelib.xml \
     extphonelib_product.xml
 
-PRODUCT_BOOT_JARS += \
-    telephony-ext
-
 # Thermal
 PRODUCT_PACKAGES += \
     android.hardware.thermal-service.qti
