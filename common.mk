@@ -200,19 +200,15 @@ PRODUCT_PACKAGES += \
 
 # Media
 PRODUCT_PACKAGES += \
-    libOmxCore \
     libOmxVdec \
     libOmxVenc \
-    libstagefrighthw \
     libc2dcolorconvert \
     init.qti.media.sh
 
 PRODUCT_PACKAGES += \
-    libavservices_minijail.vendor \
     libcodec2_hidl@1.2.vendor \
     libcodec2_soft_common.vendor \
     libsfplugin_ccodec_utils.vendor \
-    libgui_vendor \
     libstagefright_softomx.vendor \
     libstagefright_softomx_plugin.vendor \
     vendor.qti.hardware.capabilityconfigstore@1.0.vendor
@@ -222,8 +218,7 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/media/media_codecs_performance.xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_codecs_performance.xml \
     $(LOCAL_PATH)/media/media_codecs_performance_v3.xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_codecs_performance_khaje.xml \
     $(LOCAL_PATH)/media/media_codecs_vendor.xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_codecs.xml \
-    $(LOCAL_PATH)/media/media_codecs_vendor_v3.xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_codecs_khaje.xml \
-    $(LOCAL_PATH)/media/media_profiles_vendor.xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_profiles_vendor.xml
+    $(LOCAL_PATH)/media/media_codecs_vendor_v3.xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_codecs_khaje.xml
 
 # MotoActions
 PRODUCT_PACKAGES += \
@@ -321,9 +316,12 @@ TARGET_COMMON_QTI_COMPONENTS := \
     display \
     gps \
     init \
+    media \
     overlay \
     perf \
+    vibrator \
     wfd \
+    wlan
 
 # RFS MSM MPSS symlinks
 PRODUCT_PACKAGES += \
