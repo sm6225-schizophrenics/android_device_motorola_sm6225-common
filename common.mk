@@ -325,7 +325,6 @@ TARGET_COMMON_QTI_COMPONENTS := \
     perf \
     usb \
     vibrator \
-    wfd \
     wlan
 
 # RFS MSM MPSS symlinks
