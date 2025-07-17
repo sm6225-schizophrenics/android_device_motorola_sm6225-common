@@ -123,6 +123,9 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     disable_configstore
     
+# Data Services
+$(call inherit-product, vendor/qcom/opensource/dataservices/dataservices_vendor_product.mk)
+    
 # DebugFS
 PRODUCT_SET_DEBUGFS_RESTRICTIONS := true
 
