@@ -160,6 +160,8 @@ PRODUCT_PACKAGES += \
     fastbootd
 
 # FM
+BOARD_HAVE_QCOM_FM := true
+
 PRODUCT_PACKAGES += \
     FM2
 
