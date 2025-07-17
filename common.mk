@@ -164,7 +164,8 @@ PRODUCT_PACKAGES += \
 BOARD_HAVE_QCOM_FM := true
 
 PRODUCT_PACKAGES += \
-    FM2
+    FM2 \
+    qcom.fmradio
 
 # GPS
 PRODUCT_PACKAGES += \
