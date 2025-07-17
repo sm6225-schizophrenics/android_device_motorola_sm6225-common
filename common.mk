@@ -3,6 +3,8 @@
 # SPDX-License-Identifier: Apache-2.0
 #
 
+HARDWARE_PATH := hardware/motorola
+
 # Add common definitions for Qualcomm
 $(call inherit-product, device/qcom/common/common.mk)
 
@@ -183,6 +185,9 @@ PRODUCT_PACKAGES += \
     flp.conf \
     gps.conf \
     izat.conf
+    
+# Hardware Motorola
+$(call inherit-product, $(HARDWARE_PATH)/common.mk)
 
 # Health
 PRODUCT_PACKAGES += \
