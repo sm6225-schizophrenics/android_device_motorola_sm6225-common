@@ -323,7 +323,6 @@ TARGET_COMMON_QTI_COMPONENTS := \
     overlay \
     perf \
     vibrator \
-    wfd \
     wlan
 
 # RFS MSM MPSS symlinks
