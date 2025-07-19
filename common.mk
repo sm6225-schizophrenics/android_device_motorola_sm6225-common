@@ -326,7 +326,6 @@ PRODUCT_COPY_FILES += \
 # QTI
 TARGET_COMMON_QTI_COMPONENTS := \
     alarm \
-    audio \
     av \
     bt \
     display \
