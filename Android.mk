@@ -20,4 +20,9 @@ $(CNE_SYMLINKS): $(LOCAL_INSTALLED_MODULE)
 
 ALL_DEFAULT_INSTALLED_MODULES += $(CNE_SYMLINKS)
 
+include $(CLEAR_VARS)
+LOCAL_MODULE := fastcv_headers
+LOCAL_EXPORT_C_INCLUDE_DIRS := device/qcom/common/vendor/media-legacy/include
+include $(BUILD_HEADER_LIBRARY)
+
 endif
