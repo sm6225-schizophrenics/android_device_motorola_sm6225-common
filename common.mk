@@ -215,27 +215,28 @@ PRODUCT_PACKAGES += \
     IPACM_cfg.xml
 
 # Media
+MSM_VIDC_TARGET_LIST := bengal
+
+include hardware/qcom/media/conf_files/bengal/bengal.mk
+
+PRODUCT_COPY_FILES += \
+    device/qcom/common/vendor/media/media_profiles.xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_profiles.xml
+
 PRODUCT_PACKAGES += \
+    libOmxCore \
     libOmxVdec \
     libOmxVenc \
+    libstagefrighthw \
     libc2dcolorconvert \
     init.qti.media.rc \
     init.qti.media.sh
 
 PRODUCT_PACKAGES += \
-    libcodec2_hidl@1.2.vendor \
-    libcodec2_soft_common.vendor \
-    libsfplugin_ccodec_utils.vendor \
+    libavservices_minijail.vendor \
+    libgui_vendor \
     libstagefright_softomx.vendor \
     libstagefright_softomx_plugin.vendor \
     vendor.qti.hardware.capabilityconfigstore@1.0.vendor
-
-# Media - Configs
-PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/media/media_codecs_performance.xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_codecs_performance.xml \
-    $(LOCAL_PATH)/media/media_codecs_performance_v3.xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_codecs_performance_khaje.xml \
-    $(LOCAL_PATH)/media/media_codecs_vendor.xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_codecs.xml \
-    $(LOCAL_PATH)/media/media_codecs_vendor_v3.xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_codecs_khaje.xml
 
 # MotoActions
 PRODUCT_PACKAGES += \
