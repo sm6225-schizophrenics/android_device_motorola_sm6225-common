@@ -274,4 +274,16 @@
         <fqname>@1.0::IDumpstateDevice/default</fqname>
         <fqname>@1.1::IDumpstateDevice/default</fqname>
     </hal>
+    <hal format="hidl">
+        <name>android.hardware.graphics.allocator</name>
+        <transport>hwbinder</transport>
+        <version>2.0</version>
+        <interface>
+            <name>IAllocator</name>
+            <instance>default</instance>
+        </interface>
+        <fqname>@2.0::IAllocator/default</fqname>
+        <fqname>@3.0::IAllocator/default</fqname>
+        <fqname>@4.0::IAllocator/default</fqname>
+    </hal>
 </manifest>
