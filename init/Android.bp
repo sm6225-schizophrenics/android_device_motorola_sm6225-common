@@ -66,3 +66,9 @@ sh_binary {
     src: "init.qti.early_init.sh",
     vendor: true,
 }
+
+prebuilt_etc {
+    name: "ueventd.motobengal.rc",
+    src: "ueventd.motobengal.rc",
+    device_specific: true,
+}

@@ -208,7 +208,8 @@ PRODUCT_PACKAGES += \
     init.mmi.charge_only.rc \
     init.mmi.dalvik.rc \
     init.mmi.rc \
-    init.target.rc
+    init.target.rc \
+    ueventd.motobengal.rc
 
 # IPACM
 PRODUCT_PACKAGES += \
