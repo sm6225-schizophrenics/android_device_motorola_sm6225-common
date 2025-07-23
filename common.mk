@@ -8,7 +8,6 @@ HARDWARE_PATH := hardware/motorola
 # Add common definitions for Qualcomm
 $(call inherit-product, device/qcom/common/common.mk)
 
-
 # Enable whole-program R8 Java optimizations for system_server.
 FULL_SYSTEM_OPTIMIZE_JAVA := true
 
@@ -167,23 +166,6 @@ PRODUCT_PACKAGES += \
 # FM
 BOARD_HAVE_QCOM_FM := true
 
-PRODUCT_PACKAGES += \
-    FM2 \
-    qcom.fmradio
-
-# GPS
-PRODUCT_PACKAGES += \
-    android.hardware.gnss@2.1-impl-qti \
-    android.hardware.gnss@2.1-service-qti \
-    gnss@2.0-base.policy \
-    gnss@2.0-xtra-daemon.policy \
-    gnss@2.0-xtwifi-client.policy \
-    gnss@2.0-xtwifi-inet-agent.policy \
-    libbatching \
-    libgeofencing \
-    libgnss \
-    libloc_socket
-
 # GPS configs
 PRODUCT_PACKAGES += \
     flp.conf \
@@ -274,7 +256,6 @@ PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.hardware.camera.full.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.camera.full.xml \
     frameworks/native/data/etc/android.hardware.camera.raw.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.camera.raw.xml \
     frameworks/native/data/etc/android.hardware.fingerprint.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.fingerprint.xml \
-    frameworks/native/data/etc/android.hardware.location.gps.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.location.gps.xml \
     frameworks/native/data/etc/android.hardware.opengles.aep.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.opengles.aep.xml \
     frameworks/native/data/etc/android.hardware.se.omapi.uicc.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.se.omapi.uicc.xml \
     frameworks/native/data/etc/android.hardware.sensor.accelerometer.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.sensor.accelerometer.xml \
@@ -304,12 +285,7 @@ PRODUCT_COPY_FILES += \
     
 # Platform
 TARGET_BOARD_PLATFORM := bengal
-TARGET_KERNEL_VERSION := 4.19
 
-# Power
-PRODUCT_PACKAGES += \
-    android.hardware.power-service-qti
-    
 # Prebuilt Headers
 PRODUCT_VENDOR_KERNEL_HEADERS := kernel/motorola/kernel-headers
     
@@ -323,8 +299,7 @@ PRODUCT_VENDOR_PROPERTY_BLACKLIST := \
 
 # Public libraries
 PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/configs/public.libraries.txt:$(TARGET_COPY_OUT_VENDOR)/etc/public.libraries.txt \
-    $(LOCAL_PATH)/configs/public.libraries.system_ext-qti.txt:$(TARGET_COPY_OUT_SYSTEM_EXT)/etc/public.libraries-qti.txt
+    $(LOCAL_PATH)/configs/public.libraries.txt:$(TARGET_COPY_OUT_VENDOR)/etc/public.libraries.txt
     
 # QTI
 TARGET_COMMON_QTI_COMPONENTS := \
@@ -354,8 +329,7 @@ PRODUCT_PACKAGES += \
 PRODUCT_SOONG_NAMESPACES += \
     $(LOCAL_PATH) \
     hardware/motorola \
-    hardware/samsung \
-    vendor/qcom/opensource/usb/etc
+    hardware/samsung
 
 # Telephony
 PRODUCT_PACKAGES += \
@@ -380,35 +354,7 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     android.hardware.thermal-service.qti
 
-# USB
-PRODUCT_PACKAGES += \
-    android.hardware.usb-service.qti
-
-PRODUCT_PACKAGES += \
-    init.qcom.usb.rc \
-    init.qcom.usb.sh
-
-# Vendor service manager
-PRODUCT_PACKAGES += \
-    vndservicemanager
-
-# Vibrator
-PRODUCT_PACKAGES += \
-    vendor.qti.hardware.vibrator.service
-
-PRODUCT_COPY_FILES += \
-    vendor/qcom/opensource/vibrator/excluded-input-devices.xml:vendor/etc/excluded-input-devices.xml
-
 # Wifi
-PRODUCT_PACKAGES += \
-    android.hardware.wifi-service \
-    hostapd \
-    libqsap_sdk \
-    libwpa_client \
-    libwifi-hal-qcom \
-    wpa_supplicant \
-    wpa_supplicant.conf
-
 PRODUCT_PACKAGES += \
     WifiResCommonOverlay
 
@@ -416,7 +362,7 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     firmware_wlan_mac.bin_symlink \
     firmware_WCNSS_qcom_cfg.ini_symlink
-
+    
 # Wifi - Configs
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/wifi/p2p_supplicant_overlay.conf:$(TARGET_COPY_OUT_VENDOR)/etc/wifi/p2p_supplicant_overlay.conf \
