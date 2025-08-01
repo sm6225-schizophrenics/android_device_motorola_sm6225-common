@@ -158,8 +158,7 @@ PRODUCT_PACKAGES += \
     fastbootd
 
 # FM
-PRODUCT_PACKAGES += \
-    FM2
+$(call inherit-product, vendor/motorola/MotoFm/common.mk)
 
 # Framework detect
 PRODUCT_PACKAGES += \
