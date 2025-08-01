@@ -164,7 +164,7 @@ PRODUCT_PACKAGES += \
     fastbootd
 
 # FM
-BOARD_HAVE_QCOM_FM := true
+$(call inherit-product, vendor/motorola/MotoFm/common.mk)
 
 # GPS configs
 PRODUCT_PACKAGES += \
