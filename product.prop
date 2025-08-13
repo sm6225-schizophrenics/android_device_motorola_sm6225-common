@@ -28,6 +28,3 @@ ro.vendor.mot.factory=false
 
 # System server
 arm64.memtag.process.system_server=off
-
-# Voice assistant
-ro.opa.eligible_device=true
