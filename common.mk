@@ -340,9 +340,6 @@ PRODUCT_SOONG_NAMESPACES += \
 
 # Telephony
 PRODUCT_PACKAGES += \
-    qti-telephony-hidl-wrapper-prd \
-    qti_telephony_hidl_wrapper_prd.xml \
-    telephony-ext \
     libjson \
     android.hardware.radio.config@1.2.vendor \
     android.hardware.radio@1.4.vendor \
@@ -351,11 +348,7 @@ PRODUCT_PACKAGES += \
     android.hardware.secure_element@1.0.vendor \
     rild \
     librmnetctl \
-    libprotobuf-cpp-full \
-    extphonelib \
-    extphonelib-product \
-    extphonelib.xml \
-    extphonelib_product.xml
+    libprotobuf-cpp-full
 
 # Thermal
 PRODUCT_PACKAGES += \
