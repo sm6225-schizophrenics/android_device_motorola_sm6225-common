@@ -201,6 +201,9 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     ipacm \
     IPACM_cfg.xml
+    
+# Low RAM
+TARGET_HAS_LOW_RAM := true
 
 # Media
 MSM_VIDC_TARGET_LIST := bengal
