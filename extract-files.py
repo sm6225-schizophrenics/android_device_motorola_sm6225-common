@@ -22,7 +22,7 @@ namespace_imports = [
     'device/motorola/sm6225-common',
     'vendor/qcom/opensource/dataservices',
     'vendor/qcom/common/system/display',
-    "vendor/qcom/common/system/perf"
+    "vendor/qcom/common/system/perf",
     'vendor/qcom/common/vendor/gps-legacy',
     'vendor/qcom/common/vendor/display/4.19',
     'vendor/qcom/common/vendor/display'
