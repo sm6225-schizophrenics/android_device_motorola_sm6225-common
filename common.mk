@@ -328,6 +328,9 @@ TARGET_BUILDS_OSS_SENSORS_SUBHAL := true
 
 PRODUCT_PACKAGES += \
     android.hardware.sensors-service.multihal
+    
+# Signing
+$(call inherit-product, vendor/aospa-priv/config/common.mk)
 
 # Soong namespaces
 PRODUCT_SOONG_NAMESPACES += \
