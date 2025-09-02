@@ -163,8 +163,11 @@ vendor/etc/init/vendor.qti.hardware.capabilityconfigstore@1.0-service.rc|4ede025
 vendor/lib64/hw/vendor.qti.hardware.capabilityconfigstore@1.0-impl.so|2163df1cf52ef304f924bcc833947604036f4217
 
 # Display postprocessing - from LA.UM.9.15.2.r1-10600-KAMORTA.QSSI14.0
+vendor/bin/qdcmss|536c34abfbf7833df440bfcd264bacdc88318067
+vendor/etc/init/qdcmss.rc|53d78d686678c4f923a9ec4ace7d4d3575b13788
 vendor/etc/init/vendor.display.color@1.0-service.rc|5ad673f879b3685a0e79b5633437e5499cb94f48
 vendor/lib64/libdisp-aba.so|894b0fe1ace5effb471ebb7437cd590a096e47d8
+vendor/lib64/libdpps.so|aded45bfd6df995e72342f7f4fa6f79dc0c6f226
 
 # DPM
 system_ext/bin/dpmd
