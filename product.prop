@@ -12,6 +12,7 @@ ro.vold.umsdirtyratio=20
 power.saving.mode=1
 
 # LMKD
+ro.config.use_compaction
 ro.lmk.thrashing_limit=30
 ro.lmk.swap_free_low_percentage=10
 ro.lmk.psi_partial_stall_ms=200
@@ -21,6 +22,9 @@ ro.lmk.thrashing_limit_decay=50
 ro.lmk.critical_upgrade=true
 ro.lmk.upgrade_pressure=40
 ro.lmk.downgrade_pressure=60
+ro.lowmemdetector.psi_low_stall_us=100000
+ro.lowmemdetector.psi_medium_stall_us=150000
+ro.lowmemdetector.psi_high_stall_us=200000
 
 # Motorola
 ro.mot.build.customerid=global
