@@ -309,7 +309,8 @@ PRODUCT_PACKAGES += \
 
 # Sensors
 PRODUCT_PACKAGES += \
-    android.hardware.sensors-service.multihal
+    android.hardware.sensors-service.multihal \
+    android.frameworks.sensorservice@1.0
 
 # Soong namespaces
 PRODUCT_SOONG_NAMESPACES += \
