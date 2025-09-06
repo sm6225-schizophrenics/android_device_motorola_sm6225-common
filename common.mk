@@ -334,7 +334,8 @@ PRODUCT_PACKAGES += \
 TARGET_BUILDS_OSS_SENSORS_SUBHAL := true
 
 PRODUCT_PACKAGES += \
-    android.hardware.sensors-service.multihal
+    android.hardware.sensors-service.multihal \
+    android.frameworks.sensorservice@1.0
     
 # Signing
 $(call inherit-product, vendor/aospa-priv/config/common.mk)
