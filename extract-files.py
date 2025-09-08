@@ -38,8 +38,7 @@ lib_fixups: lib_fixups_user_type = {
     **lib_fixups,
     (
         'com.qualcomm.qti.dpm.api@1.0',
-        'vendor.qti.imsrtpservice@3.0',
-        'vendor.qti.hardware.iop@2.0'
+        'vendor.qti.imsrtpservice@3.0'
     ): lib_fixup_vendor_suffix,
     (
         'libqsap_sdk',
