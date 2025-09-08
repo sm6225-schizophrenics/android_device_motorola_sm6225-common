@@ -51,14 +51,6 @@ TARGET_GLOBAL_LTO := thin
 TARGET_GLOBAL_OPTIMIZATION := O3
 TARGET_GLOBAL_THINLTO := true
 
-# HIDL
-DEVICE_FRAMEWORK_COMPATIBILITY_MATRIX_FILE += \
-    hardware/motorola/vintf/device_framework_matrix.xml \
-    vendor/qcom/opensource/core-utils/vendor_framework_compatibility_matrix.xml
-DEVICE_MANIFEST_FILE += \
-    $(COMMON_PATH)/manifest.xml
-ODM_MANIFEST_FILES := $(COMMON_PATH)/manifest-qva.xml
-
 # HWUI
 HWUI_COMPILE_FOR_PERF := true
 USE_OPENGL_RENDERER := true
@@ -140,6 +132,14 @@ TARGET_USE_AOSP_SURFACEFLINGER := true
 # Verified Boot
 BOARD_AVB_ENABLE := true
 BOARD_AVB_MAKE_VBMETA_IMAGE_ARGS += --flags 3
+
+# VINTF
+DEVICE_FRAMEWORK_COMPATIBILITY_MATRIX_FILE += \
+    hardware/motorola/vintf/device_framework_matrix.xml \
+    vendor/qcom/opensource/core-utils/vendor_framework_compatibility_matrix.xml
+DEVICE_MANIFEST_FILE += \
+    $(COMMON_PATH)/manifest.xml
+ODM_MANIFEST_FILES := $(COMMON_PATH)/manifest-qva.xml
 
 # WiFi
 CONFIG_ACS := true
