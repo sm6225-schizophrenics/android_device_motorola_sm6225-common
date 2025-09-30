@@ -11,6 +11,15 @@ ro.mot.eri.losalert.delay=100
 ro.vold.umsdirtyratio=20
 power.saving.mode=1
 
+# Bluetooth
+bluetooth.hardware.power.idle_cur_ma=7
+bluetooth.hardware.power.operating_voltage_mv=3700
+bluetooth.hardware.power.rx_cur_ma=75
+bluetooth.hardware.power.tx_cur_ma=93
+
+# Cutout
+ro.support_hide_display_cutout=true
+
 # LMKD
 ro.config.use_compaction
 ro.lmk.thrashing_limit=30

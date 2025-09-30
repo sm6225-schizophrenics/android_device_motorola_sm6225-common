@@ -24,7 +24,7 @@ namespace_imports = [
     'vendor/qcom/common/system/display',
     "vendor/qcom/common/system/perf",
     'vendor/qcom/common/vendor/gps-legacy',
-    'vendor/qcom/common/vendor/display/4.19',
+    'vendor/qcom/common/vendor/display/5.15',
     'vendor/qcom/common/vendor/display',
     'vendor/qcom/common/vendor/keymaster'
 ]
@@ -38,9 +38,13 @@ lib_fixups: lib_fixups_user_type = {
     **lib_fixups,
     (
         'com.qualcomm.qti.dpm.api@1.0',
-        'vendor.qti.imsrtpservice@3.0'
+        'vendor.qti.imsrtpservice@3.0',
+        'vendor.qti.imsrtpservice@3.1'
     ): lib_fixup_vendor_suffix,
     (
+        'libagmclient',
+        'libar-gsl',
+        'liblx-osal',
         'libqsap_sdk',
         'libwpa_client',
         'libril'
@@ -50,8 +54,6 @@ lib_fixups: lib_fixups_user_type = {
 blob_fixups: blob_fixups_user_type = {
     'system_ext/etc/permissions/moto-telephony.xml': blob_fixup()
         .regex_replace('/system/', '/system_ext/'),
-    'system_ext/priv-app/ims/ims.apk': blob_fixup()
-        .apktool_patch('ims-patches'),
     'vendor/lib64/vendor.qti.hardware.camera.postproc@1.0-service-impl.so': blob_fixup()
         .sig_replace('13 0A 00 94', '1F 20 03 D5'),
     'vendor/lib64/libwvhidl.so': blob_fixup()

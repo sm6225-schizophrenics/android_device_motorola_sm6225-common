@@ -5,9 +5,6 @@
 
 HARDWARE_PATH := hardware/motorola
 
-# Add common definitions for Qualcomm
-$(call inherit-product, device/qcom/common/common.mk)
-
 # Enable whole-program R8 Java optimizations for system_server.
 FULL_SYSTEM_OPTIMIZE_JAVA := true
 
@@ -19,10 +16,12 @@ AB_OTA_PARTITIONS += \
     dtbo \
     product \
     system \
+    system_dlkm \
     system_ext \
     vbmeta \
-    vendor
-
+    vendor \
+    vendor_dlkm
+    
 PRODUCT_PACKAGES += \
     update_engine \
     update_engine_sideload \
@@ -43,17 +42,20 @@ AB_OTA_POSTINSTALL_CONFIG += \
 PRODUCT_PACKAGES += \
     checkpoint_gc \
     otapreopt_script
-    
-PRODUCT_VIRTUAL_AB_COMPRESSION_METHOD := lz4
 
 # AAPT
 PRODUCT_AAPT_CONFIG := normal
 PRODUCT_AAPT_PREF_CONFIG := xxhdpi
 
 # Audio
+SOONG_CONFIG_NAMESPACES += android_hardware_audio
+SOONG_CONFIG_android_hardware_audio += \
+    run_64bit
+SOONG_CONFIG_android_hardware_audio_run_64bit := true
+
 PRODUCT_PACKAGES += \
     audio.bluetooth.default \
-    audio.primary.bengal \
+    audio.primary.default \
     audio.r_submix.default \
     audio.usb.default \
     sound_trigger.primary.bengal
@@ -61,51 +63,27 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     android.hardware.audio@2.0-impl \
     android.hardware.audio@4.0-impl \
-    android.hardware.audio@6.0-impl \
-    android.hardware.audio.effect@6.0-impl \
+    android.hardware.audio@7.1-impl \
+    android.hardware.audio.effect@7.1-impl \
     android.hardware.audio.service \
-    android.hardware.bluetooth.audio-impl \
     android.hardware.soundtrigger@2.3-impl
 
 PRODUCT_PACKAGES += \
-    firmware_aw_cali.bin_symlink \
-    liba2dpoffload \
+    audioadsprpcd \
+    libvolumelistener \
     libbatterylistener \
-    libcomprcapture \
-    libexthwplugin \
-    libhdmiedid \
-    libhfp \
-    libsndmonitor \
-    libspkrprot \
-    libssrec
-
-PRODUCT_PACKAGES += \
-    libaudiopreprocessing \
-    libbundlewrapper \
-    libdownmix \
-    libdynproc \
-    libeffectproxy \
-    libldnhncr \
-    libqcompostprocbundle \
-    libqcomvisualizer \
-    libqcomvoiceprocessing \
-    libreverbwrapper \
-    libvisualizer \
-    libvolumelistener
+    libhfp_pal
 
 # Audio - Configs
 PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/audio/audio_effects.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio_effects.xml \
-    $(LOCAL_PATH)/audio/audio_io_policy.conf:$(TARGET_COPY_OUT_VENDOR)/etc/audio_io_policy.conf \
-    $(LOCAL_PATH)/audio/audio_policy_configuration.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio_policy_configuration.xml \
-    $(LOCAL_PATH)/audio/audio_policy_configuration_a2dp_offload_disabled.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio_policy_configuration_a2dp_offload_disabled.xml \
-    $(LOCAL_PATH)/audio/audio_policy_configuration_a2dp_offload_disabled.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio/audio_policy_configuration.xml \
-    $(LOCAL_PATH)/audio/bluetooth_hearing_aid_audio_policy_configuration.xml:$(TARGET_COPY_OUT_VENDOR)/etc/bluetooth_hearing_aid_audio_policy_configuration.xml \
-    $(LOCAL_PATH)/audio/sound_trigger_mixer_paths.xml:$(TARGET_COPY_OUT_VENDOR)/etc/sound_trigger_mixer_paths.xml \
-    $(LOCAL_PATH)/audio/sound_trigger_platform_info.xml:$(TARGET_COPY_OUT_VENDOR)/etc/sound_trigger_platform_info.xml
+    $(call find-copy-subdir-files,*,$(LOCAL_PATH)/audio/,$(TARGET_COPY_OUT_VENDOR)/etc)
 
 PRODUCT_COPY_FILES += \
-    frameworks/av/services/audiopolicy/config/bluetooth_audio_policy_configuration.xml:$(TARGET_COPY_OUT_VENDOR)/etc/bluetooth_audio_policy_configuration.xml \
+    $(LOCAL_PATH)/audio/audio_policy_configuration.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio/audio_policy_configuration.xml \
+    $(LOCAL_PATH)/audio/audio_policy_configuration.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio_policy_configuration.xml
+
+PRODUCT_COPY_FILES += \
+    frameworks/av/services/audiopolicy/config/bluetooth_audio_policy_configuration_7_0.xml:$(TARGET_COPY_OUT_VENDOR)/etc/bluetooth_audio_policy_configuration_7_0.xml \
     frameworks/av/services/audiopolicy/config/r_submix_audio_policy_configuration.xml:$(TARGET_COPY_OUT_VENDOR)/etc/r_submix_audio_policy_configuration.xml \
     frameworks/av/services/audiopolicy/config/usb_audio_policy_configuration.xml:$(TARGET_COPY_OUT_VENDOR)/etc/usb_audio_policy_configuration.xml
 
@@ -121,8 +99,16 @@ $(call soong_config_set,QTI_GPT_UTILS,USE_BSG_FRAMEWORK,false)
 
 # Camera
 PRODUCT_PACKAGES += \
+    android.hardware.camera.device@3.6.vendor \
     android.hardware.camera.provider@2.4-impl \
-    android.hardware.camera.provider@2.4-service_64
+    android.hardware.camera.provider@2.4-service_64 \
+    libcamera2ndk_vendor \
+    libdng_sdk.vendor \
+    libgui_vendor \
+    libstdc++.vendor \
+    libpiex_shim \
+    vendor.qti.hardware.camera.device@1.0.vendor \
+    vendor.qti.hardware.camera.postproc@1.0.vendor
 
 # ConfigStore
 PRODUCT_PACKAGES += \
@@ -140,21 +126,10 @@ USE_DEX2OAT_DEBUG := false
 
 # Display
 TARGET_DISPLAY_USE_SMOOTH_MOTION := true
-TARGET_USE_AIDL_QTI_MEMTRACK := true
 
 PRODUCT_PACKAGES += \
-    android.hardware.graphics.mapper@3.0-impl-qti-display \
-    android.hardware.graphics.mapper@4.0-impl-qti-display \
-    gralloc.qcom \
-    vendor.qti.hardware.display.allocator-service \
-    vendor.qti.hardware.display.composer-service \
-    vendor.qti.hardware.memtrack-service \
-    vendor.qti.hardware.display.config-V2-ndk_platform.vendor \
-    vendor.qti.hardware.display.config-V5-ndk_platform.vendor
-
-PRODUCT_PACKAGES += \
-    init.qti.display_boot.rc \
-    init.qti.display_boot.sh
+    android.frameworks.displayservice@1.0.vendor \
+    gralloc.qcom
     
 # Dolby
 $(call inherit-product, hardware/dolby/dolby.mk)
@@ -169,12 +144,6 @@ PRODUCT_PACKAGES += \
 
 # FM
 $(call inherit-product, vendor/motorola/MotoFm/common.mk)
-
-# GPS configs
-PRODUCT_PACKAGES += \
-    flp.conf \
-    gps.conf \
-    izat.conf
     
 # Hardware Motorola
 $(call inherit-product, $(HARDWARE_PATH)/common.mk)
@@ -195,12 +164,8 @@ PRODUCT_PACKAGES += \
     init.mmi.dalvik.rc \
     init.mmi.rc \
     init.target.rc \
-    ueventd.motobengal.rc
-
-# IPACM
-PRODUCT_PACKAGES += \
-    ipacm \
-    IPACM_cfg.xml
+    ueventd.motobengal.rc \
+    vendor_modprobe.sh
     
 # Low RAM
 TARGET_HAS_LOW_RAM := true
@@ -211,26 +176,24 @@ PRODUCT_ENABLE_UFFD_GC := true
 # Media
 MSM_VIDC_TARGET_LIST := bengal
 
-include hardware/qcom/media/conf_files/bengal/bengal.mk
+PRODUCT_COPY_FILES += \
+    $(call find-copy-subdir-files,*,$(LOCAL_PATH)/media/,$(TARGET_COPY_OUT_VENDOR)/etc)
 
 PRODUCT_COPY_FILES += \
     device/qcom/common/vendor/media/media_profiles.xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_profiles.xml
 
 PRODUCT_PACKAGES += \
-    libOmxCore \
-    libOmxVdec \
-    libOmxVenc \
-    libstagefrighthw \
-    libc2dcolorconvert \
-    init.qti.media.rc \
-    init.qti.media.sh
-
-PRODUCT_PACKAGES += \
+    libavservices_minijail \
     libavservices_minijail.vendor \
-    libgui_vendor \
-    libstagefright_softomx.vendor \
-    libstagefright_softomx_plugin.vendor \
-    vendor.qti.hardware.capabilityconfigstore@1.0.vendor
+    libcodec2_hidl@1.0.vendor \
+    libcodec2_vndk.vendor \
+    libsfplugin_ccodec_utils.vendor \
+    libplatformconfig \
+    libOmxCore
+
+# Media stagefright
+PRODUCT_PACKAGES += \
+    libstagefrighthw
 
 # MotoActions
 PRODUCT_PACKAGES += \
@@ -259,8 +222,6 @@ PRODUCT_USE_DYNAMIC_PARTITIONS := true
 
 # Permissions
 PRODUCT_COPY_FILES += \
-    frameworks/native/data/etc/android.hardware.bluetooth.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.bluetooth.xml \
-    frameworks/native/data/etc/android.hardware.bluetooth_le.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.bluetooth_le.xml \
     frameworks/native/data/etc/android.hardware.camera.flash-autofocus.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.camera.flash-autofocus.xml \
     frameworks/native/data/etc/android.hardware.camera.front.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.camera.front.xml \
     frameworks/native/data/etc/android.hardware.camera.full.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.camera.full.xml \
@@ -269,6 +230,7 @@ PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.hardware.opengles.aep.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.opengles.aep.xml \
     frameworks/native/data/etc/android.hardware.se.omapi.uicc.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.se.omapi.uicc.xml \
     frameworks/native/data/etc/android.hardware.sensor.accelerometer.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.sensor.accelerometer.xml \
+    frameworks/native/data/etc/android.hardware.sensor.barometer.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.sensor.barometer.xml \
     frameworks/native/data/etc/android.hardware.sensor.compass.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.sensor.compass.xml \
     frameworks/native/data/etc/android.hardware.sensor.gyroscope.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.sensor.gyroscope.xml \
     frameworks/native/data/etc/android.hardware.sensor.light.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.sensor.light.xml \
@@ -291,13 +253,13 @@ PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.software.ipsec_tunnels.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.software.ipsec_tunnels.xml \
     frameworks/native/data/etc/android.software.midi.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.software.midi.xml \
     frameworks/native/data/etc/android.software.verified_boot.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.software.verified_boot.xml \
-    frameworks/native/data/etc/android.software.vulkan.deqp.level-2020-03-01.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.software.vulkan.deqp.level.xml
+    frameworks/native/data/etc/android.software.opengles.deqp.level-2022-03-01.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.software.opengles.deqp.level.xml \
+    frameworks/native/data/etc/android.software.vulkan.deqp.level-2022-03-01.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.software.vulkan.deqp.level.xml
     
 # Platform
 TARGET_BOARD_PLATFORM := bengal
-
-# Prebuilt Headers
-PRODUCT_VENDOR_KERNEL_HEADERS := kernel/motorola/kernel-headers
+TARGET_BOARD_SUFFIX := _515
+TARGET_KERNEL_VERSION := 5.15
     
 # Preopt SystemUI
 PRODUCT_DEXPREOPT_SPEED_APPS += SystemUIGoogle  # For internal
@@ -306,12 +268,22 @@ PRODUCT_DEXPREOPT_SPEED_APPS += SystemUI        # For AOSP
 # Properties
 PRODUCT_VENDOR_PROPERTY_BLACKLIST := \
     ro.carrier
+    
+# Prebuilt Headers
+PRODUCT_VENDOR_KERNEL_HEADERS := kernel/motorola/kernel-headers
 
 # Public libraries
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/public.libraries.txt:$(TARGET_COPY_OUT_VENDOR)/etc/public.libraries.txt
     
 # QTI
+TARGET_ADRENO_COMPONENT_VARIANT := adreno
+TARGET_GPS_COMPONENT_VARIANT := gps
+TARGET_MEDIA_COMPONENT_VARIANT := media
+TARGET_PERF_COMPONENT_VARIANT := perf
+TARGET_WLAN_COMPONENT_VARIANT := wlan
+TARGET_USE_AIDL_QTI_HEALTH := true
+
 TARGET_COMMON_QTI_COMPONENTS := \
     alarm \
     av \
@@ -349,18 +321,16 @@ PRODUCT_SOONG_NAMESPACES += \
 # Telephony
 PRODUCT_PACKAGES += \
     libjson \
-    android.hardware.radio.config@1.2.vendor \
-    android.hardware.radio@1.4.vendor \
+    android.hardware.radio.config@1.3.vendor \
+    android.hardware.radio@1.6.vendor \
     android.hardware.radio.deprecated@1.0.vendor \
-    android.hardware.secure_element@1.0 \
-    android.hardware.secure_element@1.0.vendor \
+    android.hardware.secure_element@1.2.vendor \
     rild \
     librmnetctl \
     libprotobuf-cpp-full
-
-# Thermal
-PRODUCT_PACKAGES += \
-    android.hardware.thermal-service.qti
+    
+# USB
+PRODUCT_HAS_GADGET_HAL := true
 
 # Wifi
 PRODUCT_PACKAGES += \
@@ -373,9 +343,7 @@ PRODUCT_PACKAGES += \
     
 # Wifi - Configs
 PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/wifi/p2p_supplicant_overlay.conf:$(TARGET_COPY_OUT_VENDOR)/etc/wifi/p2p_supplicant_overlay.conf \
-    $(LOCAL_PATH)/wifi/WCNSS_qcom_cfg.ini:$(TARGET_COPY_OUT_VENDOR)/etc/wifi/WCNSS_qcom_cfg.ini \
-    $(LOCAL_PATH)/wifi/wpa_supplicant_overlay.conf:$(TARGET_COPY_OUT_VENDOR)/etc/wifi/wpa_supplicant_overlay.conf
+    $(LOCAL_PATH)/wifi/WCNSS_qcom_cfg.ini:$(TARGET_COPY_OUT_VENDOR)/etc/wifi/WCNSS_qcom_cfg.ini
 
 # Get non-open-source specific aspects
 $(call inherit-product, vendor/motorola/sm6225-common/sm6225-common-vendor.mk)
