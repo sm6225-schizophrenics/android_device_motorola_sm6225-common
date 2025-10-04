@@ -12,6 +12,8 @@ on init
     chmod 0640 /proc/driver/mmi_annotate
 
 on early-init
+    exec u:r:vendor_modprobe:s0 -- /vendor/bin/modprobe -a -d /vendor/lib/modules exfat
+
     # Need to wait for platform path for UTAGs driver to succeed
     wait /dev/block/platform/soc/${ro.boot.bootdevice}/by-name/hw
 
@@ -49,6 +51,7 @@ on early-init
     write /sys/module/msm_show_resume_irq/parameters/debug_mask 1
 
 on fs
+    insmod /vendor/lib/modules/cci_intf.ko
     mkdir /mnt/vendor/persist/fps 0770 system system
     exec_start vendor.ident-fps-sh
 
