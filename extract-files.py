@@ -9,6 +9,7 @@ from extract_utils.fixups_blob import (
     blob_fixups_user_type,
 )
 from extract_utils.fixups_lib import (
+    lib_fixup_remove,
     lib_fixups,
     lib_fixups_user_type,
 )
@@ -19,7 +20,6 @@ from extract_utils.main import (
 
 namespace_imports = [
     'device/motorola/sm6225-common',
-    'hardware/motorola',
     'vendor/qcom/opensource/dataservices',
 ]
 
@@ -35,6 +35,9 @@ lib_fixups: lib_fixups_user_type = {
         'vendor.qti.hardware.fm@1.0',
         'vendor.qti.imsrtpservice@3.0',
     ): lib_fixup_vendor_suffix,
+    (
+        'libqsap_sdk',
+    ): lib_fixup_remove,
 }
 
 blob_fixups: blob_fixups_user_type = {
