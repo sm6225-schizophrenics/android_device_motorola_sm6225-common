@@ -397,6 +397,7 @@ PRODUCT_PACKAGES += \
     vendor.qti.hardware.capabilityconfigstore@1.0.vendor
     
 PRODUCT_SYSTEM_EXT_PROPERTIES += \
+    debug.stagefright.ccodec=1 \
     media.settings.xml=/vendor/etc/media_profiles_vendor.xml \
     media.stagefright.thumbnail.prefer_hw_codecs=true \
     ro.media.recorder-max-base-layer-fps=60
