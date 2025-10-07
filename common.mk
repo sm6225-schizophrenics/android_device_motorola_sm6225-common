@@ -198,6 +198,8 @@ PRODUCT_PACKAGES += \
     vendor.lineage.health-service.default
 
 # Media
+MSM_VIDC_TARGET_LIST := bengal
+
 PRODUCT_PACKAGES += \
     libOmxCore \
     libOmxVdec \
