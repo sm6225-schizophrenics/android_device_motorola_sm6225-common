@@ -46,6 +46,10 @@ PRODUCT_AAPT_PREF_CONFIG := xxhdpi
 PRODUCT_PACKAGES += \
     android.hardware.atrace@1.0-service
 
+# ANT+
+PRODUCT_PACKAGES += \
+    com.dsi.ant@1.0.vendor
+
 # Audio
 PRODUCT_PACKAGES += \
     audio_amplifier.bengal \
@@ -59,9 +63,6 @@ PRODUCT_PACKAGES += \
     android.hardware.audio@6.0-impl \
     android.hardware.audio.effect@6.0-impl \
     android.hardware.audio.service \
-    android.hardware.bluetooth.audio@2.0-impl \
-    android.hardware.bluetooth.audio@2.1-impl \
-    android.hardware.bluetooth.audio@2.1.vendor \
     android.hardware.soundtrigger@2.3-impl
 
 PRODUCT_PACKAGES += \
@@ -105,6 +106,13 @@ PRODUCT_COPY_FILES += \
     frameworks/av/services/audiopolicy/config/bluetooth_audio_policy_configuration.xml:$(TARGET_COPY_OUT_VENDOR)/etc/bluetooth_audio_policy_configuration.xml \
     frameworks/av/services/audiopolicy/config/r_submix_audio_policy_configuration.xml:$(TARGET_COPY_OUT_VENDOR)/etc/r_submix_audio_policy_configuration.xml \
     frameworks/av/services/audiopolicy/config/usb_audio_policy_configuration.xml:$(TARGET_COPY_OUT_VENDOR)/etc/usb_audio_policy_configuration.xml
+    
+# Bluetooth
+PRODUCT_PACKAGES += \
+    android.hardware.bluetooth@1.0.vendor \
+    vendor.qti.hardware.bluetooth_audio@2.1.vendor \
+    vendor.qti.hardware.btconfigstore@1.0.vendor \
+    vendor.qti.hardware.btconfigstore@2.0.vendor
 
 # Bootctrl
 PRODUCT_PACKAGES += \
@@ -117,6 +125,14 @@ $(call soong_config_set,QTI_GPT_UTILS,USE_BSG_FRAMEWORK,false)
 PRODUCT_PACKAGES += \
     android.hardware.camera.provider@2.4-impl \
     android.hardware.camera.provider@2.4-service_64
+    
+PRODUCT_PACKAGES += \
+    android.frameworks.sensorservice@1.0 \
+    android.frameworks.sensorservice@1.0.vendor \
+    vendor.qti.hardware.camera.postproc@1.0.vendor
+    
+PRODUCT_PACKAGES += \
+    libgui_vendor
     
 # Data Services
 $(call inherit-product, vendor/qcom/opensource/dataservices/dataservices_vendor_product.mk)
@@ -131,14 +147,26 @@ PRODUCT_PACKAGES += \
     android.hardware.graphics.mapper@4.0-impl-qti-display \
     vendor.qti.hardware.display.allocator-service \
     vendor.qti.hardware.display.composer-service \
+    vendor.display.config@1.11.vendor \
+    vendor.qti.hardware.display.mapper@1.1.vendor \
+    vendor.qti.hardware.display.mapper@2.0.vendor \
+    vendor.qti.hardware.display.mapper@3.0.vendor \
+    vendor.qti.hardware.display.mapper@4.0.vendor \
     vendor.qti.hardware.memtrack-service
 
 PRODUCT_PACKAGES += \
     init.qti.display_boot.rc \
-    init.qti.display_boot.sh
+    init.qti.display_boot.sh \
+    libdisplayconfig.qti \
+    libdisplayconfig.system.qti \
+    libqdMetaData \
+    libqdMetaData.system \
+    libsdmcore \
+    libsdmutils
 
 # DRM
 PRODUCT_PACKAGES += \
+    android.hardware.drm@1.3.vendor \
     android.hardware.drm-service.clearkey
 
 # Fastbootd
@@ -177,6 +205,11 @@ PRODUCT_PACKAGES += \
 # Health
 PRODUCT_PACKAGES += \
     android.hardware.health-service.qti
+    
+# HIDL
+PRODUCT_PACKAGES += \
+    libhidltransport.vendor \
+    libhwbinder.vendor
 
 # Init
 PRODUCT_PACKAGES += \
@@ -223,6 +256,9 @@ PRODUCT_PACKAGES += \
     libOmxVenc \
     libstagefrighthw \
     libc2dcolorconvert
+    
+PRODUCT_PACKAGES += \
+    libavservices_minijail.vendor
 
 # Media - Configs
 PRODUCT_COPY_FILES += \
@@ -236,6 +272,10 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PACKAGES += \
     MotoActions \
     MotoCommonOverlay
+    
+# Net
+PRODUCT_PACKAGES += \
+    android.system.net.netd@1.1.vendor
 
 # NFC
 PRODUCT_PACKAGES += \
@@ -329,7 +369,7 @@ TARGET_BUILDS_OSS_SENSORS_SUBHAL := true
 
 PRODUCT_PACKAGES += \
     android.hardware.sensors-service.multihal \
-    android.frameworks.sensorservice@1.0
+    libsensorndkbridge
 
 # Soong namespaces
 PRODUCT_SOONG_NAMESPACES += \
@@ -337,7 +377,18 @@ PRODUCT_SOONG_NAMESPACES += \
     hardware/motorola \
     hardware/samsung \
     vendor/qcom/opensource/usb/etc
-
+    
+# Telephony
+PRODUCT_PACKAGES += \
+    android.hardware.radio@1.5.vendor \
+    android.hardware.radio.config@1.2.vendor \
+    android.hardware.radio.deprecated@1.0.vendor \
+    android.hardware.secure_element@1.2.vendor \
+    libjson \
+    libsqlite.vendor:64 \
+    libsysutils.vendor:64 \
+    libxml2
+    
 # Thermal
 PRODUCT_PACKAGES += \
     android.hardware.thermal-service.qti
