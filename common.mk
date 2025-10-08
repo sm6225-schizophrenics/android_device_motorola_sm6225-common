@@ -165,6 +165,12 @@ PRODUCT_PACKAGES += \
 # Fastbootd
 PRODUCT_PACKAGES += \
     fastbootd
+    
+# Fingerprint
+TARGET_BUILDS_OSS_BIOMETRICS := true
+
+PRODUCT_PACKAGES += \
+    android.hardware.biometrics.fingerprint@2.3.so.vendor
 
 # FM
 $(call inherit-product, vendor/motorola/MotoFm/common.mk)
