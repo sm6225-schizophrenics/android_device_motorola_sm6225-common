@@ -3,6 +3,8 @@
 # SPDX-License-Identifier: Apache-2.0
 #
 
+HARDWARE_PATH := hardware/motorola
+
 # A/B
 AB_OTA_UPDATER := true
 
