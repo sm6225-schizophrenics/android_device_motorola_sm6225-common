@@ -248,6 +248,4 @@
         <transport>hwbinder</transport>
         <fqname>@3.0::IRTPService/imsrtpservice</fqname>
     </hal>
-    <hal format="hidl">
-    </hal>
 </manifest>
