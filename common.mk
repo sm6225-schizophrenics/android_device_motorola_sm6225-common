@@ -304,6 +304,7 @@ TARGET_COMMON_QTI_COMPONENTS := \
     display \
     gps \
     keymaster \
+    overlay \
     perf \
     vibrator \
     wlan
