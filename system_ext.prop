@@ -1,9 +1,5 @@
 # CNE
-persist.vendor.cne.feature=1
 persist.vendor.cne.logging.qxdm=3974
-
-# DPM
-persist.vendor.dpm.feature=11
 
 # Legit Touch Hax
 touch.size.scale=1
@@ -21,6 +17,3 @@ TapSlop=1px
 
 # Media
 ro.media.recorder-max-base-layer-fps=60
-
-# Radio
-ril.subscription.types=RUIM
