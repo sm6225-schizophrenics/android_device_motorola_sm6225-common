@@ -7,7 +7,6 @@ ro.vendor.perf.scroll_opt=true
 
 # RAM
 ro.config.fha_enable=true
-ro.sys.fw.bg_apps_limit=32
 ro.config.dha_cached_max=16
 ro.config.dha_empty_max=42
 ro.config.dha_empty_init=32
