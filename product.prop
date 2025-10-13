@@ -29,6 +29,3 @@ ro.lowmemdetector.psi_high_stall_us=200000
 # Motorola
 ro.mot.build.customerid=global
 ro.vendor.mot.factory=false
-
-# System server
-arm64.memtag.process.system_server=off
