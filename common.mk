@@ -169,8 +169,7 @@ PRODUCT_PACKAGES += \
 $(call inherit-product, $(HARDWARE_PATH)/common.mk)
 
 # Health
-PRODUCT_PACKAGES += \
-    android.hardware.health-service.qti
+$(call inherit-product, vendor/qcom/opensource/healthd-ext/health-vendor-product.mk)
 
 # Init
 PRODUCT_PACKAGES += \
