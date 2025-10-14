@@ -8,12 +8,15 @@
 # ADSP - from LA.UM.9.15.2.r1-10600-KAMORTA.QSSI14.0
 vendor/bin/adsprpcd|2886f08eb674b6ced8bf6e9bb54761094ee7b74c
 vendor/bin/dspservice|081468b9bc63cab921ac1e37a95eb93bd16e23f9
+vendor/bin/loadalgo|7d3f0eda9dc6abf3973233dd10f7ef2529182b9c
 vendor/etc/init/vendor.qti.adsprpc-service.rc|54588df8e7da58c66838028d2284986b966c2d37
 vendor/etc/init/vendor.qti.hardware.dsp@1.0-service.rc|fbf2bb38ca6bdddf98c7123da9e1f263a4eec55f
 vendor/etc/seccomp_policy/vendor.qti.hardware.dsp.policy|f060101b26d3674bb173e5fc95e118f56a8ac15d
+vendor/lib/libcdsprpc.so|6b82904772f244b4c491ec214d1c70b5ce85432d
 vendor/lib/vendor.qti.hardware.dsp@1.0.so|8fcb647d22144c0ce005eae37e05e786d2b045be
 vendor/lib64/libadsp_default_listener.so|33f44a23edf2cf734658e762a19dfc207b1921b8
 vendor/lib64/libadsprpc.so|b6ed660a4478b8cf3950fa942526e69ba2b5f310
+vendor/lib64/libloadalgo_stub.so|f544ef182d9cdc77e02eb8cc2a29ce4c02d0ddfc
 vendor/lib64/vendor.qti.hardware.dsp@1.0.so|2b6b1ffd336e7524240cf9627b0fcec75e8eae5b
 
 # ADSP modules
@@ -51,25 +54,32 @@ vendor/lib/soundfx/libshoebox.so
 # Bluetooth - from LA.UM.9.15.2.r1-10600-KAMORTA.QSSI14.0
 vendor/bin/hw/android.hardware.bluetooth@1.0-service-qti|b0f73b4ac1a88607ec90b514b9602de423bb9be6
 vendor/etc/init/android.hardware.bluetooth@1.0-service-qti.rc|f4ee3b2da2b08647447869ade86ec63f7340accc
-vendor/lib64/hw/android.hardware.bluetooth@1.0-impl-qti.so|9e870e95c101f27195970d184776b7e8d14ceb51
-vendor/lib64/libbt-hidlclient.so|13e7ae0f423841ea5d6b722446acad3bbebf89ee
-vendor/lib64/libbtnv.so|7973f6eeaa23f85709682e6fca66d589f514563d
-vendor/lib64/libsoc_helper.so|cdd194a76c1ff4836411babeb329090c4eae8d3b
-vendor/lib64/libsoc_helper_jni.so|1ed6ebd7bd154e481617ce98273139d2b916094b
-
-# Bluetooth (A2DP) - from LA.UM.9.15.2.r1-10600-KAMORTA.QSSI14.0
+vendor/lib/btaudio_offload_if.so|a6a47f8397048e0286d6291b1996d6af16cbe241
+vendor/lib/hw/android.hardware.bluetooth@1.0-impl-qti.so|57f6e2f04b4c965baaf295b587ecfda0a1a73f26
 vendor/lib/hw/audio.bluetooth_qti.default.so|6ce26888f5b67e3e211a7cfe11554d842162ae07
 vendor/lib/hw/vendor.qti.hardware.bluetooth_audio@2.0-impl.so|7d9503fce83522d27bcdae531a4e0b320281f85f
 vendor/lib/hw/vendor.qti.hardware.bluetooth_audio@2.1-impl.so|a83e30d60645db71d5fcb57ef1dd708af95ed662
-vendor/lib/btaudio_offload_if.so|a6a47f8397048e0286d6291b1996d6af16cbe241
+vendor/lib/hw/vendor.qti.hardware.bluetooth_sar@1.1-impl.so|6a950eaa3066fcba19e1d94a04e5823059a951a8
+vendor/lib/hw/vendor.qti.hardware.btconfigstore@1.0-impl.so|de18f44f36a89f8fb8c8b6f5d2e0bff73acaabea
+vendor/lib/hw/vendor.qti.hardware.btconfigstore@2.0-impl.so|b2d984f5f0ed37f70b63a22d4d351d38b5c5e372
 vendor/lib/libbluetooth_audio_session_qti.so|0b306bac29ba1beff74c9e84785f0e77efb4402c
 vendor/lib/libbluetooth_audio_session_qti_2_1.so|b894e2e3768c2f3d6a21fae79a92663822e53450
-
-# Bluetooth (Configstore) - from LA.UM.9.15.2.r1-10600-KAMORTA.QSSI14.0
-vendor/lib64/hw/vendor.qti.hardware.btconfigstore@2.0-impl.so|91fc2e9d2560ff260e83f044d0dd05ab50dfa9ad
-
-# Bluetooth (SAR) - from LA.UM.9.15.2.r1-10600-KAMORTA.QSSI14.0
+vendor/lib/libbt-hidlclient.so|2648e2161b8423073a6449a4ec72b3fb33123e7a
+vendor/lib/libbtnv.so|887149605c2f810e9e996354d24d2fdd39d13e5c
+vendor/lib/vendor.qti.hardware.bluetooth_sar@1.0.so|42595c79d388cc5ba1c2f50a0caa20640d5d5708
+vendor/lib/vendor.qti.hardware.bluetooth_sar@1.1.so|b719b696b47d5ba10547bc7a969dd527e61ba650
+vendor/lib64/btaudio_offload_if.so|7c3dfa53e70b7706f1a69e56a9dda109b6ac500c
+vendor/lib64/hw/android.hardware.bluetooth@1.0-impl-qti.so|9e870e95c101f27195970d184776b7e8d14ceb51
+vendor/lib64/hw/audio.bluetooth_qti.default.so|e7f73d58e5f2a8ba9bb6aad8c5637c10841b066b
+vendor/lib64/hw/vendor.qti.hardware.bluetooth_audio@2.0-impl.so|e30c268c385d3a75f86969e70c91410d2ab8b5bb
+vendor/lib64/hw/vendor.qti.hardware.bluetooth_audio@2.1-impl.so|a36dad6cac456b033e34e98945281284d52d8304
 vendor/lib64/hw/vendor.qti.hardware.bluetooth_sar@1.1-impl.so|6afb681f9876d632c1369b11672a46e5d56b28c7
+vendor/lib64/hw/vendor.qti.hardware.btconfigstore@1.0-impl.so|473f93f5d500186121d4b844b388a83e1e22297d
+vendor/lib64/hw/vendor.qti.hardware.btconfigstore@2.0-impl.so|91fc2e9d2560ff260e83f044d0dd05ab50dfa9ad
+vendor/lib64/libbluetooth_audio_session_qti.so|5bd4b55dc98a0e67200ff5e84196667390e1a0e7
+vendor/lib64/libbluetooth_audio_session_qti_2_1.so|1a24b6a9badc091f61389f0a122523eff6eab08e
+vendor/lib64/libbt-hidlclient.so|13e7ae0f423841ea5d6b722446acad3bbebf89ee
+vendor/lib64/libbtnv.so|7973f6eeaa23f85709682e6fca66d589f514563d
 vendor/lib64/vendor.qti.hardware.bluetooth_sar@1.0.so|0eef499251b171cbb4099786fdc3c9877eb77a8e
 vendor/lib64/vendor.qti.hardware.bluetooth_sar@1.1.so|6e36d92f07d5adee0f3b3379a28788c75fd63365
 
@@ -81,7 +91,7 @@ vendor/lib64/vendor.qti.hardware.camera.postproc@1.0-service-impl.so
 # CDSP - from LA.UM.9.15.2.r1-10600-KAMORTA.QSSI14.0
 vendor/bin/cdsprpcd|2257675e907dce9ed4a328d66caae44096221bb8
 vendor/etc/init/vendor.qti.cdsprpc-service.rc|36772b70216796e8ef19376d9c6a81ee9ffff549
-vendor/lib/libcdsprpc.so|6b82904772f244b4c491ec214d1c70b5ce85432d
+vendor/lib/libfastcrc.so|c375e138d9a25c65014e06f08b47e46e8bc88d43
 vendor/lib64/libcdsp_default_listener.so|23a8dff8e8ab66d23c5de9aa3574dd3c64d113b4
 vendor/lib64/libcdsprpc.so|02921b47c4a0464ae3774fc130f2a6e1820e979f
 vendor/lib64/libmdsprpc.so|cbceda06c613a2e82acfc91a6e671f6d99be1ed9
@@ -160,12 +170,19 @@ vendor/bin/hw/vendor.qti.hardware.capabilityconfigstore@1.0-service|8faba5310d71
 vendor/etc/init/vendor.qti.hardware.capabilityconfigstore@1.0-service.rc|4ede0250585a44b01d351bbc301d7a13cc3d783d
 vendor/lib64/hw/vendor.qti.hardware.capabilityconfigstore@1.0-impl.so|2163df1cf52ef304f924bcc833947604036f4217
 
-# Display postprocessing - from LA.UM.9.15.2.r1-10600-KAMORTA.QSSI14.0
+# Diag - from LA.UM.9.15.2.r1-10600-KAMORTA.QSSI14.0
+vendor/lib/libdiag.so|143ab47c8da5f6530dc9e2da3d627a75e8469527
+vendor/lib64/libdiag.so|81b05ca03bcd66d078b4f6e296a26f34b536e091
+
+# Display - from LA.UM.9.15.2.r1-10600-KAMORTA.QSSI14.0
 vendor/bin/qdcmss|536c34abfbf7833df440bfcd264bacdc88318067
+vendor/etc/display/advanced_sf_offsets.xml|de6449ddd7fd4e975ae29ce5aeeda1d6dff275ee
 vendor/etc/init/qdcmss.rc|53d78d686678c4f923a9ec4ace7d4d3575b13788
 vendor/etc/init/vendor.display.color@1.0-service.rc|5ad673f879b3685a0e79b5633437e5499cb94f48
 vendor/lib64/libdisp-aba.so|894b0fe1ace5effb471ebb7437cd590a096e47d8
 vendor/lib64/libdpps.so|aded45bfd6df995e72342f7f4fa6f79dc0c6f226
+vendor/lib64/libmm-hdcpmgr.so|bacafd357b847581239b6d57f733404f6fb94ecc
+vendor/lib64/librcmask.so|8c766d8adb440b655af58f68c6b24d4e5a0affa8
 
 # DPM
 system_ext/bin/dpmd
@@ -375,10 +392,23 @@ vendor/lib64/libmmosal.so;MODULE_SUFFIX=_vendor|bed2543b929495e9b3eb14538d74adcd
 # OEM
 vendor/bin/motobox;SYMLINK=vendor/bin/expat
 
+# PD - from LA.UM.9.15.2.r1-10600-KAMORTA.QSSI14.0
+vendor/bin/pd-mapper|4aac33918475c5bfa0f51b30cc16ced4c805e6d6
+vendor/lib64/libpdmapper.so|d6058c9ed9f54d7a8066bb1323785f2683e2b517
+vendor/lib64/libpdnotifier.so|b9c908f3f2ba51ee998b4f2be68192a6878f6969
+
 # Peripheral manager - from LA.UM.9.15.2.r1-10600-KAMORTA.QSSI14.0
 vendor/bin/pm-proxy|8ea5c65add4af2dd1503023e8cfdcdf76b961c88
 vendor/bin/pm-service|8db29d527af4c10dad4bf398aa5cea2857ef78b9
 vendor/lib64/libperipheral_client.so|371cc38073c9d9bf8614f992e57a5a9891691191
+
+# QCV (SOC Helper) - from LA.UM.9.15.2.r1-10600-KAMORTA.QSSI14.0
+vendor/bin/init.qti.qcv.sh|355a70cde39583a7f2a07441ba5ab1ed4d7feb18
+vendor/etc/init/init.qti.qcv.rc|1d0cff5660bdf7abc22ac2b960a0dcd88404d740
+vendor/lib/libsoc_helper.so|8d4a7717f3fc559de9ef0f87180b7f0a7cec6490
+vendor/lib/libsoc_helper_jni.so|13d692294bea3fb90e46629edbfd7c31c37d293d
+vendor/lib64/libsoc_helper.so|cdd194a76c1ff4836411babeb329090c4eae8d3b
+vendor/lib64/libsoc_helper_jni.so|1ed6ebd7bd154e481617ce98273139d2b916094b
 
 # QMI
 system/etc/permissions/privapp-permissions-qti.xml
@@ -546,6 +576,11 @@ vendor/lib64/libssc_default_listener.so
 vendor/lib64/sensors.moto.so
 vendor/lib64/sensors.ssc.so
 
+# SMC Invoke - from LA.UM.9.15.2.r1-10600-KAMORTA.QSSI14.0
+vendor/etc/ssg/ta_config.json|e18554b038da3737b7352d1271e5fde9c789c9df
+vendor/etc/ssg/tz_whitelist.json|6d839497d2ad056f899a9bef8a1ec5916f19fad5
+vendor/lib64/libnative-api.so|fd6cf92e0347452288758b6ecc25b449535ecb61
+
 # Snapdragon Computer Vision Engine - from LA.UM.9.15.2.r1-10600-KAMORTA.QSSI14.0
 vendor/lib/libfastcvdsp_stub.so|7f27cee24281bc9bf4f08c6100cc66bd650d8efb
 vendor/lib/libfastcvopt.so|eb6e1052f12b45f2f651f1437e6072459648f2f3
@@ -568,6 +603,7 @@ vendor/lib64/vendor.qti.hardware.scve.panorama@1.0.so|2d463ceff139c3132b2c6936be
 
 # Soter - from LA.UM.9.15.2.r1-10600-KAMORTA.QSSI14.0
 vendor/bin/hw/vendor.qti.hardware.soter@1.0-service|8e315a85eeeb94a51f1533c80212d2fc0ec88760
+vendor/bin/vendor.qti.hardware.soter@1.0-provision|d1fbc5777ca05a7405b9e65e334b22894cf29155
 vendor/etc/init/vendor.qti.hardware.soter@1.0-service.rc|76447a61ad5529949365eeb7e8ca000e48bd28ae
 vendor/lib64/hw/vendor.qti.hardware.soter@1.0-impl.so|859ca42e0cbd88c896b174e7537c2d17643cf724
 vendor/lib64/vendor.qti.hardware.soter@1.0.so|8251cbf50d81918cb0ab298e4ed26d21748624f0
@@ -582,11 +618,19 @@ vendor/lib64/libsubsystem_control.so|eff7dd1899097f8e568e884dfc66ecc12259ae81
 vendor/lib/libthermalclient.so;DUMMY_SHARED_LIB
 vendor/lib64/libthermalclient.so;DUMMY_SHARED_LIB
 
-# Time services - from LA.UM.9.15.2.r1-10600-KAMORTA.QSSI14.0
+# TFTP - from LA.UM.9.15.2.r1-10600-KAMORTA.QSSI14.0
+vendor/bin/tftp_server;DISABLE_CHECKELF|101fc62916069a454771b48965e9d4976b662ffc
+vendor/etc/init/vendor.qti.tftp.rc|b27f188cbffba470a4510d50e46ff7c8446c22cb
+
+# Time - from LA.UM.9.15.2.r1-10600-KAMORTA.QSSI14.0
 vendor/app/TimeService/TimeService.apk|92317b3b72586489456d37057b4c3c8e55863923
 vendor/bin/time_daemon|5ac6b1af3c41eecad1e522df8e272db5fab86523
 vendor/etc/init/init.time_daemon.rc|b253ca2a498757e14e1d7a051bf504ae09218f51
 vendor/lib64/libtime_genoff.so|149197d93a67dbf787a57789298d5d67a4e04dda
+
+# TLOC - from LA.UM.9.15.2.r1-10600-KAMORTA.QSSI14.0
+vendor/bin/tloc_daemon|d7c9c9c0cdd6fa432c592b1c717b76a160a143b3
+vendor/etc/init/tloc_daemon.rc|9dd38e92847bc34f8a3228f4cd81ef14b6e89785
 
 # Trusted Execution Environment connector - from LA.UM.9.15.2.r1-10600-KAMORTA.QSSI14.0
 vendor/bin/hw/vendor.qti.hardware.qteeconnector@1.0-service|4167b12a9f09c52a4dc1555f243dec17051b8a23
@@ -597,6 +641,10 @@ vendor/lib64/libGPTEE_vendor.so|92c0215dbd3271e597d536c259df44aac716a402
 vendor/lib64/libQTEEConnector_listener.so|a05a271a35ff4f558f4665b4467b5eb66f56716b
 vendor/lib64/libQTEEConnector_vendor.so|30e5fd8d4fff50083f44f6d0bd09f4bd287a8366
 vendor/lib64/vendor.qti.hardware.qteeconnector@1.0.so|e97b21908ec942b5ea6c78100d46398fe1784d0e
+
+# UBWC - from LA.UM.9.15.2.r1-10600-KAMORTA.QSSI14.0
+vendor/lib/libstreamparser.so|49b5a007a6c6ec31a97c00062a421988536f6238
+vendor/lib/libvideoutils.so|8386c94816eb456f8eb78c2203da3aedd35226d1
 
 # VPP - from LA.UM.9.15.2.r1-10600-KAMORTA.QSSI14.0
 vendor/lib64/vendor.qti.hardware.vpp@1.1.so|05c88622d43390c3b4a216755b44c2e034c282e8
@@ -609,3 +657,41 @@ vendor/etc/vintf/manifest/manifest_android.hardware.drm@1.3-service.widevine.xml
 vendor/lib64/liboemcrypto.so
 vendor/lib64/libtrustedapploader.so
 vendor/lib64/libwvhidl.so
+
+# WiFi Display - from LA.UM.9.15.2.r1-10600-KAMORTA.QSSI14.0
+vendor/bin/wfdhdcphalservice|768476bd30672982e07937e8a765537cc23481c9
+vendor/bin/wfdvndservice|194bb3aef5237f05d0c8fab2c88846147a6cc55a
+vendor/bin/wifidisplayhalservice|36bddae1febbee1bb53a80646d17c0fe36199757
+vendor/etc/init/android.hardware.drm@1.1-service.wfdhdcp.rc|c266f08783a17f6583e3f22c85e55b0c200442ea
+vendor/etc/init/com.qualcomm.qti.wifidisplayhal@1.0-service.rc|576ce4393b7746b77a230745aa9e9ee3bd31b17d
+vendor/etc/init/wfdvndservice.rc|42e28fb8e0bf00620d7b9939b5bd3164ca671033
+vendor/etc/seccomp_policy/wfdhdcphalservice.policy|fa3af51919d4995027e41495a5d67caf9c101891
+vendor/etc/seccomp_policy/wfdvndservice.policy|b46f0c22a1f9b65c6750205e161c0a3f84ac716b
+vendor/etc/seccomp_policy/wifidisplayhalservice.policy|698f46d3a3b89be125e2fe88439c770e5c647037
+vendor/etc/wfdconfig.xml|9e13371f7ae509cc0bbb3f2ace93c5ea5d87bf0f
+vendor/lib/libFileMux_proprietary.so|350e50a857eaca20feb77e9c886068055818c3bc
+vendor/lib/libmm-hdcpmgr.so|bf1cf616023ed7a84f44ab323002dd368785d679
+vendor/lib/libmmrtpdecoder_proprietary.so|f95339c9cd1128bd1425c148b90fae8555720d3e
+vendor/lib/libmmrtpencoder_proprietary.so|399e4f5edae72e267828b4abea04a1b1a02eff30
+vendor/lib/libwfdcodecv4l2_proprietary.so|90934119102a43642f6ea3954116c300a8a3ed71
+vendor/lib/libwfdcommonutils_proprietary.so|a78458e66d3997603b3eca36641fec9e6ff6fa6f
+vendor/lib/libwfdconfigutils_proprietary.so|6b309e2a855ee926138d426b0687f0b4a2488102
+vendor/lib/libwfddisplayconfig_proprietary.so|f24b3956a71df1f9602a0cfd486616e4f79c01bf
+vendor/lib/libwfdhdcpcp.so|92ea12f382eb63a96c3dafbecf7d90bf91d5b5e8
+vendor/lib/libwfdhdcpservice_proprietary.so|638d734d842c6eb5d5c3fd53d52b015b6c148fee
+vendor/lib/libwfdmminterface_proprietary.so|afb38905fdc951985357765e830e2a14720ce668
+vendor/lib/libwfdmmservice_proprietary.so|3e813eceb99e6c82184fad95a88ac5fe6a877a7d
+vendor/lib/libwfdmmsrc_proprietary.so;DISABLE_CHECKELF|9f7c7413ef233729b644bf01519fd16f88272958
+vendor/lib/libwfdmodulehdcpsession.so|b4c986dd4f079f0d3ce06b6711e58532a538ad5c
+vendor/lib/libwfdrtsp_proprietary.so|c3587bb20fcb047499e80d0ffd97a2d7db092248
+vendor/lib/libwfdsessionmodule.so|d85789795f1fcef320f49cf9f741ca3006602d7c
+vendor/lib/libwfdsourcesession_proprietary.so|c1eaaec718aca421dd4b8a294678a5695dfcb2be
+vendor/lib/libwfdsourcesm_proprietary.so|fb91ee8496251a2b64dfccdb6fe28863bbcce78c
+vendor/lib/libwfduibcinterface_proprietary.so|6c58302aa9d8b8ff044c6e79ddfb5ef9ce01b57e
+vendor/lib/libwfduibcsink_proprietary.so|1494b91472803b7d7e51044d50b96c4193251c82
+vendor/lib/libwfduibcsinkinterface_proprietary.so|c8b59137820fc3d27d9186b57bbcb8b06bc80299
+vendor/lib/libwfduibcsrc_proprietary.so|5ef39723ad9858b26c24a0c4853723a08183ef5c
+vendor/lib/libwfduibcsrcinterface_proprietary.so|826a3a7c9f81e63abe1cf805e6abca2d1e6e0afb
+vendor/lib/libwfdutils_proprietary.so|f60f70ba7efdcb773bed04815da7c88f2e63d6b9
+vendor/lib/vendor.qti.hardware.wifidisplaysession@1.0.so;MODULE_SUFFIX=_vendor|1c38bab7199c0ebd418749b16dc8e10610eaf17c
+vendor/lib/vendor.qti.hardware.wifidisplaysessionl@1.0-halimpl.so|13400d7a04bd2fefa77806de905bbe240f1e83f1
