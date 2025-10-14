@@ -7,10 +7,6 @@ import /vendor/etc/init/hw/init.mmi.dalvik.rc
 # Charge only mode configuration
 import /vendor/etc/init/hw/init.mmi.charge_only.rc
 
-on init
-    chown system log /proc/driver/mmi_annotate
-    chmod 0640 /proc/driver/mmi_annotate
-
 on early-init
     exec u:r:vendor_modprobe:s0 -- /vendor/bin/modprobe -a -d /vendor/lib/modules exfat
 
