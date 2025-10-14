@@ -63,7 +63,6 @@ PRODUCT_PACKAGES += \
 
 PRODUCT_PACKAGES += \
     firmware_aw_cali.bin_symlink \
-    liba2dpoffload \
     libbatterylistener \
     libcomprcapture \
     libexthwplugin \
