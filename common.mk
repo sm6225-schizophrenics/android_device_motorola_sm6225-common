@@ -5,9 +5,6 @@
 
 HARDWARE_PATH := hardware/motorola
 
-# Add common definitions for Qualcomm
-$(call inherit-product, device/qcom/common/common.mk)
-
 # Enable whole-program R8 Java optimizations for system_server.
 FULL_SYSTEM_OPTIMIZE_JAVA := true
 
