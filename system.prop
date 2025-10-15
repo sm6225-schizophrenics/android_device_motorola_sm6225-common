@@ -2,9 +2,6 @@
 debug.hwui.use_hint_manager=true
 debug.hwui.target_cpu_time_percent=30
 
-# Pre-Rendering
-ro.vendor.perf.scroll_opt=true
-
 # RAM
 ro.config.fha_enable=true
 ro.config.dha_cached_max=16

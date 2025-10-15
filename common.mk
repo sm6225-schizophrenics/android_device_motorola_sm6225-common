@@ -215,7 +215,6 @@ PRODUCT_PACKAGES += \
     init.qti.media.sh
 
 PRODUCT_PACKAGES += \
-    libavservices_minijail.vendor \
     libgui_vendor \
     libstagefright_softomx.vendor \
     libstagefright_softomx_plugin.vendor \
