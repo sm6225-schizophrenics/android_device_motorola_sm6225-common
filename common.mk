@@ -241,12 +241,6 @@ PRODUCT_PACKAGES += \
     NoCutoutOverlay
 
 # Partitions
-PRODUCT_PACKAGES += \
-    vendor_bt_firmware_mountpoint \
-    vendor_dsp_mountpoint \
-    vendor_firmware_mnt_mountpoint \
-    vendor_fsg_mountpoint
-
 PRODUCT_USE_DYNAMIC_PARTITIONS := true
 
 # Permissions
@@ -345,10 +339,6 @@ PRODUCT_SOONG_NAMESPACES += \
     hardware/motorola \
     hardware/samsung \
     vendor/qcom/opensource/usb/etc
-    
-# Thermal
-PRODUCT_PACKAGES += \
-    android.hardware.thermal-service.qti
 
 # USB
 PRODUCT_PACKAGES += \
