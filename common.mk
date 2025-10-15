@@ -360,10 +360,6 @@ PRODUCT_PACKAGES += \
     init.qcom.usb.rc \
     init.qcom.usb.sh
 
-# Wifi
-PRODUCT_PACKAGES += \
-    WifiResCommonOverlay
-
 # WiFi firmware symlinks
 PRODUCT_PACKAGES += \
     firmware_wlan_mac.bin_symlink \
