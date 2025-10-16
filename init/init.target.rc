@@ -56,6 +56,10 @@ on init
     chmod 0664 /dev/cpuctl/background/tasks
     chmod 0664 /dev/cpuctl/top-app/tasks
     chmod 0664 /dev/cpuctl/rt/tasks
+    
+    on boot
+    # GPU boost
+    chmod 0660 /sys/class/kgsl/kgsl-3d0/min_pwrlevel
 
 on early-fs
     start vold
