@@ -134,7 +134,6 @@ ro.surface_flinger.use_content_detection_for_refresh_rate=true
 ro.surface_flinger.wcg_composition_dataspace=143261696
 vendor.display.secure_preview_buffer_format=420_sp
 vendor.display.camera_noc_efficiency_factor=0.70
-vendor.display.disable_excl_rect_partial_fb=1
 vendor.display.disable_idle_time_hdr=1
 vendor.display.disable_idle_time_video=1
 vendor.display.disable_layer_stitch=0
