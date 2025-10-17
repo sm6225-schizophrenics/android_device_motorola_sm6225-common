@@ -12,8 +12,6 @@ vendor/bin/loadalgo|7d3f0eda9dc6abf3973233dd10f7ef2529182b9c
 vendor/etc/init/vendor.qti.adsprpc-service.rc|54588df8e7da58c66838028d2284986b966c2d37
 vendor/etc/init/vendor.qti.hardware.dsp@1.0-service.rc|fbf2bb38ca6bdddf98c7123da9e1f263a4eec55f
 vendor/etc/seccomp_policy/vendor.qti.hardware.dsp.policy|f060101b26d3674bb173e5fc95e118f56a8ac15d
-vendor/lib/libcdsprpc.so|6b82904772f244b4c491ec214d1c70b5ce85432d
-vendor/lib/vendor.qti.hardware.dsp@1.0.so|8fcb647d22144c0ce005eae37e05e786d2b045be
 vendor/lib64/libadsp_default_listener.so|33f44a23edf2cf734658e762a19dfc207b1921b8
 vendor/lib64/libadsprpc.so|b6ed660a4478b8cf3950fa942526e69ba2b5f310
 vendor/lib64/libloadalgo_stub.so|f544ef182d9cdc77e02eb8cc2a29ce4c02d0ddfc
@@ -169,10 +167,6 @@ vendor/lib64/vendor.qti.latency@2.1.so
 vendor/bin/hw/vendor.qti.hardware.capabilityconfigstore@1.0-service|8faba5310d71eb9d67c5a5e0dbc22ba423f714e7
 vendor/etc/init/vendor.qti.hardware.capabilityconfigstore@1.0-service.rc|4ede0250585a44b01d351bbc301d7a13cc3d783d
 vendor/lib64/hw/vendor.qti.hardware.capabilityconfigstore@1.0-impl.so|2163df1cf52ef304f924bcc833947604036f4217
-
-# Diag - from LA.UM.9.15.2.r1-10600-KAMORTA.QSSI14.0
-vendor/lib/libdiag.so|143ab47c8da5f6530dc9e2da3d627a75e8469527
-vendor/lib64/libdiag.so|81b05ca03bcd66d078b4f6e296a26f34b536e091
 
 # Display - from LA.UM.9.15.2.r1-10600-KAMORTA.QSSI14.0
 vendor/bin/qdcmss|536c34abfbf7833df440bfcd264bacdc88318067
@@ -405,8 +399,6 @@ vendor/lib64/libperipheral_client.so|371cc38073c9d9bf8614f992e57a5a9891691191
 # QCV (SOC Helper) - from LA.UM.9.15.2.r1-10600-KAMORTA.QSSI14.0
 vendor/bin/init.qti.qcv.sh|355a70cde39583a7f2a07441ba5ab1ed4d7feb18
 vendor/etc/init/init.qti.qcv.rc|1d0cff5660bdf7abc22ac2b960a0dcd88404d740
-vendor/lib/libsoc_helper.so|8d4a7717f3fc559de9ef0f87180b7f0a7cec6490
-vendor/lib/libsoc_helper_jni.so|13d692294bea3fb90e46629edbfd7c31c37d293d
 vendor/lib64/libsoc_helper.so|cdd194a76c1ff4836411babeb329090c4eae8d3b
 vendor/lib64/libsoc_helper_jni.so|1ed6ebd7bd154e481617ce98273139d2b916094b
 
@@ -582,14 +574,6 @@ vendor/etc/ssg/tz_whitelist.json|6d839497d2ad056f899a9bef8a1ec5916f19fad5
 vendor/lib64/libnative-api.so|fd6cf92e0347452288758b6ecc25b449535ecb61
 
 # Snapdragon Computer Vision Engine - from LA.UM.9.15.2.r1-10600-KAMORTA.QSSI14.0
-vendor/lib/libfastcvdsp_stub.so|7f27cee24281bc9bf4f08c6100cc66bd650d8efb
-vendor/lib/libfastcvopt.so|eb6e1052f12b45f2f651f1437e6072459648f2f3
-vendor/lib/libscveCommon.so|4be56b846f71f4ba8032471abf9f02dc5b01810c
-vendor/lib/libscveCommon_stub.so|89e1a3d3302b6809ae4ca1d80f6c2e0cd3c3b752
-vendor/lib/libscveObjectSegmentation.so|b60b43377262ef6cc7882ff5cc49d35e4c516670
-vendor/lib/libscveObjectSegmentation_stub.so|f1a139933c16c2fde367506fe0419c15684a2d3c
-vendor/lib/libscveObjectTracker.so|26318c862d3d56596fe7208ebcc3ae1900f7d55f
-vendor/lib/libscveObjectTracker_stub.so|cafdeed8fa0d51672806038065cf4ce38d442b6b
 vendor/lib64/libfastcvdsp_stub.so|9813b36faa8029bdb358126c2996207fc7704d32
 vendor/lib64/libfastcvopt.so|0796b9092eb285d7689a8e6c4478a88a1d7e6e87
 vendor/lib64/libscveCommon.so|237b6432dfb9d7b6ac5d5522591db0972755bb5b
@@ -615,7 +599,6 @@ vendor/bin/subsystem_ramdump|804a1b433124d5bd022e762e536b4ae5e6bb0f2b
 vendor/lib64/libsubsystem_control.so|eff7dd1899097f8e568e884dfc66ecc12259ae81
 
 # Thermal
-vendor/lib/libthermalclient.so;DUMMY_SHARED_LIB
 vendor/lib64/libthermalclient.so;DUMMY_SHARED_LIB
 
 # TFTP - from LA.UM.9.15.2.r1-10600-KAMORTA.QSSI14.0
