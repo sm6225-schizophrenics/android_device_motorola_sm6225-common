@@ -49,7 +49,7 @@ SOONG_CONFIG_rmnetctl_old_rmnet_data := true
 TARGET_DISABLE_POSTRENDER_CLEANUP := true
 
 # Filesystem
-TARGET_FS_CONFIG_GEN += $(COMMON_PATH)/mot_aids.fs
+TARGET_FS_CONFIG_GEN += $(COMMON_PATH)/configs/mot_aids.fs
     
 # Global LTO
 TARGET_GLOBAL_LTO := thin
@@ -145,10 +145,10 @@ BOARD_ROOT_EXTRA_SYMLINKS := \
     /vendor/fsg:/fsg
 
 # Properties
-TARGET_PRODUCT_PROP += $(COMMON_PATH)/product.prop
-TARGET_SYSTEM_PROP += $(COMMON_PATH)/system.prop
-TARGET_SYSTEM_EXT_PROP += $(COMMON_PATH)/system_ext.prop
-TARGET_VENDOR_PROP += $(COMMON_PATH)/vendor.prop
+TARGET_PRODUCT_PROP += $(COMMON_PATH)/configs/props/product.prop
+TARGET_SYSTEM_PROP += $(COMMON_PATH)/configs/props/system.prop
+TARGET_SYSTEM_EXT_PROP += $(COMMON_PATH)/configs/props/system_ext.prop
+TARGET_VENDOR_PROP += $(COMMON_PATH)/configs/props/vendor.prop
 
 # RIL
 ENABLE_VENDOR_RIL_SERVICE := true
@@ -169,8 +169,8 @@ BOARD_AVB_MAKE_VBMETA_IMAGE_ARGS += --flags 3
 # VINTF
 DEVICE_FRAMEWORK_COMPATIBILITY_MATRIX_FILE += \
     hardware/motorola/vintf/device_framework_matrix.xml
-DEVICE_MANIFEST_FILE += $(COMMON_PATH)/manifest.xml
-ODM_MANIFEST_FILES := $(COMMON_PATH)/manifest-qva.xml
+DEVICE_MANIFEST_FILE += $(COMMON_PATH)/configs/vintf/manifest.xml
+ODM_MANIFEST_FILES := $(COMMON_PATH)/configs/vintf/manifest-qva.xml
 
 # WiFi
 CONFIG_ACS := true
