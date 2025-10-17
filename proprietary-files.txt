@@ -372,11 +372,6 @@ vendor/lib64/libmmosal.so;MODULE_SUFFIX=_vendor|bed2543b929495e9b3eb14538d74adcd
 # OEM
 vendor/bin/motobox;SYMLINK=vendor/bin/expat
 
-# PD - from LA.UM.9.15.2.r1-10600-KAMORTA.QSSI14.0
-vendor/bin/pd-mapper|4aac33918475c5bfa0f51b30cc16ced4c805e6d6
-vendor/lib64/libpdmapper.so|d6058c9ed9f54d7a8066bb1323785f2683e2b517
-vendor/lib64/libpdnotifier.so|b9c908f3f2ba51ee998b4f2be68192a6878f6969
-
 # Peripheral manager - from LA.UM.9.15.2.r1-10600-KAMORTA.QSSI14.0
 vendor/bin/pm-proxy|8ea5c65add4af2dd1503023e8cfdcdf76b961c88
 vendor/bin/pm-service|8db29d527af4c10dad4bf398aa5cea2857ef78b9
@@ -521,14 +516,19 @@ vendor/radio/qcril_database/qcril.db
 vendor/radio/qcril_database/upgrade/0_initial.sql
 vendor/radio/qcril_database/upgrade/10_version_qcrildb.sql
 vendor/radio/qcril_database/upgrade/11_version_qcrildb.sql
-vendor/radio/qcril_database/upgrade/2_version_add_wps_config.sql
-vendor/radio/qcril_database/upgrade/3_version_update_wps_config.sql
 vendor/radio/qcril_database/upgrade/4_version_qcrildb.sql
 vendor/radio/qcril_database/upgrade/5_version_qcrildb.sql
 vendor/radio/qcril_database/upgrade/6_version_qcrildb.sql
 vendor/radio/qcril_database/upgrade/7_version_qcrildb.sql
 vendor/radio/qcril_database/upgrade/8_version_qcrildb.sql
 vendor/radio/qcril_database/upgrade/9_version_qcrildb.sql
+
+# RIL - from LA.UM.9.15.2.r1-10600-KAMORTA.QSSI14.0
+vendor/radio/qcril_database/upgrade/10_version_update_ecc_table.sql|1ca05b047116cbc776f71d3bdba4952b18b04229
+vendor/radio/qcril_database/upgrade/11_version_update_ecc_table.sql|ab2580e3e25fb02936eb760cba85f3b6139b8d34
+vendor/radio/qcril_database/upgrade/1_version_intro.sql|67b96cb3e94737bfe271b2519b9eb5fae17373a2
+vendor/radio/qcril_database/upgrade/2_version_add_wps_config.sql|b4a825ba20fea3e2f20c7f02c8bd64596c24a75e
+vendor/radio/qcril_database/upgrade/3_version_update_wps_config.sql|0571aacaf9fc0868c48bba2f7542f5b4e68c9022
 
 # Radio - Moto
 system/etc/permissions/moto-telephony.xml:system_ext/etc/permissions/moto-telephony.xml|164c70e2b45a88e50ec5b67dfc27ebad186d48b9
@@ -586,10 +586,6 @@ vendor/lib64/libsubsystem_control.so|eff7dd1899097f8e568e884dfc66ecc12259ae81
 
 # Thermal
 vendor/lib64/libthermalclient.so;DUMMY_SHARED_LIB
-
-# TFTP - from LA.UM.9.15.2.r1-10600-KAMORTA.QSSI14.0
-vendor/bin/tftp_server;DISABLE_CHECKELF|101fc62916069a454771b48965e9d4976b662ffc
-vendor/etc/init/vendor.qti.tftp.rc|b27f188cbffba470a4510d50e46ff7c8446c22cb
 
 # Time - from LA.UM.9.15.2.r1-10600-KAMORTA.QSSI14.0
 vendor/app/TimeService/TimeService.apk|92317b3b72586489456d37057b4c3c8e55863923
