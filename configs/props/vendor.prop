@@ -102,7 +102,6 @@ debug.hwui.target_cpu_time_percent=30
 debug.hwui.use_hint_manager=true
 debug.sf.enable_egl_image_tracker=0
 debug.sf.high_fps_early_gl_phase_offset_ns=-5000000
-debug.sf.disable_backpressure=1
 debug.sf.high_fps_early_phase_offset_ns=-5000000
 debug.sf.high_fps_late_app_phase_offset_ns=1000000
 debug.sf.high_fps_late_sf_phase_offset_ns=-5000000
