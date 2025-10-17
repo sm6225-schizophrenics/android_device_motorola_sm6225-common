@@ -157,12 +157,6 @@ PRODUCT_PACKAGES += \
 
 # FM
 $(call inherit-product, vendor/motorola/MotoFm/common.mk)
-
-# GPS configs
-PRODUCT_PACKAGES += \
-    flp.conf \
-    gps.conf \
-    izat.conf
     
 # Hardware Motorola
 $(call inherit-product, $(HARDWARE_PATH)/common.mk)
