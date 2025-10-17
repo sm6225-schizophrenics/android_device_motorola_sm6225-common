@@ -219,11 +219,6 @@ PRODUCT_PACKAGES += \
     MotoActions \
     MotoCommonOverlay
 
-# NFC
-PRODUCT_PACKAGES += \
-    com.android.nfc_extras \
-    Tag
-
 # Overlay
 DEVICE_PACKAGE_OVERLAYS += \
     $(LOCAL_PATH)/overlay
