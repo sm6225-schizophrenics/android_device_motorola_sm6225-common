@@ -133,7 +133,7 @@ USE_DEX2OAT_DEBUG := false
 
 # Display
 TARGET_DISPLAY_USE_SMOOTH_MOTION := true
-TARGET_DISABLE_MEMTRACK := true
+TARGET_USE_AIDL_QTI_MEMTRACK := true
 
 PRODUCT_PACKAGES += \
     android.frameworks.displayservice@1.0.vendor
