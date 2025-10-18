@@ -38,12 +38,15 @@ lib_fixups: lib_fixups_user_type = {
     **lib_fixups,
     (
         'com.qualcomm.qti.dpm.api@1.0',
-        'vendor.qti.imsrtpservice@3.0'
+        'vendor.qti.imsrtpservice@3.0',
+        'libmmosal',
+        'vendor.qti.hardware.wifidisplaysession@1.0'
     ): lib_fixup_vendor_suffix,
     (
         'libqsap_sdk',
         'libwpa_client',
         'libril'
+        
     ): lib_fixup_remove,
 }
 
