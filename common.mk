@@ -215,6 +215,10 @@ KERNEL_MODULES_INSTALL := vendor
 KERNEL_MODULES_OUT := $(OUT_DIR)/target/product/$(AOSPA_BUILD)/$(KERNEL_MODULES_INSTALL)/lib/modules
 TARGET_USES_KERNEL_PLATFORM := false
 
+# Lineage Health
+PRODUCT_PACKAGES += \
+    vendor.lineage.health-service.default
+
 # Media
 MSM_VIDC_TARGET_LIST := bengal
 
@@ -254,6 +258,8 @@ DEVICE_PACKAGE_OVERLAYS += \
     $(LOCAL_PATH)/overlay
 
 PRODUCT_ENFORCE_RRO_TARGETS := *
+PRODUCT_PACKAGES += \
+    NcmTetheringOverlay
 
 # Partitions
 PRODUCT_PACKAGES += \
@@ -314,6 +320,10 @@ PRODUCT_DEXPREOPT_SPEED_APPS += SystemUI        # For AOSP
 PRODUCT_VENDOR_PROPERTY_BLACKLIST := \
     ro.carrier
 
+# Properties
+PRODUCT_VENDOR_PROPERTY_BLACKLIST := \
+    ro.carrier
+
 # Public libraries
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/public.libraries.txt:$(TARGET_COPY_OUT_VENDOR)/etc/public.libraries.txt
@@ -335,6 +345,20 @@ TARGET_COMMON_QTI_COMPONENTS := \
 # RFS MSM MPSS symlinks
 PRODUCT_PACKAGES += \
     rfs_msm_mpss_readonly_vendor_fsg_symlink
+    
+# RIL
+PRODUCT_PACKAGES += \
+    android.hardware.radio@1.5.vendor \
+    android.hardware.radio.config@1.2.vendor \
+    android.hardware.radio.deprecated@1.0.vendor \
+    android.hardware.secure_element@1.2.vendor \
+    libjson \
+    libprotobuf-cpp-full-3.9.1-vendorcompat \
+    libprotobuf-cpp-lite-3.9.1-vendorcompat \
+    librmnetctl \
+    libsqlite.vendor:64 \
+    libsysutils.vendor:64 \
+    libxml2
 
 # Sensors
 TARGET_BUILDS_OSS_SENSORS_SUBHAL := true
@@ -350,23 +374,22 @@ $(call inherit-product, vendor/aospa-priv/config/common.mk)
 PRODUCT_SOONG_NAMESPACES += \
     $(LOCAL_PATH) \
     hardware/motorola \
-    hardware/samsung
-
-# Telephony
-PRODUCT_PACKAGES += \
-    libjson \
-    android.hardware.radio.config@1.2.vendor \
-    android.hardware.radio@1.4.vendor \
-    android.hardware.radio.deprecated@1.0.vendor \
-    android.hardware.secure_element@1.0 \
-    android.hardware.secure_element@1.0.vendor \
-    rild \
-    librmnetctl \
-    libprotobuf-cpp-full
+    hardware/samsung \
+    vendor/qcom/opensource/usb/etc
 
 # Thermal
 PRODUCT_PACKAGES += \
     android.hardware.thermal-service.qti
+
+# USB
+PRODUCT_PACKAGES += \
+    android.hardware.usb-service.qti \
+    android.hardware.usb.gadget-service.qti \
+    usb_compositions.conf
+
+PRODUCT_PACKAGES += \
+    init.qcom.usb.rc \
+    init.qcom.usb.sh
 
 # Wifi
 PRODUCT_PACKAGES += \
