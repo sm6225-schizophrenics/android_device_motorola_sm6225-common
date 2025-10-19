@@ -539,8 +539,8 @@ vendor/radio/qcril_database/upgrade/8_version_qcrildb.sql
 vendor/radio/qcril_database/upgrade/9_version_qcrildb.sql
 
 # Radio - Moto
-system/etc/permissions/moto-telephony.xml:system_ext/etc/permissions/moto-telephony.xml|164c70e2b45a88e50ec5b67dfc27ebad186d48b9
-system/framework/moto-telephony.jar:system_ext/framework/moto-telephony.jar|31a442f308f9421866b5ba009ce849a1ac10e6cb
+system/etc/permissions/moto-telephony.xml:system_ext/etc/permissions/moto-telephony.xml
+system/framework/moto-telephony.jar:system_ext/framework/moto-telephony.jar
 
 # Sensors
 vendor/bin/init.qcom.sensors.sh
