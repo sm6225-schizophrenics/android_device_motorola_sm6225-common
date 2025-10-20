@@ -7,12 +7,21 @@ import /vendor/etc/init/hw/init.mmi.dalvik.rc
 # Charge only mode configuration
 import /vendor/etc/init/hw/init.mmi.charge_only.rc
 
+# Chipset-specific file
+import /vendor/etc/init/hw/init.mmi.chipset.rc
+
+on early-boot
+    write /sys/module/subsystem_restart/parameters/disable_restart_work 0x0
+
 on init
     chown system log /proc/driver/mmi_annotate
     chmod 0640 /proc/driver/mmi_annotate
 
 on early-init
     exec u:r:vendor_modprobe:s0 -- /vendor/bin/modprobe -a -d /vendor/lib/modules exfat
+
+    # Need to wait for platform path for UTAGs driver to succeed
+    wait /dev/block/platform/soc/${ro.boot.bootdevice}/by-name/hw
 
     # Need to wait for platform path for UTAGs driver to succeed
     wait /dev/block/platform/soc/${ro.boot.bootdevice}/by-name/hw
@@ -80,6 +89,7 @@ on post-fs
     mkdir /mnt/vendor/persist/camera/ledcal 0775 camera vendor_tcmd
     mkdir /mnt/vendor/persist/camera/mot_ledcal 0775 camera camera
     mkdir /mnt/vendor/persist/camera/mot_gyrocal 0775 camera camera
+    mkdir /mnt/vendor/persist/batt_health 0775 vendor_pwric vendor_pwric
     mkdir /mnt/vendor/persist/mdm 0770 radio radio
     mkdir /mnt/vendor/persist/factory 0755 vendor_tcmd vendor_tcmd
     mkdir /mnt/vendor/persist/factory/audio 0755 vendor_tcmd system
@@ -139,6 +149,11 @@ on post-fs-data
 
     # Setup folder for Pre-Activation Kill Switch app (PAKS)
     mkdir /mnt/vendor/persist/paks 02770 vendor_tcmd vendor_tcmd
+
+    # Create directory used by power_supply_logger
+    mkdir /data/vendor/power_supply_logger 0750 vendor_pwric log
+    # Create directory power_supply_logger used by memtest and batt_health
+    mkdir /data/vendor_de/power_supply_logger 0770 root log
 
     chown vendor_pwric vendor_pwric /sys/class/power_supply/battery/cycle_count
     chmod 0664 /sys/class/power_supply/battery/cycle_count
@@ -207,6 +222,9 @@ on post-fs-data
     # Setup folder for aplogd
     mkdir /data/vendor/aplogd 0770 log log
 
+    # Create directory used by chargeonlymode
+    mkdir /data/vendor/chargeonly 0750 root log
+
     # Subsystem RAM-dumps
     mkdir /data/vendor/ss-ram-dumps 0750 system log
     mkdir /data/vendor/ss-ram-dumps/bp-dumps 0750 system log
@@ -224,6 +242,9 @@ on post-fs-data
     # Imager tuning metadata for camera subsystem
     mkdir /data/vendor/misc/imager/metadata 0771 camera camera
 
+    #Folder for hardware properties
+    mkdir /data/vendor/hardware_revisions 0755 system system
+    
     # NFC vendor data
     mkdir /data/vendor/nfc 0770 nfc nfc
 
@@ -245,6 +266,11 @@ on boot
    chown system system /sys/class/leds/red/brightness
    chmod 0664 /sys/class/leds/red/brightness
 
+    # MOTO, NJH348, IKHALFMWK-1864, change system max tcp buffer sizes based on RAT changes
+    # Define system changable TCP buffer max values
+    chown system system /proc/sys/net/core/rmem_max
+    chown system system /proc/sys/net/core/wmem_max
+    
    # Change ownership and permission for vibrator
    chown system system /sys/class/timed_output/vibrator/enable
    chmod 0660 /sys/class/timed_output/vibrator/enable
@@ -264,6 +290,12 @@ on boot
    chown audio audio /sys/kernel/aov/trigger
    chown audio audio /sys/kernel/aov/register
    chown audio audio /sys/kernel/aov/event
+
+   # Clear cooldown state
+   mkdir /mnt/vendor/persist/chargeonly 0770 system system
+   write /mnt/vendor/persist/chargeonly/cooldown n
+   chown system system /mnt/vendor/persist/chargeonly/cooldown
+   chmod 0660 /mnt/vendor/persist/chargeonly/cooldown
 
    # Quiet binder logs
    write /sys/module/binder/parameters/debug_mask 0x5
@@ -378,3 +410,30 @@ on property:vendor.hw.touch.status="ready"
 
 on property:ro.vendor.hw.pvtui=*
     setprop ro.hardware.device.pvtui ${ro.vendor.hw.pvtui}
+
+service vendor.charge_only_mode /vendor/bin/charge_only_mode
+    user root
+    group graphics system input
+    capabilities SYS_BOOT
+    disabled
+
+# Override the AOSP sensor HAL service definition
+# from hardware/interfaces/sensors/2.0/multihal
+# to add input and uhid group access
+service vendor.sensors-hal-2-0-multihal /vendor/bin/hw/android.hardware.sensors@2.0-service.multihal
+    class hal
+    user system
+    group system wakelock context_hub input uhid
+    writepid /dev/cpuset/system-background/tasks
+    capabilities BLOCK_SUSPEND
+    rlimit rtprio 10 10
+
+# from hardware/interfaces/sensors/2.1/multihal
+# to add input and uhid group access
+service vendor.sensors-hal-2-1-multihal /vendor/bin/hw/android.hardware.sensors@2.1-service.multihal
+    class hal
+    user system
+    group system wakelock context_hub input uhid
+    writepid /dev/cpuset/system-background/tasks
+    capabilities BLOCK_SUSPEND
+    rlimit rtprio 10 10

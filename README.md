@@ -1,4 +1,4 @@
-# Common device tree for Motorola SM6225 devices
+# Common device tree for Motorola bengal (sm4250, sm6115, sm6225) devices
 
 
 ```

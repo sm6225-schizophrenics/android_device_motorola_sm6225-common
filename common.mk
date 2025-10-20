@@ -258,8 +258,11 @@ PRODUCT_VENDOR_PROPERTIES += \
 
 # Init
 PRODUCT_PACKAGES += \
+    charger_fstab.qti \
+    charger_fw_fstab.qti \
     init.bengal.rc \
-    init.bengal.perf.rc 
+    init.bengal.perf.rc \
+    init.mmi.charge_only.rc \
     init.mmi.boot.sh \
     init.mmi.laser.sh \
     init.mmi.touch.sh \
@@ -269,6 +272,8 @@ PRODUCT_PACKAGES += \
     init.mmi.charge_only.rc \
     init.mmi.dalvik.rc \
     init.mmi.rc \
+    init.qti.chg_policy.sh \
+    init.qti.qcv.rc \
     init.target.rc 
     
 PRODUCT_COPY_FILES += \
@@ -460,6 +465,8 @@ PRODUCT_PACKAGES += \
 TARGET_BUILDS_OSS_SENSORS_SUBHAL := true
 
 PRODUCT_PACKAGES += \
+    android.hardware.sensors@2.0-service.multihal \
+    android.hardware.sensors@2.0-ScopedWakelock \
     android.hardware.sensors@2.0-ScopedWakelock.vendor \
     libsensorndkbridge
 

@@ -97,6 +97,7 @@ BOARD_ROOT_EXTRA_SYMLINKS := \
 
 # Recovery
 BOARD_INCLUDE_RECOVERY_DTBO := true
+TARGET_RECOVERY_WIPE := $(DEVICE_PATH)/recovery/recovery.wipe
 
 # Sepolicy
 include hardware/motorola/sepolicy/qti/SEPolicy.mk

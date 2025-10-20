@@ -31,6 +31,7 @@ vendor/lib/rfsa/adsp/libdspCV_skel.so
 vendor/lib/rfsa/adsp/libdsp_streamer_binning.so
 vendor/lib/rfsa/adsp/libfastcvadsp.so
 vendor/lib/rfsa/adsp/libfastcvdsp_skel.so
+<<<<<<< HEAD
 vendor/lib/rfsa/adsp/libmctfengine_skel.so
 vendor/lib/rfsa/adsp/libneat_1_1_skel.so
 vendor/lib/rfsa/adsp/libsns_device_mode_skel.so
@@ -45,6 +46,7 @@ vendor/lib/libacdbloader.so
 vendor/lib/libacdbrtac.so
 vendor/lib/libadiertac.so
 vendor/lib/libadm.so
+<<<<<<< HEAD
 vendor/lib/libaudcal.so
 vendor/lib/libqtigef.so
 
@@ -425,7 +427,6 @@ system/etc/permissions/moto-telephony.xml:system_ext/etc/permissions/moto-teleph
 system/framework/moto-telephony.jar:system_ext/framework/moto-telephony.jar
 
 # Sensors
-vendor/bin/init.qcom.sensors.sh
 vendor/bin/sensors.qti
 vendor/bin/sscrpcd
 vendor/etc/init/init.vendor.sensors.rc
@@ -491,9 +492,18 @@ vendor/lib64/libqsocket.so|33b007b455cd9bc6897d737a5a325570ee630ff0
 vendor/lib64/libsmemlog.so|ff9ef200029d21b8dd93eca663f120d07be0e3d9
 vendor/lib64/libsystem_health_mon.so|9b13ab7123f78ad044e5dd75f14dc7a4ae8267f3
 
-# RemoteFS - from LA.UM.9.15.2.r1-10600-KAMORTA.QSSI14.0
-vendor/bin/rmt_storage|f17d029997b6da068c50b93721e359463f043217
-vendor/etc/init/vendor.qti.rmt_storage.rc|bc212c6353c2ded44ae4d759605fbbe55aa4fa3f
+# RemoteFS
+vendor/bin/rmt_storage
+vendor/etc/init/vendor.qti.rmt_storage.rc
+
+# RIL
+vendor/bin/qmi_motext_hook
+vendor/lib64/libadropbox.so
+vendor/lib64/liblog_vendor.so
+vendor/lib64/libmdmcutback.so
+vendor/lib64/libmotext_inf.so
+vendor/lib64/libqmimotext.so
+vendor/lib64/libril-qcril-hook-oem.so
 
 # RIL - from LA.UM.9.15.2.r1-10600-KAMORTA.QSSI14.0
 vendor/bin/hw/qcrild|0d58199eb3438e5c23d40740a141db71a6ad1fea

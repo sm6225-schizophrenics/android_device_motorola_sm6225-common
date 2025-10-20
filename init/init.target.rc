@@ -68,6 +68,17 @@ on early-boot
     start vendor.sensors
 
 on boot
+# We want all cores for camera
+    mkdir /dev/cpuset/camera-daemon
+    write /dev/cpuset/camera-daemon/cpus 0-7
+    write /dev/cpuset/camera-daemon/mems 0
+    chown cameraserver cameraserver /dev/cpuset/camera-daemon
+    chown cameraserver cameraserver /dev/cpuset/camera-daemon/tasks
+    chmod 0660 /dev/cpuset/camera-daemon/tasks
+    # set default schedTune value for camera-daemon
+    write /dev/stune/camera-daemon/schedtune.prefer_idle 1
+    write /dev/stune/camera-daemon/schedtune.boost 0
+    
 #USB controller configuration
     setprop vendor.usb.rndis.func.name "gsi"
     setprop vendor.usb.rmnet.func.name "gsi"
@@ -87,6 +98,17 @@ on property:vendor.usb.controller=*
 
 on charger
     setprop vendor.usb.controller 4e00000.dwc3
+
+on init && property:ro.boot.mode=charger
+    mount_all /vendor/etc/charger_fw_fstab.qti --early
+    write /sys/kernel/boot_adsp/boot 1
+    wait /sys/class/power_supply/battery
+
+service vendor.lowi /vendor/bin/lowirpcd
+   class core
+   user system
+   group system wakelock
+   capabilities BLOCK_SUSPEND
 
 #pd-mapper
 service vendor.pd_mapper /vendor/bin/pd-mapper
@@ -148,7 +170,3 @@ service dcvs-sh /vendor/bin/init.qti.dcvs.sh
 
 on property:vendor.dcvs.prop=1
    start dcvs-sh
-
-on property:sys.boot_completed=1
-    # Disable statsd service to prevent additional battery drain
-    stop statsd

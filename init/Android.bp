@@ -11,9 +11,14 @@ prebuilt_etc {
 }
 
 prebuilt_etc {
+    name: "charger_fstab.qti",
+    src: "charger_fstab.qti",
+    vendor: true,
+}
+
+prebuilt_etc {
     name: "init.bengal.rc",
     src: "init.bengal.rc",
-    sub_dir: "init",
     vendor: true,
 }
 
@@ -57,6 +62,20 @@ sh_binary {
     vendor: true,
 }
 
+prebuilt_etc {
+    name: "init.mmi.charge_only.rc",
+    src: "init.mmi.charge_only.rc",
+    sub_dir: "init/hw",
+    vendor: true,
+}
+
+prebuilt_etc {
+    name: "init.mmi.chipset.rc",
+    src: "init.mmi.chipset.rc",
+    sub_dir: "init/hw",
+    vendor: true,
+}
+
 sh_binary {
     name: "init.mmi.touch.sh",
     src: "init.mmi.touch.sh",
@@ -67,6 +86,7 @@ sh_binary {
     name: "init.oem.hw.sh",
     src: "init.oem.hw.sh",
     vendor: true,
+}
 
 sh_binary {
     name: "init.qti.dcvs.sh",
@@ -75,7 +95,46 @@ sh_binary {
 }
 
 sh_binary {
+    name: "init.qcom.sensors.sh",
+    src: "init.qcom.sensors.sh",
+    vendor: true,
+}
+
+sh_binary {
     name: "init.qti.early_init.sh",
     src: "init.qti.early_init.sh",
     vendor: true,
+}
+
+sh_binary {
+    name: "init.qti.chg_policy.sh",
+    src: "init.qti.chg_policy.sh",
+    vendor: true,
+}
+
+prebuilt_etc {
+    name: "init.qti.qcv.rc",
+    src: "init.qti.qcv.rc",
+    sub_dir: "init",
+    vendor: true,
+}
+
+sh_binary {
+    name: "init.qti.qcv.sh",
+    src: "init.qti.qcv.sh",
+    vendor: true,
+}
+
+prebuilt_etc {
+    name: "init.target.rc",
+    src: "init.target.rc",
+    sub_dir: "init/hw",
+    vendor: true,
+}
+
+prebuilt_etc {
+    name: "ueventd.motobengal.rc",
+    filename: "ueventd.rc",
+    src: "ueventd.motobengal.rc",
+    device_specific: true,
 }
