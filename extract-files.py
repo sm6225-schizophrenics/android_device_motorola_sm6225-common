@@ -24,7 +24,6 @@ namespace_imports = [
     'hardware/qcom/display/gralloc',
     'hardware/qcom/display/libdebug',
     'hardware/qcom/display/sde-drm',
-    'hardware/qcom/media/mm-core',
     'hardware/motorola',
     'vendor/qcom/common/vendor/display',
     'vendor/qcom/common/vendor/display/4.19',
@@ -130,6 +129,8 @@ lib_fixups: lib_fixups_user_type = {
     ): lib_fixup_vendor_suffix,
     (
         'libwpa_client',
+        'libril',
+        'libqsap_sdk'
     ): lib_fixup_remove,
 }
 

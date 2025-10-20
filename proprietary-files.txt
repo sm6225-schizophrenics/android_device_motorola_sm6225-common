@@ -31,7 +31,6 @@ vendor/lib/rfsa/adsp/libdspCV_skel.so
 vendor/lib/rfsa/adsp/libdsp_streamer_binning.so
 vendor/lib/rfsa/adsp/libfastcvadsp.so
 vendor/lib/rfsa/adsp/libfastcvdsp_skel.so
-<<<<<<< HEAD
 vendor/lib/rfsa/adsp/libmctfengine_skel.so
 vendor/lib/rfsa/adsp/libneat_1_1_skel.so
 vendor/lib/rfsa/adsp/libsns_device_mode_skel.so
@@ -46,20 +45,12 @@ vendor/lib/libacdbloader.so
 vendor/lib/libacdbrtac.so
 vendor/lib/libadiertac.so
 vendor/lib/libadm.so
-<<<<<<< HEAD
 vendor/lib/libaudcal.so
 vendor/lib/libqtigef.so
 
 # Audio FX modules
 vendor/lib/soundfx/libasphere.so
 vendor/lib/soundfx/libshoebox.so
-
-# ANT+ - from LA.UM.9.15.2.r1-10600-KAMORTA.QSSI14.0
-vendor/lib64/hw/com.dsi.ant@1.0-impl.so|ecdf9f24262c49031c470b14a27d3f99d2b47ff4
-
-# libbatterylistener - from LA.UM.9.15.2.r1-10600-KAMORTA.QSSI14.0
-vendor/lib/libbatterylistener.so|71b4da03bdc4522b8829370093ebca3c90e86799
-vendor/lib64/libbatterylistener.so|ebd7be328d91c09eaf2073f78cb31560a882438b
 
 # Bluetooth - from LA.UM.9.15.2.r1-10600-KAMORTA.QSSI14.0
 vendor/bin/hw/android.hardware.bluetooth@1.0-service-qti|b0f73b4ac1a88607ec90b514b9602de423bb9be6
@@ -260,14 +251,6 @@ vendor/lib64/vendor.qti.hardware.embmssl@1.0-adapter-helper.so|ea1c0003f7ac057e6
 vendor/lib64/vendor.qti.hardware.embmssl@1.0.so;MODULE_SUFFIX=_vendor|e4fc8e5b0e7e9c609ed8c78309c3d6d86a131802
 vendor/lib64/vendor.qti.hardware.embmssl@1.1-adapter-helper.so|86a03bcc9a34bff0bd29f6c862da248fb81d7d55
 vendor/lib64/vendor.qti.hardware.embmssl@1.1.so;MODULE_SUFFIX=_vendor|a4f353cac95f9cf034a5a91fe6419f6fb85f3d70
-
-# Factory - from LA.UM.9.15.2.r1-10600-KAMORTA.QSSI14.0
-vendor/bin/hw/vendor.qti.hardware.factory@1.0-service|cacf96d37eb787d153ffaa3aa7312524045d8132
-vendor/bin/mmid|dd5fd065fae235b8eb05fbfad3f1ee910bf7316e
-vendor/etc/init/vendor.qti.hardware.factory@1.0-service.rc|b47de7097f6b81ad6a6b05f70a2678861fda69fb
-vendor/etc/permissions/vendor.qti.hardware.factory.xml|bedb01aed43b95943ac60f80cf351742ccb4a072
-vendor/lib64/vendor.qti.hardware.factory@1.0.so|26587947997ade3f691c58176d76a9a706bd187b
-vendor/lib64/vendor.qti.hardware.factory@1.1.so|845ecda4dfe0b2a0fded2d944c12f5ac70e4f081
 
 # FM - from LA.UM.9.15.2.r1-10600-KAMORTA.QSSI14.0
 vendor/lib64/hw/vendor.qti.hardware.fm@1.0-impl.so|084154df521025d3d6b4402cd8edcd06510e169c
@@ -500,10 +483,10 @@ vendor/etc/init/vendor.qti.rmt_storage.rc
 vendor/bin/qmi_motext_hook
 vendor/lib64/libadropbox.so
 vendor/lib64/liblog_vendor.so
-vendor/lib64/libmdmcutback.so
-vendor/lib64/libmotext_inf.so
+vendor/lib64/libmdmcutback.so;DISABLE_CHECKELF
+vendor/lib64/libmotext_inf.so;DISABLE_CHECKELF
 vendor/lib64/libqmimotext.so
-vendor/lib64/libril-qcril-hook-oem.so
+vendor/lib64/libril-qcril-hook-oem.so;DISABLE_CHECKELF
 
 # RIL - from LA.UM.9.15.2.r1-10600-KAMORTA.QSSI14.0
 vendor/bin/hw/qcrild|0d58199eb3438e5c23d40740a141db71a6ad1fea
@@ -619,7 +602,6 @@ vendor/lib64/libtime_genoff.so|149197d93a67dbf787a57789298d5d67a4e04dda
 
 # TLOC - from LA.UM.9.15.2.r1-10600-KAMORTA.QSSI14.0
 vendor/bin/tloc_daemon|d7c9c9c0cdd6fa432c592b1c717b76a160a143b3
-vendor/etc/init/tloc_daemon.rc|9dd38e92847bc34f8a3228f4cd81ef14b6e89785
 
 # Trusted Execution Environment connector - from LA.UM.9.15.2.r1-10600-KAMORTA.QSSI14.0
 vendor/bin/hw/vendor.qti.hardware.qteeconnector@1.0-service|4167b12a9f09c52a4dc1555f243dec17051b8a23

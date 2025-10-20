@@ -52,7 +52,6 @@ BOARD_KERNEL_CMDLINE := \
     lpm_levels.sleep_disabled=1 \
     service_locator.enable=1 \
     swiotlb=2048
-BOARD_KERNEL_IMAGE_NAME := Image.gz-dtb
 BOARD_KERNEL_PAGESIZE := 4096
 BOARD_KERNEL_SEPARATED_DTBO := true
 BOARD_MKBOOTIMG_ARGS += --header_version $(BOARD_BOOT_HEADER_VERSION)
@@ -97,7 +96,7 @@ BOARD_ROOT_EXTRA_SYMLINKS := \
 
 # Recovery
 BOARD_INCLUDE_RECOVERY_DTBO := true
-TARGET_RECOVERY_WIPE := $(DEVICE_PATH)/recovery/recovery.wipe
+TARGET_RECOVERY_WIPE := $(COMMON_PATH)/recovery/recovery.wipe
 
 # Sepolicy
 include hardware/motorola/sepolicy/qti/SEPolicy.mk
