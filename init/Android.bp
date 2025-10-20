@@ -1,5 +1,5 @@
 //
-// SPDX-FileCopyrightText: 2024 The LineageOS Project
+// SPDX-FileCopyrightText: 2024 The LineageOS Project, 2022 Paranoid Android
 // SPDX-License-Identifier: Apache-2.0
 //
 
@@ -7,6 +7,13 @@ prebuilt_etc {
     name: "init.mmi.charge_only.rc",
     src: "init.mmi.charge_only.rc",
     sub_dir: "init/hw",
+    vendor: true,
+}
+
+prebuilt_etc {
+    name: "init.bengal.rc",
+    src: "init.bengal.rc",
+    sub_dir: "init",
     vendor: true,
 }
 
@@ -21,6 +28,13 @@ prebuilt_etc {
     name: "init.mmi.rc",
     src: "init.mmi.rc",
     sub_dir: "init/hw",
+    vendor: true,
+}
+
+prebuilt_etc {
+    name: "init.bengal.perf.rc",
+    src: "init.bengal.perf.rc",
+    sub_dir: "init",
     vendor: true,
 }
 
@@ -53,7 +67,6 @@ sh_binary {
     name: "init.oem.hw.sh",
     src: "init.oem.hw.sh",
     vendor: true,
-}
 
 sh_binary {
     name: "init.qti.dcvs.sh",
