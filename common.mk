@@ -399,8 +399,6 @@ PRODUCT_SYSTEM_EXT_PROPERTIES += \
     mmp.enable.3g2=true \
     persist.mm.enable.prefetch=true
 
-PRODUCT_PROPERTY_OVERRIDES += debug.stagefright.omx_default_rank=0
-
 # Multi-gen LRU
 PRODUCT_VENDOR_PROPERTIES += \
     persist.device_config.mglru_native.lru_gen_config=all
