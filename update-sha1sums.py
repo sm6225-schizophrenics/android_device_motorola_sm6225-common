@@ -21,7 +21,7 @@ import sys
 from hashlib import sha1
 
 device = 'sm6225-common'
-vendor = 'xiaomi'
+vendor = 'motorola'
 
 with open('proprietary-files.txt', 'r') as f:
     lines = f.read().splitlines()

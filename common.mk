@@ -164,6 +164,15 @@ PRODUCT_VENDOR_PROPERTIES += \
 PRODUCT_PRODUCT_PROPERTIES += \
     ro.support_hide_display_cutout=true
     
+# Dalvik
+PRODUCT_VENDOR_PROPERTIES += \
+    dalvik.vm.heapstartsize=12m \
+    dalvik.vm.heapgrowthlimit=256m \
+    dalvik.vm.heapsize=512m \
+    dalvik.vm.heaptargetutilization=0.55 \
+    dalvik.vm.heapminfree=8m \
+    dalvik.vm.heapmaxfree=24m
+    
 # DebugFS
 PRODUCT_SET_DEBUGFS_RESTRICTIONS := true
 
@@ -185,7 +194,53 @@ PRODUCT_VENDOR_PROPERTIES += \
     ro.vendor.display.sensortype=2 \
     vendor.display.idle_time=0 \
     vendor.display.idle_time_inactive=0 \
-    vendor.display.qdcm.mode_combine=2
+    vendor.display.qdcm.mode_combine=2 \
+    debug.hwui.skia_atrace_enabled=false \
+    debug.sf.hw=0 \
+    debug.egl.hw=0 \
+    debug.sf.latch_unsignaled=1 \
+    debug.mdpcomp.logs=0 \
+    debug.hwui.target_cpu_time_percent=30 \
+    debug.hwui.use_hint_manager=true \
+    debug.sf.enable_egl_image_tracker=0 \
+    debug.sf.high_fps_early_gl_phase_offset_ns=-5000000 \
+    debug.sf.disable_backpressure=1 \
+    debug.sf.high_fps_early_phase_offset_ns=-5000000 \
+    debug.sf.high_fps_late_app_phase_offset_ns=1000000 \
+    debug.sf.high_fps_late_sf_phase_offset_ns=-5000000 \
+    debug.sf.predict_hwc_composition_strategy=0 \
+    persist.sys.sf.color_saturation=1.0 \
+    persist.sys.sf.native_mode=1 \
+    ro.hardware.egl=adreno \
+    ro.hardware.vulkan=adreno \
+    ro.sf.hwc_set_default_colormode=true \
+    ro.surface_flinger.force_hwc_copy_for_virtual_displays=true \
+    ro.surface_flinger.max_virtual_display_dimension=4096 \
+    ro.surface_flinger.protected_contents=true \
+    ro.surface_flinger.use_content_detection_for_refresh_rate=true \
+    ro.surface_flinger.use_color_management=true \
+    ro.surface_flinger.wcg_composition_dataspace=143261696 \
+    vendor.display.secure_preview_buffer_format=420_sp \
+    vendor.display.camera_noc_efficiency_factor=0.70 \
+    vendor.display.comp_mask=0 \
+    vendor.display.disable_excl_rect=0 \
+    vendor.display.disable_excl_rect_partial_fb=1 \
+    vendor.display.disable_hw_recovery_dump=1 \
+    vendor.display.disable_idle_time_hdr=1 \
+    vendor.display.disable_idle_time_video=1 \
+    vendor.display.disable_layer_stitch=0 \
+    vendor.display.disable_rotator_ubwc=1 \
+    vendor.display.disable_scaler=0 \
+    vendor.display.enable_async_powermode=1 \
+    vendor.display.enable_optimize_refresh=1 \
+    vendor.display.enable_posted_start_dyn=1 \
+    vendor.display.hwc_disable_hdr=1 \
+    vendor.display.idle_time=0 \
+    vendor.display.normal_noc_efficiency_factor=0.85 \
+    vendor.display.use_smooth_motion=1 \
+    vendor.opengles.version=196610 \
+    vendor.gralloc.disable_ubwc=0 \
+    vendor.gralloc.secure_preview_buffer_format=420_sp
     
 # Dolby
 $(call inherit-product, hardware/dolby/dolby.mk)
@@ -258,7 +313,6 @@ PRODUCT_VENDOR_PROPERTIES += \
 # Init
 PRODUCT_PACKAGES += \
     charger_fstab.qti \
-    charger_fw_fstab.qti \
     init.bengal.rc \
     init.bengal.perf.rc \
     init.mmi.charge_only.rc \
@@ -268,7 +322,6 @@ PRODUCT_PACKAGES += \
     init.oem.hw.sh \
     init.qti.dcvs.sh \
     init.qti.early_init.sh \
-    init.mmi.charge_only.rc \
     init.mmi.dalvik.rc \
     init.mmi.rc \
     init.qti.chg_policy.sh \
@@ -464,6 +517,9 @@ PRODUCT_PACKAGES += \
 TARGET_BUILDS_OSS_SENSORS_SUBHAL := true
 
 PRODUCT_PACKAGES += \
+    android.hardware.sensors-service.multihal \
+    android.frameworks.sensorservice@1.0 \
+    android.frameworks.sensorservice@1.0.vendor \
     android.hardware.sensors@2.0-service.multihal \
     android.hardware.sensors@2.0-ScopedWakelock \
     android.hardware.sensors@2.0-ScopedWakelock.vendor \

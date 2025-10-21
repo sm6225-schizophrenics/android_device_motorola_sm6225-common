@@ -100,7 +100,6 @@ on charger
     setprop vendor.usb.controller 4e00000.dwc3
 
 on init && property:ro.boot.mode=charger
-    mount_all /vendor/etc/charger_fw_fstab.qti --early
     write /sys/kernel/boot_adsp/boot 1
     wait /sys/class/power_supply/battery
 

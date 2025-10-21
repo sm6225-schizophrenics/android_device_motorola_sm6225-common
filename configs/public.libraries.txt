@@ -5,6 +5,11 @@ libsdsprpc.so
 libfastcvopt.so
 liblistensoundmodel2.so
 libOpenCL.so
+libqmi_cci.so
+libqmi_common_so.so
+libqmiservices.so
+libqmimotext.so
+libiqi_bridge.so
 
 libflaw.so 64
 libarcsoft_high_dynamic_range.so 64
