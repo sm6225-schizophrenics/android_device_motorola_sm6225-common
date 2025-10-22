@@ -97,11 +97,9 @@ on property:vendor.usb.controller=*
     setprop sys.usb.controller ${vendor.usb.controller}
 
 on charger
-    setprop vendor.usb.controller 4e00000.dwc3
-
-on init && property:ro.boot.mode=charger
-    write /sys/kernel/boot_adsp/boot 1
+    mount_all /vendor/etc/charger_fstab.qti --early
     wait /sys/class/power_supply/battery
+    setprop vendor.usb.controller 4e00000.dwc3
 
 service vendor.lowi /vendor/bin/lowirpcd
    class core

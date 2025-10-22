@@ -23,6 +23,22 @@ AB_OTA_PARTITIONS += \
     vbmeta \
     vendor
 
+AB_OTA_POSTINSTALL_CONFIG += \
+    RUN_POSTINSTALL_system=true \
+    POSTINSTALL_PATH_system=system/bin/otapreopt_script \
+    FILESYSTEM_TYPE_system=ext4 \
+    POSTINSTALL_OPTIONAL_system=true
+
+AB_OTA_POSTINSTALL_CONFIG += \
+    RUN_POSTINSTALL_vendor=true \
+    POSTINSTALL_PATH_vendor=bin/checkpoint_gc \
+    FILESYSTEM_TYPE_vendor=ext4 \
+    POSTINSTALL_OPTIONAL_vendor=true
+
+PRODUCT_PACKAGES += \
+    checkpoint_gc \
+    otapreopt_script
+
 PRODUCT_PACKAGES += \
     update_engine \
     update_engine_sideload \
@@ -142,9 +158,6 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/camera/camxoverridesettings.txt:$(TARGET_COPY_OUT_VENDOR)/etc/camera/camxoverridesettings.txt
 
 # Charger
-PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/init/vendor.qti.hardware.charger_monitor@1.0-service.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/vendor.qti.hardware.charger_monitor@1.0-service.rc
-
 PRODUCT_PRODUCT_PROPERTIES += \
     persist.vendor.quick.charge=1 \
     ro.charger.disable_init_blank=true
@@ -517,11 +530,7 @@ TARGET_BUILDS_OSS_SENSORS_SUBHAL := true
 PRODUCT_PACKAGES += \
     android.hardware.sensors-service.multihal \
     android.frameworks.sensorservice@1.0 \
-    android.frameworks.sensorservice@1.0.vendor \
-    android.hardware.sensors@2.0-service.multihal \
-    android.hardware.sensors@2.0-ScopedWakelock \
-    android.hardware.sensors@2.0-ScopedWakelock.vendor \
-    libsensorndkbridge
+    android.frameworks.sensorservice@1.0.vendor
 
 PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.hardware.sensor.accelerometer.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.sensor.accelerometer.xml \

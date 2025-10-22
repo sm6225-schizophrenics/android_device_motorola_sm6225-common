@@ -4,12 +4,6 @@
 //
 
 prebuilt_etc {
-    name: "charger_fstab.qti",
-    src: "charger_fstab.qti",
-    vendor: true,
-}
-
-prebuilt_etc {
     name: "init.bengal.rc",
     src: "init.bengal.rc",
     vendor: true,
@@ -58,13 +52,6 @@ sh_binary {
 prebuilt_etc {
     name: "init.mmi.charge_only.rc",
     src: "init.mmi.charge_only.rc",
-    sub_dir: "init/hw",
-    vendor: true,
-}
-
-prebuilt_etc {
-    name: "init.mmi.chipset.rc",
-    src: "init.mmi.chipset.rc",
     sub_dir: "init/hw",
     vendor: true,
 }
