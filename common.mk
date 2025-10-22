@@ -147,6 +147,7 @@ PRODUCT_PACKAGES += \
 
 PRODUCT_VENDOR_PROPERTIES += \
     camera.disable_zsl_mode=1 \
+    persist.vendor.camera.expose.aux=1 \
     persist.vendor.camera.privapp.list=com.motorola.camera3
 
 PRODUCT_COPY_FILES += \
