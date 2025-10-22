@@ -333,35 +333,6 @@ KERNEL_MODULES_OUT := $(OUT_DIR)/target/product/$(AOSPA_BUILD)/$(KERNEL_MODULES_
 TARGET_USES_KERNEL_PLATFORM := false
 
 # Media
-MSM_VIDC_TARGET_LIST := bengal
-
-include hardware/qcom/media/conf_files/$(TARGET_BOARD_PLATFORM)/$(TARGET_BOARD_PLATFORM).mk
-
-PRODUCT_COPY_FILES += \
-    device/qcom/common/vendor/media/media_profiles.xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_profiles.xml
-
-PRODUCT_PACKAGES += \
-    libOmxCore \
-    libOmxVdec \
-    libOmxVenc \
-    libstagefrighthw \
-    libc2dcolorconvert \
-    init.qti.media.rc \
-    init.qti.media.sh
-
-PRODUCT_PACKAGES += \
-    libavservices_minijail.vendor \
-    libgui_vendor \
-    libstagefright_softomx.vendor \
-    libstagefright_softomx_plugin.vendor \
-    vendor.qti.hardware.capabilityconfigstore@1.0.vendor
-    
-PRODUCT_SYSTEM_EXT_PROPERTIES += \
-    debug.stagefright.ccodec=1 \
-    media.settings.xml=/vendor/etc/media_profiles_vendor.xml \
-    media.stagefright.thumbnail.prefer_hw_codecs=true \
-    ro.media.recorder-max-base-layer-fps=60
-
 PRODUCT_SYSTEM_EXT_PROPERTIES += \
     media.aac_51_output_enabled=true \
     media.stagefright.enable-aac=true \
@@ -452,6 +423,7 @@ TARGET_COMMON_QTI_COMPONENTS += \
     gps \
     init \
     keymaster \
+    media \
     overlay \
     perf \
     telephony \
