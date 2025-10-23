@@ -30,6 +30,7 @@ namespace_imports = [
     'vendor/qcom/common/vendor/gps-legacy',
     'vendor/qcom/common/vendor/keymaster',
     'vendor/qcom/common/vendor/wlan-legacy',
+    'vendor/qcom/common/vendor/media/legacy'
 ]
 
 
