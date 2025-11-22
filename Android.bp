@@ -1,5 +1,5 @@
 //
-// SPDX-FileCopyrightText: 2022-2024 The LineageOS Project
+// SPDX-FileCopyrightText: The LineageOS Project
 // SPDX-License-Identifier: Apache-2.0
 //
 
@@ -11,13 +11,6 @@ install_symlink {
     vendor: true,
     installed_location: "firmware/aw_cali.bin",
     symlink_target: "/mnt/vendor/persist/factory/audio/aw_cali.bin",
-}
-
-install_symlink {
-    name: "rfs_msm_mpss_readonly_vendor_fsg_symlink",
-    vendor: true,
-    installed_location: "rfs/msm/mpss/readonly/vendor/fsg",
-    symlink_target: "/vendor/fsg",
 }
 
 install_symlink {
