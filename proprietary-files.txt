@@ -693,6 +693,12 @@ vendor/lib64/libssc_default_listener.so
 vendor/lib64/sensors.moto.so
 vendor/lib64/sensors.ssc.so
 
+# Sensors calibrate
+vendor/bin/hw/vendor.qti.hardware.sensorscalibrate@1.0-service
+vendor/etc/init/vendor.qti.hardware.sensorscalibrate@1.0-service.rc
+vendor/lib64/hw/vendor.qti.hardware.sensorscalibrate@1.0-impl.so
+vendor/lib64/vendor.qti.hardware.sensorscalibrate@1.0.so
+
 # Snapdragon Computer Vision Engine - from LA.UM.9.15.2.r1-10600-KAMORTA.QSSI14.0
 vendor/lib/libfastcvdsp_stub.so|7f27cee24281bc9bf4f08c6100cc66bd650d8efb
 vendor/lib/libfastcvopt.so|eb6e1052f12b45f2f651f1437e6072459648f2f3
