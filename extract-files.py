@@ -22,8 +22,6 @@ namespace_imports = [
     'device/motorola/sm6225-common',
     'hardware/qcom/display',
     'hardware/qcom/display/gralloc',
-    'hardware/qcom/display/libdebug',
-    'hardware/qcom/display/sde-drm',
     'hardware/motorola',
     'vendor/qcom/common/vendor/display',
     'vendor/qcom/common/vendor/display/4.19',
