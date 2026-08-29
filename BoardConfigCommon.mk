@@ -95,6 +95,7 @@ TARGET_RECOVERY_WIPE := $(COMMON_PATH)/recovery/recovery.wipe
 
 # Sepolicy
 include hardware/motorola/sepolicy/qti/SEPolicy.mk
+SYSTEM_EXT_PRIVATE_SEPOLICY_DIRS += $(COMMON_PATH)/sepolicy/private
 
 # SurfaceFlinger
 TARGET_USE_AOSP_SURFACEFLINGER := true
