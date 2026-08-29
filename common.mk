@@ -489,7 +489,7 @@ PRODUCT_VENDOR_PROPERTIES += \
     ro.vendor.sensors.pug=false
     
 # Signing
-$(call inherit-product, vendor/aospa-priv/config/common.mk)
+$(call inherit-product-if-exists, vendor/aospa-priv/config/common.mk)
 
 # Soong namespaces
 PRODUCT_SOONG_NAMESPACES += \
