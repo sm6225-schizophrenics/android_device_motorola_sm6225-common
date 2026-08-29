@@ -324,7 +324,7 @@ PRODUCT_PACKAGES += \
     android.frameworks.sensorservice@1.0
     
 # Signing
-$(call inherit-product, vendor/aospa-priv/config/common.mk)
+$(call inherit-product-if-exists, vendor/aospa-priv/config/common.mk)
 
 # Soong namespaces
 PRODUCT_SOONG_NAMESPACES += \
