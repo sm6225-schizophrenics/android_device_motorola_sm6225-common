@@ -387,8 +387,8 @@ PRODUCT_USE_DYNAMIC_PARTITIONS := true
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/perf/perfconfigstore.xml:$(TARGET_COPY_OUT_VENDOR)/etc/perf/perfconfigstore.xml
     
-# Kernel headers
-PRODUCT_VENDOR_KERNEL_HEADERS := kernel/motorola/sm6225/include/uapi
+# Prebuilt headers
+PRODUCT_VENDOR_KERNEL_HEADERS := kernel/motorola/kernel-headers
     
 # Preopt SystemUI
 PRODUCT_DEXPREOPT_SPEED_APPS += SystemUIGoogle  # For internal
